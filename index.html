@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Marwar Infotech — Digital Experiences</title>
@@ -10,9 +12,11 @@
 content="Marwar Infotech creates premium websites, digital experiences and modern business solutions.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 
 <style>
 
@@ -596,6 +600,7 @@ section{
     from{
         transform:translateX(0);
     }
+
     to{
         transform:translateX(-50%);
     }
@@ -1173,6 +1178,7 @@ section{
     display:flex;
 
     justify-content:space-between;
+
     align-items:center;
 
     gap:40px;
@@ -1444,6 +1450,7 @@ footer{
 .form input:focus,
 .form textarea:focus,
 .form select:focus{
+
     border-color:var(--blue);
 
     background:#fff;
@@ -1482,7 +1489,6 @@ footer{
 ========================================================= */
 
 .reveal{
-
     opacity:0;
 
     transform:
@@ -1660,6 +1666,7 @@ footer{
 
     .stat{
         border-right:0;
+
         border-bottom:1px solid var(--border);
     }
 
@@ -1681,11 +1688,13 @@ footer{
 
     .footer-links{
         flex-direction:column;
+
         gap:30px;
     }
 
     .footer-bottom{
         flex-direction:column;
+
         gap:10px;
     }
 
@@ -1694,14 +1703,467 @@ footer{
     }
 }
 
+
+/* =========================================================
+   DEMO ADMIN / WEBSITE EDITOR
+   TESTING ONLY
+========================================================= */
+
+#adminLoginScreen{
+    position:fixed;
+    inset:0;
+
+    z-index:99999;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(20,99,255,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #07101f,
+            #0b1220 55%,
+            #10285c
+        );
+}
+
+#adminLoginScreen.show{
+    display:flex;
+}
+
+.admin-login-card{
+    width:min(440px,100%);
+
+    background:rgba(255,255,255,.97);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:30px;
+
+    padding:38px;
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.35);
+}
+
+.admin-login-brand{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+    font-family:"Manrope";
+
+    font-weight:800;
+
+    font-size:22px;
+}
+
+.admin-login-mark{
+    width:44px;
+    height:44px;
+
+    border-radius:14px;
+
+    display:grid;
+    place-items:center;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1463ff,
+            #70a2ff
+        );
+}
+
+.admin-login-card h2{
+    font-family:"Manrope";
+
+    font-size:36px;
+
+    letter-spacing:-2px;
+
+    margin-bottom:8px;
+}
+
+.admin-login-card p{
+    color:var(--muted);
+
+    line-height:1.6;
+
+    margin-bottom:24px;
+}
+
+.admin-login-card input{
+    width:100%;
+
+    padding:15px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    outline:none;
+
+    margin-bottom:12px;
+
+    font:inherit;
+
+    background:#f8faff;
+}
+
+.admin-login-card input:focus{
+    border-color:var(--blue);
+
+    box-shadow:
+        0 0 0 4px rgba(20,99,255,.08);
+
+    background:#fff;
+}
+
+.admin-login-actions{
+    display:flex;
+
+    gap:10px;
+
+    margin-top:8px;
+}
+
+.admin-login-actions button{
+    flex:1;
+
+    border:0;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-weight:800;
+}
+
+.admin-login-submit{
+    background:var(--blue);
+    color:#fff;
+}
+
+.admin-login-cancel{
+    background:#eef3fb;
+    color:#0b1220;
+}
+
+.admin-login-error{
+    min-height:20px;
+
+    margin:5px 0 8px;
+
+    color:#e63946;
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   ADMIN TOOLBAR
+========================================================= */
+
+#adminToolbar{
+    position:fixed;
+
+    top:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:99990;
+
+    display:none;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 12px;
+
+    border-radius:50px;
+
+    background:rgba(11,18,32,.95);
+
+    color:#fff;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+
+    backdrop-filter:blur(15px);
+}
+
+body.admin-mode #adminToolbar{
+    display:flex;
+}
+
+.admin-toolbar-status{
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:0 8px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+.admin-toolbar-status i{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#19d66b;
+
+    box-shadow:
+        0 0 12px #19d66b;
+}
+
+.admin-toolbar-btn{
+    border:0;
+
+    padding:9px 14px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font:
+        700 12px
+        "DM Sans",
+        sans-serif;
+}
+
+.admin-save-btn{
+    background:var(--blue);
+    color:#fff;
+}
+
+.admin-reset-btn{
+    background:#fff;
+    color:#0b1220;
+}
+
+.admin-logout-btn{
+    background:#ff5b6e;
+    color:#fff;
+}
+
+
+/* =========================================================
+   EDITABLE ELEMENTS
+========================================================= */
+
+body.admin-mode [data-admin-editable]{
+
+    outline:
+        2px dashed
+        rgba(20,99,255,.38);
+
+    outline-offset:5px;
+
+    cursor:text !important;
+}
+
+body.admin-mode [data-admin-editable]:hover{
+
+    outline-color:var(--blue);
+
+    background:
+        rgba(20,99,255,.045);
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.admin-edit-btn{
+
+    position:fixed;
+
+    z-index:99995;
+
+    display:none;
+
+    border:0;
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    background:#1463ff;
+
+    color:#fff;
+
+    font:
+        800 11px
+        "DM Sans",
+        sans-serif;
+
+    box-shadow:
+        0 10px 30px
+        rgba(20,99,255,.3);
+
+    cursor:pointer;
+
+    white-space:nowrap;
+}
+
+body.admin-mode .admin-edit-btn.show{
+    display:block;
+}
+
+
+/* =========================================================
+   IMAGE BUTTON
+========================================================= */
+
+.admin-image-btn{
+
+    position:fixed;
+
+    z-index:99995;
+
+    display:none;
+
+    border:0;
+
+    padding:7px 11px;
+
+    border-radius:20px;
+
+    background:#0b1220;
+
+    color:#fff;
+
+    font:
+        800 11px
+        "DM Sans",
+        sans-serif;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.25);
+
+    cursor:pointer;
+}
+
+body.admin-mode .admin-image-btn.show{
+    display:block;
+}
+
+
+/* =========================================================
+   ADMIN HINT
+========================================================= */
+
+.admin-hint{
+
+    position:fixed;
+
+    left:20px;
+
+    bottom:20px;
+
+    z-index:99980;
+
+    display:none;
+
+    max-width:310px;
+
+    padding:12px 15px;
+
+    border-radius:16px;
+
+    background:rgba(11,18,32,.92);
+
+    color:#fff;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.18);
+}
+
+body.admin-mode .admin-hint{
+    display:block;
+}
+
+
+@media(max-width:600px){
+
+    #adminToolbar{
+
+        top:10px;
+
+        width:calc(100% - 20px);
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+        border-radius:20px;
+    }
+
+    .admin-toolbar-status{
+        display:none;
+    }
+
+    .admin-hint{
+
+        left:10px;
+        right:10px;
+
+        bottom:10px;
+
+        max-width:none;
+    }
+}
+
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- CURSOR -->
+<!-- ======================================================
+     CURSOR
+====================================================== -->
+
 <div class="cursor-glow"></div>
 
 
@@ -1714,30 +2176,54 @@ footer{
 <div class="container nav-inner">
 
 <a href="#" class="logo">
-    <div class="logo-mark">M</div>
-    <span>Marwar Infotech</span>
+
+    <div class="logo-mark">
+        M
+    </div>
+
+    <span>
+        Marwar Infotech
+    </span>
+
 </a>
+
 
 <nav class="nav-links">
 
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#work">Work</a>
-<a href="#process">Process</a>
-<a href="#faq">FAQ</a>
+<a href="#services">
+    Services
+</a>
+
+<a href="#about">
+    About
+</a>
+
+<a href="#work">
+    Work
+</a>
+
+<a href="#process">
+    Process
+</a>
+
+<a href="#faq">
+    FAQ
+</a>
 
 </nav>
+
 
 <button
 class="nav-btn magnetic"
 onclick="openDrawer()">
-Let's Talk
+
+    Let's Talk
+
 </button>
 
 </div>
 
 </header>
-
 
 
 <!-- ======================================================
@@ -1748,48 +2234,72 @@ Let's Talk
 
 <div class="container hero-grid">
 
+
 <div class="hero-content reveal-left">
 
 <div class="hero-eyebrow">
+
     <i></i>
+
     Digital Experiences That Stand Out
+
 </div>
 
+
 <h1>
+
 We build
-<span>websites</span>
+
+<span>
+    websites
+</span>
+
 people remember.
+
 </h1>
 
+
 <p class="hero-text">
+
 Marwar Infotech creates premium, modern and conversion-focused
 digital experiences for businesses that want to look different
 from everyone else.
+
 </p>
+
 
 <div class="hero-actions">
 
 <button
 class="primary-btn magnetic"
 onclick="openDrawer()">
+
 Start a Project →
+
 </button>
+
 
 <a
 href="#work"
 class="secondary-btn magnetic">
+
 Explore Our Work
+
 </a>
 
 </div>
 
+
 <div class="hero-note">
+
 <span></span>
+
 Available for selected projects
-</div>
 
 </div>
 
+
+</div>
 
 
 <div class="hero-visual reveal-right">
@@ -1806,16 +2316,20 @@ alt="Creative digital design">
 
 <div class="floating-card card-top">
 
-<div class="card-icon">✦</div>
+<div class="card-icon">
+    ✦
+</div>
 
 <div>
+
 <div class="card-small">
-Design
+    Design
 </div>
 
 <div class="card-bold">
-Premium UI / UX
+    Premium UI / UX
 </div>
+
 </div>
 
 </div>
@@ -1824,19 +2338,21 @@ Premium UI / UX
 <div class="floating-card card-bottom">
 
 <div class="card-small">
-Digital Growth
+    Digital Growth
 </div>
 
-<strong>∞</strong>
+<strong>
+    ∞
+</strong>
 
 </div>
 
 </div>
+
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -1848,41 +2364,48 @@ Digital Growth
 <div class="marquee-track">
 
 <div class="marquee-item">
-Web Design <span>✦</span>
+    Web Design
+    <span>✦</span>
 </div>
 
 <div class="marquee-item">
-Creative Development <span>✦</span>
+    Creative Development
+    <span>✦</span>
 </div>
 
 <div class="marquee-item">
-UI / UX <span>✦</span>
+    UI / UX
+    <span>✦</span>
 </div>
 
 <div class="marquee-item">
-Digital Experiences <span>✦</span>
+    Digital Experiences
+    <span>✦</span>
 </div>
 
 <div class="marquee-item">
-Brand Websites <span>✦</span>
+    Brand Websites
+    <span>✦</span>
 </div>
 
 <div class="marquee-item">
-Web Design <span>✦</span>
+    Web Design
+    <span>✦</span>
 </div>
 
 <div class="marquee-item">
-Creative Development <span>✦</span>
+    Creative Development
+    <span>✦</span>
 </div>
 
 <div class="marquee-item">
-UI / UX <span>✦</span>
+    UI / UX
+    <span>✦</span>
 </div>
 
 </div>
 
 </div>
-
 
 
 <!-- ======================================================
@@ -1895,26 +2418,39 @@ id="services">
 
 <div class="container">
 
+
 <div class="reveal">
 
 <div class="section-label">
+
 <span></span>
+
 What We Do
+
 </div>
 
+
 <h2 class="section-title">
+
 Digital work with
-<span>character.</span>
+
+<span>
+    character.
+</span>
+
 </h2>
 
-<p class="section-copy"
+
+<p
+class="section-copy"
 style="max-width:600px;margin-top:22px;">
+
 From strategy to final pixels, we create digital experiences
 that look premium and feel effortless.
+
 </p>
 
 </div>
-
 
 
 <div class="services-grid">
@@ -1924,11 +2460,17 @@ that look premium and feel effortless.
 class="service-card reveal"
 style="--delay:.05s">
 
-<div class="service-number">01</div>
+<div class="service-number">
+    01
+</div>
 
-<div class="service-icon">◈</div>
+<div class="service-icon">
+    ◈
+</div>
 
-<h3>Website Design</h3>
+<h3>
+    Website Design
+</h3>
 
 <p>
 Modern, premium and responsive websites designed
@@ -1938,16 +2480,21 @@ around your brand and customers.
 </div>
 
 
-
 <div
 class="service-card reveal"
 style="--delay:.15s">
 
-<div class="service-number">02</div>
+<div class="service-number">
+    02
+</div>
 
-<div class="service-icon">✦</div>
+<div class="service-icon">
+    ✦
+</div>
 
-<h3>UI / UX Design</h3>
+<h3>
+    UI / UX Design
+</h3>
 
 <p>
 Beautiful interfaces with thoughtful interactions,
@@ -1957,16 +2504,21 @@ motion and user experience.
 </div>
 
 
-
 <div
 class="service-card reveal"
 style="--delay:.25s">
 
-<div class="service-number">03</div>
+<div class="service-number">
+    03
+</div>
 
-<div class="service-icon">⌁</div>
+<div class="service-icon">
+    ⌁
+</div>
 
-<h3>Creative Development</h3>
+<h3>
+    Creative Development
+</h3>
 
 <p>
 High-performance front-end experiences with
@@ -1976,16 +2528,21 @@ animations and advanced interactions.
 </div>
 
 
-
 <div
 class="service-card reveal"
 style="--delay:.35s">
 
-<div class="service-number">04</div>
+<div class="service-number">
+    04
+</div>
 
-<div class="service-icon">◎</div>
+<div class="service-icon">
+    ◎
+</div>
 
-<h3>Business Websites</h3>
+<h3>
+    Business Websites
+</h3>
 
 <p>
 Professional websites built to make local and
@@ -1995,16 +2552,21 @@ growing businesses look premium.
 </div>
 
 
-
 <div
 class="service-card reveal"
 style="--delay:.45s">
 
-<div class="service-number">05</div>
+<div class="service-number">
+    05
+</div>
 
-<div class="service-icon">↗</div>
+<div class="service-icon">
+    ↗
+</div>
 
-<h3>Landing Pages</h3>
+<h3>
+    Landing Pages
+</h3>
 
 <p>
 Conversion-focused pages designed to turn visitors
@@ -2014,16 +2576,21 @@ into enquiries and customers.
 </div>
 
 
-
 <div
 class="service-card reveal"
 style="--delay:.55s">
 
-<div class="service-number">06</div>
+<div class="service-number">
+    06
+</div>
 
-<div class="service-icon">∞</div>
+<div class="service-icon">
+    ∞
+</div>
 
-<h3>Digital Solutions</h3>
+<h3>
+    Digital Solutions
+</h3>
 
 <p>
 Smart digital experiences tailored to the way
@@ -2032,12 +2599,12 @@ your business actually works.
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2054,56 +2621,78 @@ your business actually works.
 <div
 class="stat-number"
 data-target="50">
+
 0+
-</div>
-
-<p>Projects & Concepts</p>
 
 </div>
 
+<p>
+Projects & Concepts
+</p>
 
-<div class="stat reveal" style="--delay:.1s">
+</div>
+
+
+<div
+class="stat reveal"
+style="--delay:.1s">
 
 <div
 class="stat-number"
 data-target="30">
+
 0+
-</div>
-
-<p>Businesses Served</p>
 
 </div>
 
+<p>
+Businesses Served
+</p>
 
-<div class="stat reveal" style="--delay:.2s">
+</div>
+
+
+<div
+class="stat reveal"
+style="--delay:.2s">
 
 <div
 class="stat-number"
 data-target="100">
+
 0%
-</div>
-
-<p>Creative Focus</p>
 
 </div>
 
+<p>
+Creative Focus
+</p>
 
-<div class="stat reveal" style="--delay:.3s">
+</div>
+
+
+<div
+class="stat reveal"
+style="--delay:.3s">
 
 <div
 class="stat-number"
 data-target="24">
+
 0/7
-</div>
-
-<p>Ideas Never Stop</p>
 
 </div>
+
+<p>
+Ideas Never Stop
+</p>
+
+</div>
+
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2126,18 +2715,27 @@ alt="Creative team">
 </div>
 
 
-
 <div class="about-content reveal-right">
 
 <div class="section-label">
+
 <span></span>
+
 About Marwar
+
 </div>
 
+
 <h2 class="section-title">
+
 Not just a
-<span>website.</span>
+
+<span>
+    website.
+</span>
+
 </h2>
+
 
 <p class="section-copy">
 
@@ -2151,25 +2749,50 @@ your business.
 
 <div class="about-list">
 
+
 <div>
-<span class="check">✓</span>
+
+<span class="check">
+    ✓
+</span>
+
 Premium visual design
+
 </div>
 
+
 <div>
-<span class="check">✓</span>
+
+<span class="check">
+    ✓
+</span>
+
 Smooth animations & interactions
+
 </div>
 
+
 <div>
-<span class="check">✓</span>
+
+<span class="check">
+    ✓
+</span>
+
 Mobile-first responsive experience
+
 </div>
 
+
 <div>
-<span class="check">✓</span>
+
+<span class="check">
+    ✓
+</span>
+
 Business-focused design
+
 </div>
+
 
 </div>
 
@@ -2178,7 +2801,6 @@ Business-focused design
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2191,20 +2813,29 @@ id="work">
 
 <div class="container">
 
+
 <div class="reveal">
 
 <div class="section-label">
+
 <span></span>
+
 Selected Work
+
 </div>
 
+
 <h2 class="section-title">
+
 Made to be
-<span>noticed.</span>
+
+<span>
+    noticed.
+</span>
+
 </h2>
 
 </div>
-
 
 
 <div class="portfolio-grid">
@@ -2218,14 +2849,17 @@ alt="Modern office website concept">
 
 <div class="project-info">
 
-<small>Business Website</small>
+<small>
+    Business Website
+</small>
 
-<h3>Modern Corporate</h3>
+<h3>
+    Modern Corporate
+</h3>
 
 </div>
 
 </div>
-
 
 
 <div
@@ -2238,14 +2872,17 @@ alt="Business workspace">
 
 <div class="project-info">
 
-<small>Digital Experience</small>
+<small>
+    Digital Experience
+</small>
 
-<h3>Business Growth</h3>
+<h3>
+    Business Growth
+</h3>
 
 </div>
 
 </div>
-
 
 
 <div
@@ -2258,14 +2895,17 @@ alt="Creative website design">
 
 <div class="project-info">
 
-<small>Creative Website</small>
+<small>
+    Creative Website
+</small>
 
-<h3>Digital Studio</h3>
+<h3>
+    Digital Studio
+</h3>
 
 </div>
 
 </div>
-
 
 
 <div
@@ -2278,20 +2918,24 @@ alt="UI UX design">
 
 <div class="project-info">
 
-<small>UI / UX</small>
+<small>
+    UI / UX
+</small>
 
-<h3>Future Interface</h3>
+<h3>
+    Future Interface
+</h3>
 
 </div>
 
 </div>
+
 
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2303,14 +2947,18 @@ alt="UI UX design">
 <div class="container reveal">
 
 <h2>
+
 Your business deserves a
-<span>better first impression.</span>
+
+<span>
+    better first impression.
+</span>
+
 </h2>
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2323,20 +2971,29 @@ id="process">
 
 <div class="container">
 
+
 <div class="reveal">
 
 <div class="section-label">
+
 <span></span>
+
 Our Process
+
 </div>
 
+
 <h2 class="section-title">
+
 Simple process.
-<span>Big results.</span>
+
+<span>
+    Big results.
+</span>
+
 </h2>
 
 </div>
-
 
 
 <div class="process-grid">
@@ -2344,9 +3001,13 @@ Simple process.
 
 <div class="process-card reveal">
 
-<div class="process-num">01 / DISCOVER</div>
+<div class="process-num">
+    01 / DISCOVER
+</div>
 
-<h3>Understand</h3>
+<h3>
+    Understand
+</h3>
 
 <p>
 We understand your business, audience,
@@ -2356,14 +3017,17 @@ goals and what makes your brand different.
 </div>
 
 
-
 <div
 class="process-card reveal"
 style="--delay:.15s">
 
-<div class="process-num">02 / DESIGN</div>
+<div class="process-num">
+    02 / DESIGN
+</div>
 
-<h3>Design</h3>
+<h3>
+    Design
+</h3>
 
 <p>
 We turn the strategy into a visual experience
@@ -2373,14 +3037,17 @@ with premium UI, motion and interactions.
 </div>
 
 
-
 <div
 class="process-card reveal"
 style="--delay:.3s">
 
-<div class="process-num">03 / BUILD</div>
+<div class="process-num">
+    03 / BUILD
+</div>
 
-<h3>Develop</h3>
+<h3>
+    Develop
+</h3>
 
 <p>
 The approved experience is transformed into
@@ -2390,14 +3057,17 @@ a fast and responsive working website.
 </div>
 
 
-
 <div
 class="process-card reveal"
 style="--delay:.45s">
 
-<div class="process-num">04 / LAUNCH</div>
+<div class="process-num">
+    04 / LAUNCH
+</div>
 
-<h3>Launch</h3>
+<h3>
+    Launch
+</h3>
 
 <p>
 We test everything and prepare your website
@@ -2406,12 +3076,12 @@ for its next stage of growth.
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2425,12 +3095,21 @@ for its next stage of growth.
 <div class="testimonial reveal">
 
 <div class="quote">
+
 “Good design gets attention.
-<span>Great design gets remembered.</span>”
+
+<span>
+    Great design gets remembered.
+</span>
+
+”
+
 </div>
 
 <div class="testimonial-author">
+
 — Marwar Infotech
+
 </div>
 
 </div>
@@ -2438,7 +3117,6 @@ for its next stage of growth.
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2451,20 +3129,29 @@ id="faq">
 
 <div class="container">
 
+
 <div class="reveal">
 
 <div class="section-label">
+
 <span></span>
+
 FAQ
+
 </div>
 
+
 <h2 class="section-title">
+
 Have a
-<span>question?</span>
+
+<span>
+    question?
+</span>
+
 </h2>
 
 </div>
-
 
 
 <div class="faq-wrap">
@@ -2476,9 +3163,12 @@ Have a
 
 How long does a website take?
 
-<span class="faq-plus">+</span>
+<span class="faq-plus">
+    +
+</span>
 
 </button>
+
 
 <div class="faq-answer">
 
@@ -2495,7 +3185,6 @@ and developed within a few days to a few weeks.
 </div>
 
 
-
 <div
 class="faq-item reveal"
 style="--delay:.1s">
@@ -2504,9 +3193,12 @@ style="--delay:.1s">
 
 Can you create custom animations?
 
-<span class="faq-plus">+</span>
+<span class="faq-plus">
+    +
+</span>
 
 </button>
+
 
 <div class="faq-answer">
 
@@ -2523,7 +3215,6 @@ transitions and other interactive elements.
 </div>
 
 
-
 <div
 class="faq-item reveal"
 style="--delay:.2s">
@@ -2532,9 +3223,12 @@ style="--delay:.2s">
 
 Will the website work on mobile?
 
-<span class="faq-plus">+</span>
+<span class="faq-plus">
+    +
+</span>
 
 </button>
+
 
 <div class="faq-answer">
 
@@ -2551,7 +3245,6 @@ tablets and desktop screens.
 </div>
 
 
-
 <div
 class="faq-item reveal"
 style="--delay:.3s">
@@ -2560,9 +3253,12 @@ style="--delay:.3s">
 
 Can you redesign an existing website?
 
-<span class="faq-plus">+</span>
+<span class="faq-plus">
+    +
+</span>
 
 </button>
+
 
 <div class="faq-answer">
 
@@ -2578,12 +3274,12 @@ better UX and modern interactions.
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2594,16 +3290,22 @@ better UX and modern interactions.
 
 <div class="container cta-inner">
 
+
 <div class="reveal-left">
 
 <h2>
+
 Let's build something
 different.
+
 </h2>
 
+
 <p>
+
 Have an idea, a business or an existing website
 that needs a serious upgrade? Let's talk.
+
 </p>
 
 </div>
@@ -2617,10 +3319,10 @@ Start a Conversation →
 
 </button>
 
+
 </div>
 
 </section>
-
 
 
 <!-- ======================================================
@@ -2631,23 +3333,30 @@ Start a Conversation →
 
 <div class="container">
 
+
 <div class="footer-top">
+
 
 <div class="footer-brand">
 
 <a href="#" class="logo">
 
 <div class="logo-mark">
-M
+    M
 </div>
 
-<span>Marwar Infotech</span>
+<span>
+    Marwar Infotech
+</span>
 
 </a>
 
+
 <p>
+
 Building modern digital experiences
 for ambitious businesses.
+
 </p>
 
 </div>
@@ -2655,37 +3364,56 @@ for ambitious businesses.
 
 <div class="footer-links">
 
+
 <div class="footer-col">
 
-<h4>Explore</h4>
+<h4>
+    Explore
+</h4>
 
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#work">Work</a>
-<a href="#process">Process</a>
+<a href="#services">
+    Services
+</a>
+
+<a href="#about">
+    About
+</a>
+
+<a href="#work">
+    Work
+</a>
+
+<a href="#process">
+    Process
+</a>
 
 </div>
 
 
 <div class="footer-col">
 
-<h4>Contact</h4>
+<h4>
+    Contact
+</h4>
 
 <a href="tel:+917979346610">
-Call Us
+    Call Us
 </a>
 
 <a
 href="https://wa.me/917976346610"
 target="_blank">
-WhatsApp
+
+    WhatsApp
+
 </a>
 
 <a href="mailto:marwarinfotechh@gmail.com">
-Email
+    Email
 </a>
 
 </div>
+
 
 </div>
 
@@ -2704,10 +3432,10 @@ Designed by Marwar Infotech
 
 </div>
 
+
 </div>
 
 </footer>
-
 
 
 <!-- ======================================================
@@ -2716,14 +3444,13 @@ Designed by Marwar Infotech
 
 <a
 class="whatsapp magnetic"
-href="https://wa.me/917976346610
+href="https://wa.me/917976346610"
 target="_blank"
 aria-label="WhatsApp">
 
 ☏
 
 </a>
-
 
 
 <!-- ======================================================
@@ -2741,17 +3468,25 @@ onclick="closeDrawer()">
 <button
 class="drawer-close"
 onclick="closeDrawer()">
+
 ×
+
 </button>
 
+
 <h2>
+
 Let's create
 something great.
+
 </h2>
 
+
 <p>
+
 Tell us a little about your project and
 we'll get back to you.
+
 </p>
 
 
@@ -2776,23 +3511,41 @@ placeholder="Email Address">
 <select>
 
 <option value="">
-Select Service
+    Select Service
 </option>
 
-<option>Website Design</option>
-<option>Business Website</option>
-<option>UI / UX Design</option>
-<option>Landing Page</option>
-<option>Website Redesign</option>
+<option>
+    Website Design
+</option>
+
+<option>
+    Business Website
+</option>
+
+<option>
+    UI / UX Design
+</option>
+
+<option>
+    Landing Page
+</option>
+
+<option>
+    Website Redesign
+</option>
 
 </select>
+
 
 <textarea
 placeholder="Tell us about your project...">
 </textarea>
 
+
 <button type="submit">
+
 Send Enquiry →
+
 </button>
 
 </form>
@@ -2800,8 +3553,187 @@ Send Enquiry →
 </div>
 
 
+<!-- ======================================================
+     ADMIN LOGIN
+====================================================== -->
+
+<div
+id="adminLoginScreen"
+aria-hidden="true">
+
+<div class="admin-login-card">
+
+
+<div class="admin-login-brand">
+
+<div class="admin-login-mark">
+    M
+</div>
+
+<span>
+    Marwar Infotech
+</span>
+
+</div>
+
+
+<h2>
+    Admin Login
+</h2>
+
+
+<p>
+
+Sign in to test the website editor.
+Visitors will never see the editing controls.
+
+</p>
+
+
+<form id="adminLoginForm">
+
+<input
+id="adminUsername"
+type="text"
+placeholder="Username"
+autocomplete="username"
+required>
+
+
+<input
+id="adminPassword"
+type="password"
+placeholder="Password"
+autocomplete="current-password"
+required>
+
+
+<div
+id="adminLoginError"
+class="admin-login-error">
+</div>
+
+
+<div class="admin-login-actions">
+
+<button
+type="button"
+class="admin-login-cancel"
+onclick="closeAdminLogin()">
+
+Cancel
+
+</button>
+
+
+<button
+type="submit"
+class="admin-login-submit">
+
+Login →
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     ADMIN TOOLBAR
+====================================================== -->
+
+<div id="adminToolbar">
+
+<div class="admin-toolbar-status">
+
+<i></i>
+
+ADMIN MODE
+
+</div>
+
+
+<button
+class="admin-toolbar-btn admin-save-btn"
+onclick="saveAdminChanges()">
+
+Save Changes
+
+</button>
+
+
+<button
+class="admin-toolbar-btn admin-reset-btn"
+onclick="resetAdminChanges()">
+
+Reset
+
+</button>
+
+
+<button
+class="admin-toolbar-btn admin-logout-btn"
+onclick="adminLogout()">
+
+Logout
+
+</button>
+
+</div>
+
+
+<!-- ======================================================
+     FLOATING ADMIN EDIT BUTTONS
+====================================================== -->
+
+<button
+id="adminEditBtn"
+class="admin-edit-btn"
+type="button">
+
+✎ Edit Text
+
+</button>
+
+
+<button
+id="adminImageBtn"
+class="admin-image-btn"
+type="button">
+
+✦ Change Image
+
+</button>
+
+
+<div class="admin-hint">
+
+<strong>
+    Admin mode:
+</strong>
+
+Blue outlined content can be edited.
+
+Hover an item and click
+<b>✎ Edit Text</b>.
+
+For images, use
+<b>Change Image</b>.
+
+Click
+<b>Save Changes</b>
+when finished.
+
+</div>
+
 
 <script>
+
 
 /* =========================================================
    NAVBAR
@@ -2813,9 +3745,13 @@ document.querySelector(".navbar");
 window.addEventListener("scroll",()=>{
 
     if(window.scrollY > 50){
+
         navbar.classList.add("scrolled");
+
     }else{
+
         navbar.classList.remove("scrolled");
+
     }
 
 });
@@ -2854,6 +3790,7 @@ document.querySelectorAll(
 
 const revealObserver =
 new IntersectionObserver(
+
 (entries)=>{
 
     entries.forEach(entry=>{
@@ -2871,14 +3808,19 @@ new IntersectionObserver(
     });
 
 },
+
 {
     threshold:.12,
     rootMargin:"0px 0px -60px 0px"
-});
+}
+
+);
 
 
 revealElements.forEach(el=>{
+
     revealObserver.observe(el);
+
 });
 
 
@@ -2986,6 +3928,7 @@ document.querySelectorAll(".stat-number");
 
 const counterObserver =
 new IntersectionObserver(
+
 (entries,observer)=>{
 
     entries.forEach(entry=>{
@@ -3006,6 +3949,7 @@ new IntersectionObserver(
         const start =
         performance.now();
 
+
         function animate(time){
 
             const progress =
@@ -3014,10 +3958,12 @@ new IntersectionObserver(
                 1
             );
 
+
             current =
             Math.floor(
                 progress * target
             );
+
 
             if(target === 100){
 
@@ -3025,18 +3971,21 @@ new IntersectionObserver(
                 current + "%";
 
             }
+
             else if(target === 24){
 
                 counter.textContent =
                 current + "/7";
 
             }
+
             else{
 
                 counter.textContent =
                 current + "+";
 
             }
+
 
             if(progress < 1){
 
@@ -3048,22 +3997,27 @@ new IntersectionObserver(
 
         }
 
+
         requestAnimationFrame(
             animate
         );
+
 
         observer.unobserve(counter);
 
     });
 
 },
+
 {
     threshold:.7
 });
 
 
 counters.forEach(counter=>{
+
     counterObserver.observe(counter);
+
 });
 
 
@@ -3072,7 +4026,7 @@ counters.forEach(counter=>{
 ========================================================= */
 
 document.querySelectorAll(
-".faq-question"
+    ".faq-question"
 ).forEach(question=>{
 
     question.addEventListener(
@@ -3082,19 +4036,21 @@ document.querySelectorAll(
             const item =
             question.parentElement;
 
+
             document.querySelectorAll(
                 ".faq-item"
             ).forEach(other=>{
 
-                if(
-                    other !== item
-                ){
+                if(other !== item){
+
                     other.classList.remove(
                         "active"
                     );
+
                 }
 
             });
+
 
             item.classList.toggle(
                 "active"
@@ -3116,9 +4072,11 @@ function openDrawer(){
     .querySelector(".drawer")
     .classList.add("active");
 
+
     document
     .querySelector(".overlay")
     .classList.add("active");
+
 
     document.body.style.overflow =
     "hidden";
@@ -3132,9 +4090,11 @@ function closeDrawer(){
     .querySelector(".drawer")
     .classList.remove("active");
 
+
     document
     .querySelector(".overlay")
     .classList.remove("active");
+
 
     document.body.style.overflow =
     "";
@@ -3150,10 +4110,12 @@ function submitForm(e){
 
     e.preventDefault();
 
+
     const inputs =
     e.target.querySelectorAll(
         "input,select,textarea"
     );
+
 
     const name =
     inputs[0].value;
@@ -3208,7 +4170,9 @@ document.addEventListener(
 (e)=>{
 
     if(e.key === "Escape"){
+
         closeDrawer();
+
     }
 
 });
@@ -3228,8 +4192,10 @@ window.addEventListener(
     if(!heroVisual)
         return;
 
+
     const scroll =
     window.scrollY;
+
 
     if(scroll < window.innerHeight){
 
@@ -3241,7 +4207,1135 @@ window.addEventListener(
 });
 
 
+/* =========================================================
+   DEMO ADMIN EDITOR
+========================================================= */
+
+/*
+
+IMPORTANT:
+
+This admin system is for TESTING ONLY.
+
+Username:
+admin
+
+Password:
+1234
+
+For production/client website:
+Use real authentication + database/backend.
+
+*/
+
+
+const DEMO_ADMIN_USERNAME =
+"admin";
+
+const DEMO_ADMIN_PASSWORD =
+"1234";
+
+
+const ADMIN_AUTH_KEY =
+"marwar_demo_admin_auth";
+
+
+const ADMIN_CONTENT_KEY =
+"marwar_demo_site_content";
+
+
+let adminCurrentTarget =
+null;
+
+
+let adminCurrentImage =
+null;
+
+
+const adminLoginScreen =
+document.getElementById(
+    "adminLoginScreen"
+);
+
+
+const adminLoginForm =
+document.getElementById(
+    "adminLoginForm"
+);
+
+
+const adminLoginError =
+document.getElementById(
+    "adminLoginError"
+);
+
+
+const adminEditBtn =
+document.getElementById(
+    "adminEditBtn"
+);
+
+
+const adminImageBtn =
+document.getElementById(
+    "adminImageBtn"
+);
+
+
+/* =========================================================
+   OPEN LOGIN
+========================================================= */
+
+function openAdminLogin(){
+
+    if(!adminLoginScreen)
+        return;
+
+
+    adminLoginScreen.classList.add(
+        "show"
+    );
+
+
+    adminLoginScreen.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    const user =
+    document.getElementById(
+        "adminUsername"
+    );
+
+
+    if(user){
+
+        setTimeout(
+            ()=>user.focus(),
+            100
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   CLOSE LOGIN
+========================================================= */
+
+function closeAdminLogin(){
+
+    if(!adminLoginScreen)
+        return;
+
+
+    adminLoginScreen.classList.remove(
+        "show"
+    );
+
+
+    adminLoginScreen.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    if(adminLoginError){
+
+        adminLoginError.textContent =
+        "";
+
+    }
+
+
+    if(adminLoginForm){
+
+        adminLoginForm.reset();
+
+    }
+
+}
+
+
+/* =========================================================
+   CHECK LOGIN
+========================================================= */
+
+function adminIsLoggedIn(){
+
+    return sessionStorage.getItem(
+        ADMIN_AUTH_KEY
+    ) === "true";
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function adminLogout(){
+
+    sessionStorage.removeItem(
+        ADMIN_AUTH_KEY
+    );
+
+
+    document.body.classList.remove(
+        "admin-mode"
+    );
+
+
+    if(adminCurrentTarget){
+
+        adminCurrentTarget.removeAttribute(
+            "contenteditable"
+        );
+
+    }
+
+
+    adminCurrentTarget = null;
+
+    adminCurrentImage = null;
+
+
+    hideAdminControls();
+
+
+    if(location.hash === "#admin"){
+
+        history.replaceState(
+            null,
+            "",
+            location.pathname +
+            location.search
+        );
+
+    }
+
+
+    window.scrollTo(0,0);
+
+
+    location.reload();
+
+}
+
+
+/* =========================================================
+   ENTER ADMIN MODE
+========================================================= */
+
+function enterAdminMode(){
+
+    document.body.classList.add(
+        "admin-mode"
+    );
+
+
+    closeAdminLogin();
+
+
+    setupAdminEditableElements();
+
+
+    loadAdminChanges();
+
+}
+
+
+/* =========================================================
+   SETUP EDITABLE ELEMENTS
+========================================================= */
+
+function setupAdminEditableElements(){
+
+
+    const textSelectors = [
+
+        ".logo > span",
+
+        ".hero-eyebrow",
+
+        ".hero h1",
+
+        ".hero-text",
+
+        ".hero-note",
+
+        ".card-small",
+
+        ".card-bold",
+
+        ".section-label",
+
+        ".section-title",
+
+        ".section-copy",
+
+        ".service-card h3",
+
+        ".service-card p",
+
+        ".stat-number",
+
+        ".stat p",
+
+        ".about-list > div",
+
+        ".project-info small",
+
+        ".project-info h3",
+
+        ".statement h2",
+
+        ".process-num",
+
+        ".process-card h3",
+
+        ".process-card p",
+
+        ".quote",
+
+        ".testimonial-author",
+
+        ".faq-question",
+
+        ".faq-answer-inner",
+
+        ".cta h2",
+
+        ".cta p",
+
+        ".footer-brand .logo > span",
+
+        ".footer-brand p",
+
+        ".footer-col h4",
+
+        ".footer-col a",
+
+        ".footer-bottom > div",
+
+        ".nav-btn",
+
+        ".primary-btn",
+
+        ".secondary-btn"
+
+    ];
+
+
+    document
+    .querySelectorAll(
+        textSelectors.join(",")
+    )
+    .forEach((el,index)=>{
+
+
+        if(
+            el.closest(
+                "#adminLoginScreen,#adminToolbar,.admin-hint"
+            )
+        )
+            return;
+
+
+        if(
+            el.matches(".faq-plus")
+        )
+            return;
+
+
+        if(
+            el.dataset.adminEditable === "true"
+        )
+            return;
+
+
+        el.dataset.adminEditable =
+        "true";
+
+
+        el.dataset.adminKey =
+        "text_" + index;
+
+
+        el.addEventListener(
+            "mouseenter",
+            function(){
+
+                if(
+                    !adminIsLoggedIn()
+                )
+                    return;
+
+
+                showTextEditButton(
+                    this
+                );
+
+            }
+        );
+
+
+        el.addEventListener(
+            "mouseleave",
+            function(){
+
+                setTimeout(()=>{
+
+                    if(
+                        !adminEditBtn.matches(":hover")
+                    ){
+
+                        adminEditBtn.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                },150);
+
+            }
+        );
+
+
+        el.addEventListener(
+            "click",
+            function(e){
+
+                if(
+                    !adminIsLoggedIn()
+                )
+                    return;
+
+
+                if(
+                    e.target.closest(
+                        ".admin-edit-btn,.admin-image-btn"
+                    )
+                )
+                    return;
+
+
+                adminCurrentTarget =
+                this;
+
+
+                document
+                .querySelectorAll(
+                    "[data-admin-editable='true']"
+                )
+                .forEach(item=>{
+
+                    item.removeAttribute(
+                        "contenteditable"
+                    );
+
+                });
+
+
+                this.setAttribute(
+                    "contenteditable",
+                    "true"
+                );
+
+
+                this.focus();
+
+
+                showTextEditButton(
+                    this
+                );
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       IMAGES
+    ===================================================== */
+
+    document
+    .querySelectorAll(
+        ".hero-image,.about-image img,.project img"
+    )
+    .forEach((img,index)=>{
+
+
+        img.dataset.adminImage =
+        "true";
+
+
+        img.dataset.adminImageKey =
+        "image_" + index;
+
+
+        img.addEventListener(
+            "mouseenter",
+            function(){
+
+                if(
+                    !adminIsLoggedIn()
+                )
+                    return;
+
+
+                adminCurrentImage =
+                this;
+
+
+                showImageEditButton(
+                    this
+                );
+
+            }
+        );
+
+
+        img.addEventListener(
+            "mouseleave",
+            function(){
+
+                setTimeout(()=>{
+
+                    if(
+                        !adminImageBtn.matches(":hover")
+                    ){
+
+                        adminImageBtn.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                },150);
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   TEXT EDIT BUTTON
+========================================================= */
+
+function showTextEditButton(el){
+
+    if(!adminEditBtn)
+        return;
+
+
+    const rect =
+    el.getBoundingClientRect();
+
+
+    adminEditBtn.style.left =
+    Math.max(
+        8,
+        Math.min(
+            window.innerWidth - 110,
+            rect.right - 95
+        )
+    ) + "px";
+
+
+    adminEditBtn.style.top =
+    Math.max(
+        8,
+        rect.top - 42
+    ) + "px";
+
+
+    adminEditBtn.classList.add(
+        "show"
+    );
+
+
+    adminEditBtn.onclick =
+    function(e){
+
+        e.stopPropagation();
+
+
+        const oldValue =
+        el.innerText.trim();
+
+
+        const newValue =
+        prompt(
+            "Edit this text:",
+            oldValue
+        );
+
+
+        if(
+            newValue !== null
+        ){
+
+            el.innerText =
+            newValue;
+
+        }
+
+
+        el.setAttribute(
+            "contenteditable",
+            "false"
+        );
+
+
+        adminCurrentTarget =
+        null;
+
+
+        adminEditBtn.classList.remove(
+            "show"
+        );
+
+    };
+
+}
+
+
+/* =========================================================
+   IMAGE EDIT BUTTON
+========================================================= */
+
+function showImageEditButton(img){
+
+    if(!adminImageBtn)
+        return;
+
+
+    const rect =
+    img.getBoundingClientRect();
+
+
+    adminImageBtn.style.left =
+    Math.max(
+        8,
+        Math.min(
+            window.innerWidth - 135,
+            rect.right - 125
+        )
+    ) + "px";
+
+
+    adminImageBtn.style.top =
+    Math.max(
+        8,
+        rect.top + 12
+    ) + "px";
+
+
+    adminImageBtn.classList.add(
+        "show"
+    );
+
+
+    adminImageBtn.onclick =
+    function(e){
+
+        e.stopPropagation();
+
+
+        const newUrl =
+        prompt(
+            "Enter new image URL:",
+            img.getAttribute(
+                "src"
+            ) || ""
+        );
+
+
+        if(
+            newUrl !== null &&
+            newUrl.trim()
+        ){
+
+            img.src =
+            newUrl.trim();
+
+        }
+
+
+        adminImageBtn.classList.remove(
+            "show"
+        );
+
+    };
+
+}
+
+
+/* =========================================================
+   HIDE ADMIN CONTROLS
+========================================================= */
+
+function hideAdminControls(){
+
+    if(adminEditBtn){
+
+        adminEditBtn.classList.remove(
+            "show"
+        );
+
+    }
+
+
+    if(adminImageBtn){
+
+        adminImageBtn.classList.remove(
+            "show"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   COLLECT CHANGES
+========================================================= */
+
+function collectAdminChanges(){
+
+    const data = {
+
+        texts:{},
+
+        images:{}
+
+    };
+
+
+    document
+    .querySelectorAll(
+        "[data-admin-editable='true']"
+    )
+    .forEach(el=>{
+
+        const key =
+        el.dataset.adminKey;
+
+
+        if(key){
+
+            data.texts[key] =
+            el.innerHTML;
+
+        }
+
+    });
+
+
+    document
+    .querySelectorAll(
+        "[data-admin-image='true']"
+    )
+    .forEach(img=>{
+
+        const key =
+        img.dataset.adminImageKey;
+
+
+        if(key){
+
+            data.images[key] =
+            img.getAttribute(
+                "src"
+            ) || "";
+
+        }
+
+    });
+
+
+    return data;
+
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+function saveAdminChanges(){
+
+    if(
+        !adminIsLoggedIn()
+    )
+        return;
+
+
+    const data =
+    collectAdminChanges();
+
+
+    localStorage.setItem(
+        ADMIN_CONTENT_KEY,
+        JSON.stringify(data)
+    );
+
+
+    alert(
+        "Changes saved successfully!"
+    );
+
+}
+
+
+/* =========================================================
+   LOAD
+========================================================= */
+
+function loadAdminChanges(){
+
+    const raw =
+    localStorage.getItem(
+        ADMIN_CONTENT_KEY
+    );
+
+
+    if(!raw)
+        return;
+
+
+    try{
+
+        const data =
+        JSON.parse(raw);
+
+
+        document
+        .querySelectorAll(
+            "[data-admin-editable='true']"
+        )
+        .forEach(el=>{
+
+            const key =
+            el.dataset.adminKey;
+
+
+            if(
+                data.texts &&
+                Object.prototype.hasOwnProperty.call(
+                    data.texts,
+                    key
+                )
+            ){
+
+                el.innerHTML =
+                data.texts[key];
+
+            }
+
+        });
+
+
+        /* Restore counter target values */
+
+        document
+        .querySelectorAll(
+            ".stat-number"
+        )
+        .forEach(el=>{
+
+            const key =
+            el.dataset.adminKey;
+
+
+            if(
+                data.texts &&
+                data.texts[key]
+            ){
+
+                const saved =
+                el.innerText.trim();
+
+
+                const number =
+                parseInt(
+                    saved.replace(
+                        /[^0-9]/g,
+                        ""
+                    ),
+                    10
+                );
+
+
+                if(
+                    !isNaN(number)
+                ){
+
+                    el.dataset.target =
+                    number;
+
+                }
+
+            }
+
+        });
+
+
+        document
+        .querySelectorAll(
+            "[data-admin-image='true']"
+        )
+        .forEach(img=>{
+
+            const key =
+            img.dataset.adminImageKey;
+
+
+            if(
+                data.images &&
+                data.images[key]
+            ){
+
+                img.src =
+                data.images[key];
+
+            }
+
+        });
+
+
+    }catch(error){
+
+        console.error(
+            "Admin content load error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetAdminChanges(){
+
+    if(
+        !adminIsLoggedIn()
+    )
+        return;
+
+
+    const yes =
+    confirm(
+        "Reset all saved demo edits and restore the original website?"
+    );
+
+
+    if(!yes)
+        return;
+
+
+    localStorage.removeItem(
+        ADMIN_CONTENT_KEY
+    );
+
+
+    location.reload();
+
+}
+
+
+/* =========================================================
+   LOGIN FORM
+========================================================= */
+
+if(adminLoginForm){
+
+    adminLoginForm.addEventListener(
+        "submit",
+        function(e){
+
+            e.preventDefault();
+
+
+            const username =
+            document
+            .getElementById(
+                "adminUsername"
+            )
+            .value
+            .trim();
+
+
+            const password =
+            document
+            .getElementById(
+                "adminPassword"
+            )
+            .value;
+
+
+            if(
+                username ===
+                DEMO_ADMIN_USERNAME
+                &&
+                password ===
+                DEMO_ADMIN_PASSWORD
+            ){
+
+                sessionStorage.setItem(
+                    ADMIN_AUTH_KEY,
+                    "true"
+                );
+
+
+                if(
+                    location.hash === "#admin"
+                ){
+
+                    history.replaceState(
+                        null,
+                        "",
+                        location.pathname +
+                        location.search
+                    );
+
+                }
+
+
+                enterAdminMode();
+
+            }else{
+
+                adminLoginError.textContent =
+                "Incorrect username or password.";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   OPEN ADMIN LOGIN USING #admin
+========================================================= */
+
+if(
+    location.hash.toLowerCase() ===
+    "#admin"
+){
+
+    setTimeout(
+        openAdminLogin,
+        100
+    );
+
+}
+
+
+/* =========================================================
+   RESTORE ADMIN MODE
+========================================================= */
+
+if(
+    adminIsLoggedIn()
+){
+
+    setTimeout(
+        enterAdminMode,
+        50
+    );
+
+}
+
+
+/* =========================================================
+   KEYBOARD SHORTCUT
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(e){
+
+        if(
+            e.ctrlKey &&
+            e.shiftKey &&
+            e.key.toLowerCase() === "a"
+        ){
+
+            e.preventDefault();
+
+
+            if(
+                adminIsLoggedIn()
+            ){
+
+                document.body.classList.toggle(
+                    "admin-mode"
+                );
+
+            }else{
+
+                openAdminLogin();
+
+            }
+
+        }
+
+
+        if(
+            e.key === "Escape" &&
+            adminLoginScreen.classList.contains(
+                "show"
+            )
+        ){
+
+            closeAdminLogin();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   HIDE EDIT CONTROLS ON SCROLL / RESIZE
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        hideAdminControls();
+
+    }
+);
+
+
+window.addEventListener(
+    "resize",
+    function(){
+
+        hideAdminControls();
+
+    }
+);
+
+
 </script>
+
 
 </body>
 </html>
