@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Marwar Infotech — Digital Experiences</title>
 
@@ -12,16 +10,14 @@
 content="Marwar Infotech creates premium websites, digital experiences and modern business solutions.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-
 <style>
 
 /* =========================================================
-   RESET
+   ORIGINAL WEBSITE DESIGN
 ========================================================= */
 
 *{
@@ -55,34 +51,18 @@ button{
     font-family:inherit;
 }
 
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root{
-
     --blue:#1463ff;
     --blue-dark:#0747d1;
     --blue-light:#eaf2ff;
-
     --text:#0b1220;
     --muted:#657086;
-
     --white:#ffffff;
     --soft:#f5f8fd;
-
     --border:rgba(15,35,70,.10);
-
     --shadow:0 25px 70px rgba(22,55,110,.10);
-
     --radius:28px;
 }
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 .container{
     width:min(1180px,calc(100% - 40px));
@@ -101,14 +81,11 @@ section{
     display:inline-flex;
     align-items:center;
     gap:9px;
-
     font-size:12px;
     font-weight:700;
     letter-spacing:2px;
     text-transform:uppercase;
-
     color:var(--blue);
-
     margin-bottom:20px;
 }
 
@@ -138,54 +115,39 @@ section{
     font-size:17px;
 }
 
-
-/* =========================================================
-   CURSOR
-========================================================= */
+/* CURSOR */
 
 .cursor-glow{
     position:fixed;
     width:300px;
     height:300px;
-
     border-radius:50%;
-
     background:radial-gradient(
         circle,
         rgba(20,99,255,.10),
         transparent 65%
     );
-
     pointer-events:none;
     transform:translate(-50%,-50%);
-
     z-index:1;
 }
 
-
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* NAVBAR */
 
 .navbar{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-
     z-index:1000;
-
     padding:18px 0;
-
     transition:.4s;
 }
 
 .navbar.scrolled{
     background:rgba(255,255,255,.85);
     backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 10px 40px rgba(0,30,80,.08);
+    box-shadow:0 10px 40px rgba(0,30,80,.08);
 }
 
 .nav-inner{
@@ -198,7 +160,6 @@ section{
     display:flex;
     align-items:center;
     gap:11px;
-
     font-family:"Manrope";
     font-size:20px;
     font-weight:800;
@@ -207,30 +168,18 @@ section{
 .logo-mark{
     width:38px;
     height:38px;
-
     border-radius:12px;
-
-    background:linear-gradient(
-        135deg,
-        #1463ff,
-        #70a2ff
-    );
-
+    background:linear-gradient(135deg,#1463ff,#70a2ff);
     color:white;
-
     display:grid;
     place-items:center;
-
     font-weight:800;
-
-    box-shadow:
-        0 10px 30px rgba(20,99,255,.25);
+    box-shadow:0 10px 30px rgba(20,99,255,.25);
 }
 
 .nav-links{
     display:flex;
     gap:34px;
-
     font-size:14px;
     font-weight:600;
 }
@@ -241,16 +190,12 @@ section{
 
 .nav-links a::after{
     content:"";
-
     position:absolute;
     left:0;
     bottom:-7px;
-
     width:0;
     height:2px;
-
     background:var(--blue);
-
     transition:.3s;
 }
 
@@ -261,60 +206,40 @@ section{
 .nav-btn{
     background:#0b1220;
     color:#fff;
-
     padding:13px 20px;
     border-radius:50px;
-
     font-size:13px;
     font-weight:700;
-
     cursor:pointer;
 }
 
-
-/* =========================================================
-   MAGNETIC
-========================================================= */
+/* MAGNETIC */
 
 .magnetic{
-    transition:
-        transform .25s cubic-bezier(.2,.8,.2,1);
+    transition:transform .25s cubic-bezier(.2,.8,.2,1);
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero{
     min-height:100vh;
-
     display:flex;
     align-items:center;
-
     padding:150px 0 80px;
-
     overflow:hidden;
-
     background:
         radial-gradient(
             circle at 85% 20%,
             rgba(65,135,255,.16),
             transparent 35%
         ),
-        linear-gradient(
-            180deg,
-            #fff,
-            #f4f8ff
-        );
+        linear-gradient(180deg,#fff,#f4f8ff);
 }
 
 .hero-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-
     gap:70px;
-
     align-items:center;
 }
 
@@ -322,42 +247,29 @@ section{
     display:inline-flex;
     align-items:center;
     gap:10px;
-
     padding:8px 13px;
-
     border-radius:50px;
-
     background:#edf4ff;
     color:var(--blue);
-
     font-size:12px;
     font-weight:700;
-
     margin-bottom:25px;
 }
 
 .hero-eyebrow i{
     width:7px;
     height:7px;
-
     border-radius:50%;
-
     background:#1bd36b;
-
     box-shadow:0 0 12px #1bd36b;
 }
 
 .hero h1{
     font-family:"Manrope",sans-serif;
-
     font-size:clamp(54px,7vw,92px);
-
     line-height:.95;
-
     letter-spacing:-5px;
-
     font-weight:800;
-
     max-width:700px;
 }
 
@@ -367,36 +279,26 @@ section{
 
 .hero-text{
     margin-top:28px;
-
     max-width:560px;
-
     color:var(--muted);
-
     font-size:18px;
-
     line-height:1.75;
 }
 
 .hero-actions{
     display:flex;
     gap:15px;
-
     margin-top:35px;
 }
 
 .primary-btn,
 .secondary-btn{
     border:0;
-
     padding:17px 25px;
-
     border-radius:50px;
-
     font-size:14px;
     font-weight:700;
-
     cursor:pointer;
-
     display:inline-flex;
     align-items:center;
     gap:10px;
@@ -405,9 +307,7 @@ section{
 .primary-btn{
     background:var(--blue);
     color:#fff;
-
-    box-shadow:
-        0 18px 35px rgba(20,99,255,.25);
+    box-shadow:0 18px 35px rgba(20,99,255,.25);
 }
 
 .secondary-btn{
@@ -417,13 +317,10 @@ section{
 
 .hero-note{
     margin-top:24px;
-
     display:flex;
     align-items:center;
     gap:10px;
-
     color:#788398;
-
     font-size:12px;
 }
 
@@ -434,16 +331,11 @@ section{
     border-radius:50%;
 }
 
-
-/* =========================================================
-   HERO VISUAL
-========================================================= */
+/* HERO VISUAL */
 
 .hero-visual{
     position:relative;
-
     height:580px;
-
     display:flex;
     align-items:center;
     justify-content:center;
@@ -451,28 +343,19 @@ section{
 
 .hero-image-wrap{
     position:relative;
-
     width:90%;
     height:480px;
-
     border-radius:40px;
-
     overflow:hidden;
-
-    box-shadow:
-        0 40px 90px rgba(28,65,130,.20);
-
+    box-shadow:0 40px 90px rgba(28,65,130,.20);
     transform:rotate(2deg);
-
     border:8px solid rgba(255,255,255,.8);
 }
 
 .hero-image-wrap::after{
     content:"";
-
     position:absolute;
     inset:0;
-
     background:
         linear-gradient(
             120deg,
@@ -480,44 +363,30 @@ section{
             transparent 40%,
             rgba(20,99,255,.08)
         );
-
     pointer-events:none;
 }
 
 .hero-image{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
-    filter:
-        brightness(1.16)
-        contrast(.96)
-        saturate(1.08);
+    filter:brightness(1.16) contrast(.96) saturate(1.08);
 }
 
 .floating-card{
     position:absolute;
-
     background:rgba(255,255,255,.92);
-
     backdrop-filter:blur(15px);
-
     border:1px solid rgba(255,255,255,.9);
-
     border-radius:22px;
-
     box-shadow:0 25px 60px rgba(20,50,100,.16);
-
     padding:18px;
-
     z-index:4;
 }
 
 .card-top{
     top:65px;
     left:0;
-
     display:flex;
     align-items:center;
     gap:12px;
@@ -526,16 +395,11 @@ section{
 .card-icon{
     width:43px;
     height:43px;
-
     border-radius:14px;
-
     background:#eaf2ff;
-
     display:grid;
     place-items:center;
-
     color:var(--blue);
-
     font-weight:800;
 }
 
@@ -559,26 +423,19 @@ section{
     color:var(--blue);
 }
 
-
-/* =========================================================
-   MARQUEE
-========================================================= */
+/* MARQUEE */
 
 .marquee{
     overflow:hidden;
-
     background:#0b1220;
     color:#fff;
-
     padding:22px 0;
-
     white-space:nowrap;
 }
 
 .marquee-track{
     display:inline-flex;
     gap:45px;
-
     animation:marquee 25s linear infinite;
 }
 
@@ -586,7 +443,6 @@ section{
     font-family:"Manrope";
     font-size:18px;
     font-weight:700;
-
     display:flex;
     align-items:center;
     gap:30px;
@@ -597,19 +453,11 @@ section{
 }
 
 @keyframes marquee{
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-50%);
-    }
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
 }
 
-
-/* =========================================================
-   SERVICES
-========================================================= */
+/* SERVICES */
 
 .services{
     background:#fff;
@@ -617,59 +465,37 @@ section{
 
 .services-grid{
     margin-top:65px;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .service-card{
     background:#f8faff;
-
     border:1px solid var(--border);
-
     border-radius:var(--radius);
-
     padding:35px;
-
     min-height:300px;
-
-    transition:
-        transform .45s,
-        box-shadow .45s,
-        background .45s;
-
+    transition:transform .45s,box-shadow .45s,background .45s;
     position:relative;
-
     overflow:hidden;
 }
 
 .service-card::before{
     content:"";
-
     position:absolute;
-
     width:150px;
     height:150px;
-
     background:rgba(20,99,255,.08);
-
     border-radius:50%;
-
     top:-70px;
     right:-70px;
-
     transition:.5s;
 }
 
 .service-card:hover{
     transform:translateY(-12px);
-
     background:#fff;
-
     box-shadow:var(--shadow);
 }
 
@@ -681,65 +507,48 @@ section{
     font-size:12px;
     color:var(--blue);
     font-weight:800;
-
     margin-bottom:60px;
 }
 
 .service-icon{
     width:52px;
     height:52px;
-
     border-radius:16px;
-
     background:#eaf2ff;
-
     display:grid;
     place-items:center;
-
     color:var(--blue);
-
     font-size:20px;
-
     margin-bottom:22px;
 }
 
 .service-card h3{
     font-family:"Manrope";
-
     font-size:23px;
-
     margin-bottom:12px;
 }
 
 .service-card p{
     color:var(--muted);
-
     line-height:1.7;
-
     font-size:14px;
 }
 
-
-/* =========================================================
-   STATS
-========================================================= */
+/* STATS */
 
 .stats{
     padding:80px 0;
-
     background:#f3f7ff;
 }
 
 .stats-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-
     gap:20px;
 }
 
 .stat{
     padding:25px;
-
     border-right:1px solid var(--border);
 }
 
@@ -749,28 +558,19 @@ section{
 
 .stat-number{
     font-family:"Manrope";
-
     font-size:48px;
-
     font-weight:800;
-
     letter-spacing:-2px;
-
     color:var(--blue);
 }
 
 .stat p{
     margin-top:6px;
-
     color:var(--muted);
-
     font-size:14px;
 }
 
-
-/* =========================================================
-   ABOUT
-========================================================= */
+/* ABOUT */
 
 .about{
     background:#fff;
@@ -779,40 +579,31 @@ section{
 .about-grid{
     display:grid;
     grid-template-columns:.9fr 1.1fr;
-
     gap:100px;
-
     align-items:center;
 }
 
 .about-image{
     height:570px;
-
     border-radius:35px;
-
     overflow:hidden;
-
     box-shadow:var(--shadow);
 }
 
 .about-image img{
     width:100%;
     height:100%;
-
     object-fit:cover;
 }
 
 .about-content .section-copy{
     margin-top:28px;
-
     max-width:600px;
 }
 
 .about-list{
     margin-top:35px;
-
     display:grid;
-
     gap:17px;
 }
 
@@ -820,29 +611,21 @@ section{
     display:flex;
     align-items:center;
     gap:12px;
-
     font-weight:600;
 }
 
 .check{
     width:25px;
     height:25px;
-
     background:#e9f2ff;
     color:var(--blue);
-
     border-radius:50%;
-
     display:grid;
     place-items:center;
-
     font-size:12px;
 }
 
-
-/* =========================================================
-   PORTFOLIO
-========================================================= */
+/* PORTFOLIO */
 
 .portfolio{
     background:#f5f8fd;
@@ -850,59 +633,40 @@ section{
 
 .portfolio-grid{
     margin-top:65px;
-
     display:grid;
     grid-template-columns:repeat(2,1fr);
-
     gap:25px;
 }
 
 .project{
     position:relative;
-
     height:450px;
-
     border-radius:30px;
-
     overflow:hidden;
-
     background:#ddd;
-
     cursor:pointer;
 }
 
 .project img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
-    transition:
-        transform .8s cubic-bezier(.2,.8,.2,1),
-        filter .8s;
+    transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .8s;
 }
 
 .project:hover img{
     transform:scale(1.08);
-
-    filter:
-        brightness(.65)
-        saturate(1.1);
+    filter:brightness(.65) saturate(1.1);
 }
 
 .project-info{
     position:absolute;
-
     left:25px;
     right:25px;
     bottom:25px;
-
     color:#fff;
-
     transform:translateY(25px);
-
     opacity:0;
-
     transition:.5s;
 }
 
@@ -917,42 +681,26 @@ section{
 
 .project-info h3{
     font-family:"Manrope";
-
     font-size:28px;
-
     margin-top:5px;
 }
 
-
-/* =========================================================
-   STATEMENT
-========================================================= */
+/* STATEMENT */
 
 .statement{
     padding:160px 0;
-
     background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(20,99,255,.12),
-            transparent 50%
-        ),
+        radial-gradient(circle at 50% 50%,rgba(20,99,255,.12),transparent 50%),
         #fff;
-
     text-align:center;
 }
 
 .statement h2{
     font-family:"Manrope";
-
     font-size:clamp(45px,7vw,90px);
-
     letter-spacing:-5px;
-
     line-height:.98;
-
     max-width:1000px;
-
     margin:auto;
 }
 
@@ -960,10 +708,7 @@ section{
     color:var(--blue);
 }
 
-
-/* =========================================================
-   PROCESS
-========================================================= */
+/* PROCESS */
 
 .process{
     background:#fff;
@@ -971,59 +716,43 @@ section{
 
 .process-grid{
     margin-top:70px;
-
     display:grid;
     grid-template-columns:repeat(4,1fr);
-
     gap:20px;
 }
 
 .process-card{
     padding:30px;
-
     border:1px solid var(--border);
-
     border-radius:25px;
-
     transition:.4s;
 }
 
 .process-card:hover{
     border-color:rgba(20,99,255,.3);
-
     transform:translateY(-8px);
-
     box-shadow:var(--shadow);
 }
 
 .process-num{
     color:var(--blue);
-
     font-size:12px;
-
     font-weight:800;
-
     margin-bottom:50px;
 }
 
 .process-card h3{
     font-family:"Manrope";
-
     margin-bottom:12px;
 }
 
 .process-card p{
     color:var(--muted);
-
     font-size:14px;
-
     line-height:1.7;
 }
 
-
-/* =========================================================
-   TESTIMONIAL
-========================================================= */
+/* TESTIMONIAL */
 
 .testimonials{
     background:#f5f8fd;
@@ -1031,21 +760,15 @@ section{
 
 .testimonial{
     max-width:850px;
-
     margin:70px auto 0;
-
     text-align:center;
 }
 
 .quote{
     font-family:"Manrope";
-
     font-size:clamp(28px,4vw,48px);
-
     line-height:1.15;
-
     letter-spacing:-2px;
-
     font-weight:700;
 }
 
@@ -1055,16 +778,11 @@ section{
 
 .testimonial-author{
     margin-top:30px;
-
     color:var(--muted);
-
     font-size:14px;
 }
 
-
-/* =========================================================
-   FAQ
-========================================================= */
+/* FAQ */
 
 .faq{
     background:#fff;
@@ -1072,7 +790,6 @@ section{
 
 .faq-wrap{
     max-width:850px;
-
     margin:65px auto 0;
 }
 
@@ -1082,42 +799,30 @@ section{
 
 .faq-question{
     width:100%;
-
     background:none;
     border:0;
-
     padding:25px 0;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     text-align:left;
-
     font-size:17px;
     font-weight:700;
-
     cursor:pointer;
 }
 
 .faq-plus{
     font-size:25px;
-
     color:var(--blue);
-
     transition:.3s;
 }
 
 .faq-answer{
     max-height:0;
     overflow:hidden;
-
     transition:max-height .4s ease;
-
     color:var(--muted);
-
     line-height:1.8;
-
     font-size:14px;
 }
 
@@ -1133,40 +838,23 @@ section{
     max-height:200px;
 }
 
-
-/* =========================================================
-   CTA
-========================================================= */
+/* CTA */
 
 .cta{
     padding:120px 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0b1220,
-            #10285c
-        );
-
+    background:linear-gradient(135deg,#0b1220,#10285c);
     color:#fff;
-
     overflow:hidden;
 }
 
 .cta::before{
     content:"";
-
     position:absolute;
-
     width:500px;
     height:500px;
-
     border-radius:50%;
-
     background:rgba(20,99,255,.35);
-
     filter:blur(90px);
-
     right:-150px;
     top:-200px;
 }
@@ -1174,101 +862,71 @@ section{
 .cta-inner{
     position:relative;
     z-index:2;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:40px;
 }
 
 .cta h2{
     font-family:"Manrope";
-
     font-size:clamp(40px,5vw,68px);
-
     letter-spacing:-3px;
-
     line-height:1;
 }
 
 .cta p{
     color:#aebbd3;
-
     margin-top:18px;
-
     max-width:550px;
-
     line-height:1.7;
 }
 
 .cta .primary-btn{
     background:#fff;
     color:#0b1220;
-
     flex-shrink:0;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer{
     background:#080d17;
-
     color:#fff;
-
     padding:55px 0 25px;
 }
 
 .footer-top{
     display:flex;
-
     justify-content:space-between;
-
     gap:50px;
-
     padding-bottom:50px;
-
     border-bottom:1px solid rgba(255,255,255,.1);
 }
 
 .footer-brand p{
     color:#7d899f;
-
     max-width:400px;
-
     margin-top:18px;
-
     line-height:1.7;
 }
 
 .footer-links{
     display:flex;
-
     gap:80px;
 }
 
 .footer-col h4{
     font-size:13px;
-
     margin-bottom:20px;
-
     color:#fff;
 }
 
 .footer-col a{
     display:block;
-
     color:#7d899f;
-
     font-size:13px;
-
     margin-bottom:12px;
-
     transition:.3s;
 }
 
@@ -1278,13 +936,9 @@ footer{
 
 .footer-bottom{
     padding-top:25px;
-
     display:flex;
-
     justify-content:space-between;
-
     color:#66738b;
-
     font-size:12px;
 }
 
@@ -1292,36 +946,22 @@ footer{
     color:#9ebcff;
 }
 
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
+/* WHATSAPP */
 
 .whatsapp{
     position:fixed;
-
     right:25px;
     bottom:25px;
-
     width:58px;
     height:58px;
-
     border-radius:50%;
-
     background:#18bf65;
-
     color:white;
-
     display:grid;
     place-items:center;
-
     font-size:25px;
-
     z-index:1000;
-
-    box-shadow:
-        0 15px 35px rgba(24,191,101,.3);
-
+    box-shadow:0 15px 35px rgba(24,191,101,.3);
     transition:.3s;
 }
 
@@ -1329,25 +969,16 @@ footer{
     transform:scale(1.1);
 }
 
-
-/* =========================================================
-   ENQUIRY DRAWER
-========================================================= */
+/* DRAWER */
 
 .overlay{
     position:fixed;
-
     inset:0;
-
     background:rgba(0,10,25,.45);
-
     backdrop-filter:blur(8px);
-
     z-index:1500;
-
     opacity:0;
     visibility:hidden;
-
     transition:.4s;
 }
 
@@ -1358,24 +989,15 @@ footer{
 
 .drawer{
     position:fixed;
-
     right:0;
     top:0;
-
     width:min(500px,100%);
-
     height:100%;
-
     background:#fff;
-
     z-index:1600;
-
     padding:40px;
-
     transform:translateX(100%);
-
     transition:.5s cubic-bezier(.2,.8,.2,1);
-
     overflow:auto;
 }
 
@@ -1386,37 +1008,25 @@ footer{
 .drawer-close{
     width:40px;
     height:40px;
-
     border-radius:50%;
-
     border:1px solid var(--border);
-
     background:#fff;
-
     cursor:pointer;
-
     float:right;
-
     font-size:20px;
 }
 
 .drawer h2{
     clear:both;
-
     padding-top:60px;
-
     font-family:"Manrope";
-
     font-size:40px;
-
     letter-spacing:-2px;
 }
 
 .drawer p{
     color:var(--muted);
-
     margin-top:12px;
-
     line-height:1.7;
 }
 
@@ -1427,91 +1037,58 @@ footer{
 .form input,
 .form textarea,
 .form select{
-
     width:100%;
-
     padding:16px 18px;
-
     border-radius:15px;
-
     border:1px solid var(--border);
-
     outline:none;
-
     margin-bottom:14px;
-
     font-family:inherit;
-
     background:#f9fbff;
-
     transition:.3s;
 }
 
 .form input:focus,
 .form textarea:focus,
 .form select:focus{
-
     border-color:var(--blue);
-
     background:#fff;
-
-    box-shadow:
-        0 0 0 4px rgba(20,99,255,.08);
+    box-shadow:0 0 0 4px rgba(20,99,255,.08);
 }
 
 .form textarea{
     min-height:130px;
-
     resize:vertical;
 }
 
 .form button{
     width:100%;
-
     border:0;
-
     padding:17px;
-
     border-radius:15px;
-
     background:var(--blue);
-
     color:#fff;
-
     font-weight:800;
-
     cursor:pointer;
 }
 
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+/* REVEAL */
 
 .reveal{
     opacity:0;
-
-    transform:
-        translateY(70px)
-        scale(.97);
-
+    transform:translateY(70px) scale(.97);
     filter:blur(8px);
-
     transition:
         opacity 1s cubic-bezier(.2,.8,.2,1),
         transform 1s cubic-bezier(.2,.8,.2,1),
         filter 1s ease;
-
     transition-delay:var(--delay,0s);
 }
 
 .reveal-left{
     opacity:0;
-
     transform:translateX(-80px);
-
     filter:blur(8px);
-
     transition:
         opacity 1s cubic-bezier(.2,.8,.2,1),
         transform 1s cubic-bezier(.2,.8,.2,1),
@@ -1520,11 +1097,8 @@ footer{
 
 .reveal-right{
     opacity:0;
-
     transform:translateX(80px);
-
     filter:blur(8px);
-
     transition:
         opacity 1s cubic-bezier(.2,.8,.2,1),
         transform 1s cubic-bezier(.2,.8,.2,1),
@@ -1535,16 +1109,429 @@ footer{
 .reveal-left.active,
 .reveal-right.active{
     opacity:1;
-
     transform:translate(0) scale(1);
-
     filter:blur(0);
 }
 
-
 /* =========================================================
-   MOBILE
+   ADMIN SYSTEM
+   DOES NOT CHANGE PUBLIC DESIGN
 ========================================================= */
+
+#adminLoginScreen{
+    position:fixed;
+    inset:0;
+    background:rgba(5,12,25,.88);
+    backdrop-filter:blur(18px);
+    z-index:99999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.admin-login-box{
+    width:min(430px,100%);
+    background:#fff;
+    border-radius:28px;
+    padding:38px;
+    box-shadow:0 40px 120px rgba(0,0,0,.35);
+}
+
+.admin-login-logo{
+    width:55px;
+    height:55px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#1463ff,#70a2ff);
+    color:#fff;
+    display:grid;
+    place-items:center;
+    font-weight:800;
+    font-size:20px;
+    margin-bottom:22px;
+}
+
+.admin-login-box h2{
+    font-family:Manrope;
+    font-size:32px;
+    letter-spacing:-1px;
+}
+
+.admin-login-box p{
+    color:#657086;
+    margin:10px 0 25px;
+    line-height:1.6;
+}
+
+.admin-field{
+    margin-bottom:15px;
+}
+
+.admin-field label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:7px;
+    color:#39445a;
+}
+
+.admin-field input,
+.admin-modal input,
+.admin-modal textarea,
+.admin-modal select{
+    width:100%;
+    border:1px solid #dce3ef;
+    background:#f8faff;
+    padding:13px 15px;
+    border-radius:13px;
+    outline:none;
+    font-family:inherit;
+}
+
+.admin-field input:focus,
+.admin-modal input:focus,
+.admin-modal textarea:focus,
+.admin-modal select:focus{
+    border-color:#1463ff;
+    box-shadow:0 0 0 4px rgba(20,99,255,.08);
+}
+
+.admin-login-actions{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.admin-login-actions button{
+    flex:1;
+    padding:14px;
+    border:0;
+    border-radius:13px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.admin-login-actions .login-btn{
+    background:#1463ff;
+    color:#fff;
+}
+
+.admin-login-actions .cancel-btn{
+    background:#eef2f8;
+    color:#0b1220;
+}
+
+.admin-error{
+    color:#e53935;
+    font-size:12px;
+    font-weight:700;
+    margin-top:10px;
+    display:none;
+}
+
+/* ADMIN TOP BAR */
+
+#adminToolbar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    background:#0b1220;
+    color:#fff;
+    z-index:9998;
+    display:none;
+    padding:10px 14px;
+    box-shadow:0 8px 30px rgba(0,0,0,.2);
+}
+
+.admin-toolbar-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.admin-toolbar-title{
+    font-weight:800;
+    font-size:13px;
+}
+
+.admin-toolbar-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+}
+
+.admin-tool-btn{
+    border:0;
+    border-radius:9px;
+    padding:9px 12px;
+    cursor:pointer;
+    background:#1b2b4b;
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+}
+
+.admin-tool-btn:hover{
+    background:#1463ff;
+}
+
+.admin-tool-btn.save{
+    background:#18bf65;
+}
+
+.admin-tool-btn.logout{
+    background:#e53935;
+}
+
+/* ADMIN HIGHLIGHT */
+
+body.admin-mode [data-admin-editable]{
+    outline:1px dashed rgba(20,99,255,.25);
+    outline-offset:4px;
+    cursor:text;
+}
+
+body.admin-mode [data-admin-editable]:hover{
+    outline:2px dashed #1463ff;
+    background:rgba(20,99,255,.04);
+}
+
+body.admin-mode img[data-admin-image]{
+    cursor:pointer;
+    outline:2px dashed rgba(20,99,255,.35);
+    outline-offset:4px;
+}
+
+.admin-edit-tip{
+    position:fixed;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:9997;
+    background:#0b1220;
+    color:#fff;
+    padding:10px 17px;
+    border-radius:50px;
+    font-size:12px;
+    pointer-events:none;
+    display:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+body.admin-mode .admin-edit-tip{
+    display:block;
+}
+
+/* ADMIN MODAL */
+
+#adminModal{
+    position:fixed;
+    inset:0;
+    z-index:100000;
+    background:rgba(3,10,22,.72);
+    backdrop-filter:blur(12px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.admin-modal{
+    width:min(720px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#fff;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 40px 120px rgba(0,0,0,.4);
+}
+
+.admin-modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.admin-modal-head h3{
+    font-family:Manrope;
+    font-size:25px;
+}
+
+.admin-modal-close{
+    width:38px;
+    height:38px;
+    border:0;
+    border-radius:50%;
+    background:#eef2f8;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.admin-form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.admin-form-full{
+    grid-column:1/-1;
+}
+
+.admin-modal label{
+    display:block;
+    font-size:11px;
+    font-weight:800;
+    color:#536078;
+    margin-bottom:7px;
+    text-transform:uppercase;
+    letter-spacing:.6px;
+}
+
+.admin-modal textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.admin-modal-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:20px;
+}
+
+.admin-modal-actions button{
+    padding:12px 18px;
+    border:0;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.admin-modal-actions .primary{
+    background:#1463ff;
+    color:#fff;
+}
+
+.admin-modal-actions .secondary{
+    background:#eef2f8;
+}
+
+/* SECTION MANAGER */
+
+#sectionManager{
+    display:none;
+    position:fixed;
+    top:65px;
+    right:15px;
+    width:min(390px,calc(100% - 30px));
+    max-height:calc(100vh - 90px);
+    overflow:auto;
+    background:#fff;
+    z-index:9996;
+    border-radius:20px;
+    box-shadow:0 25px 80px rgba(0,0,0,.22);
+    padding:20px;
+}
+
+.section-manager-title{
+    font-family:Manrope;
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.section-manager-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-bottom:15px;
+}
+
+.section-manager-actions button{
+    border:0;
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer;
+    background:#edf4ff;
+    color:#1463ff;
+    font-weight:700;
+    font-size:11px;
+}
+
+.manager-section-item{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:9px;
+    border:1px solid #e4e9f2;
+    border-radius:11px;
+    margin-bottom:7px;
+    font-size:12px;
+}
+
+.manager-section-name{
+    flex:1;
+    font-weight:700;
+}
+
+.manager-section-item button{
+    border:0;
+    width:27px;
+    height:27px;
+    border-radius:7px;
+    cursor:pointer;
+    background:#f0f3f8;
+}
+
+/* ADD CARD DELETE */
+
+body.admin-mode .admin-added{
+    position:relative;
+}
+
+.admin-delete{
+    position:absolute;
+    right:12px;
+    top:12px;
+    width:32px;
+    height:32px;
+    border:0;
+    border-radius:50%;
+    background:#e53935;
+    color:#fff;
+    cursor:pointer;
+    z-index:20;
+    display:none;
+}
+
+body.admin-mode .admin-added .admin-delete{
+    display:block;
+}
+
+/* UPLOAD BOX */
+
+.upload-box{
+    border:2px dashed #d6deeb;
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+    color:#69758b;
+    font-size:12px;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+.upload-box:hover{
+    border-color:#1463ff;
+    color:#1463ff;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:900px){
 
@@ -1555,7 +1542,6 @@ footer{
     .hero-grid,
     .about-grid{
         grid-template-columns:1fr;
-
         gap:50px;
     }
 
@@ -1601,7 +1587,6 @@ footer{
     }
 }
 
-
 @media(max-width:600px){
 
     .container{
@@ -1614,7 +1599,6 @@ footer{
 
     .hero h1{
         font-size:50px;
-
         letter-spacing:-3px;
     }
 
@@ -1638,7 +1622,6 @@ footer{
     .hero-image-wrap{
         width:100%;
         height:350px;
-
         border-radius:28px;
     }
 
@@ -1666,7 +1649,6 @@ footer{
 
     .stat{
         border-right:0;
-
         border-bottom:1px solid var(--border);
     }
 
@@ -1688,483 +1670,204 @@ footer{
 
     .footer-links{
         flex-direction:column;
-
         gap:30px;
     }
 
     .footer-bottom{
         flex-direction:column;
-
         gap:10px;
     }
 
     .drawer{
         padding:25px;
     }
-}
 
+    .admin-form-grid{
+        grid-template-columns:1fr;
+    }
 
-/* =========================================================
-   DEMO ADMIN / WEBSITE EDITOR
-   TESTING ONLY
-========================================================= */
-
-#adminLoginScreen{
-    position:fixed;
-    inset:0;
-
-    z-index:99999;
-
-    display:none;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
-
-    background:
-        radial-gradient(
-            circle at 80% 10%,
-            rgba(20,99,255,.18),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #07101f,
-            #0b1220 55%,
-            #10285c
-        );
-}
-
-#adminLoginScreen.show{
-    display:flex;
-}
-
-.admin-login-card{
-    width:min(440px,100%);
-
-    background:rgba(255,255,255,.97);
-
-    border:1px solid rgba(255,255,255,.4);
-
-    border-radius:30px;
-
-    padding:38px;
-
-    box-shadow:
-        0 35px 100px rgba(0,0,0,.35);
-}
-
-.admin-login-brand{
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    margin-bottom:28px;
-
-    font-family:"Manrope";
-
-    font-weight:800;
-
-    font-size:22px;
-}
-
-.admin-login-mark{
-    width:44px;
-    height:44px;
-
-    border-radius:14px;
-
-    display:grid;
-    place-items:center;
-
-    color:#fff;
-
-    background:
-        linear-gradient(
-            135deg,
-            #1463ff,
-            #70a2ff
-        );
-}
-
-.admin-login-card h2{
-    font-family:"Manrope";
-
-    font-size:36px;
-
-    letter-spacing:-2px;
-
-    margin-bottom:8px;
-}
-
-.admin-login-card p{
-    color:var(--muted);
-
-    line-height:1.6;
-
-    margin-bottom:24px;
-}
-
-.admin-login-card input{
-    width:100%;
-
-    padding:15px 16px;
-
-    border:1px solid var(--border);
-
-    border-radius:14px;
-
-    outline:none;
-
-    margin-bottom:12px;
-
-    font:inherit;
-
-    background:#f8faff;
-}
-
-.admin-login-card input:focus{
-    border-color:var(--blue);
-
-    box-shadow:
-        0 0 0 4px rgba(20,99,255,.08);
-
-    background:#fff;
-}
-
-.admin-login-actions{
-    display:flex;
-
-    gap:10px;
-
-    margin-top:8px;
-}
-
-.admin-login-actions button{
-    flex:1;
-
-    border:0;
-
-    padding:15px;
-
-    border-radius:14px;
-
-    cursor:pointer;
-
-    font-weight:800;
-}
-
-.admin-login-submit{
-    background:var(--blue);
-    color:#fff;
-}
-
-.admin-login-cancel{
-    background:#eef3fb;
-    color:#0b1220;
-}
-
-.admin-login-error{
-    min-height:20px;
-
-    margin:5px 0 8px;
-
-    color:#e63946;
-
-    font-size:13px;
-
-    font-weight:700;
-}
-
-
-/* =========================================================
-   ADMIN TOOLBAR
-========================================================= */
-
-#adminToolbar{
-    position:fixed;
-
-    top:18px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    z-index:99990;
-
-    display:none;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:10px 12px;
-
-    border-radius:50px;
-
-    background:rgba(11,18,32,.95);
-
-    color:#fff;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.25);
-
-    backdrop-filter:blur(15px);
-}
-
-body.admin-mode #adminToolbar{
-    display:flex;
-}
-
-.admin-toolbar-status{
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    padding:0 8px;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    white-space:nowrap;
-}
-
-.admin-toolbar-status i{
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:#19d66b;
-
-    box-shadow:
-        0 0 12px #19d66b;
-}
-
-.admin-toolbar-btn{
-    border:0;
-
-    padding:9px 14px;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    font:
-        700 12px
-        "DM Sans",
-        sans-serif;
-}
-
-.admin-save-btn{
-    background:var(--blue);
-    color:#fff;
-}
-
-.admin-reset-btn{
-    background:#fff;
-    color:#0b1220;
-}
-
-.admin-logout-btn{
-    background:#ff5b6e;
-    color:#fff;
-}
-
-
-/* =========================================================
-   EDITABLE ELEMENTS
-========================================================= */
-
-body.admin-mode [data-admin-editable]{
-
-    outline:
-        2px dashed
-        rgba(20,99,255,.38);
-
-    outline-offset:5px;
-
-    cursor:text !important;
-}
-
-body.admin-mode [data-admin-editable]:hover{
-
-    outline-color:var(--blue);
-
-    background:
-        rgba(20,99,255,.045);
-}
-
-
-/* =========================================================
-   EDIT BUTTON
-========================================================= */
-
-.admin-edit-btn{
-
-    position:fixed;
-
-    z-index:99995;
-
-    display:none;
-
-    border:0;
-
-    padding:7px 11px;
-
-    border-radius:20px;
-
-    background:#1463ff;
-
-    color:#fff;
-
-    font:
-        800 11px
-        "DM Sans",
-        sans-serif;
-
-    box-shadow:
-        0 10px 30px
-        rgba(20,99,255,.3);
-
-    cursor:pointer;
-
-    white-space:nowrap;
-}
-
-body.admin-mode .admin-edit-btn.show{
-    display:block;
-}
-
-
-/* =========================================================
-   IMAGE BUTTON
-========================================================= */
-
-.admin-image-btn{
-
-    position:fixed;
-
-    z-index:99995;
-
-    display:none;
-
-    border:0;
-
-    padding:7px 11px;
-
-    border-radius:20px;
-
-    background:#0b1220;
-
-    color:#fff;
-
-    font:
-        800 11px
-        "DM Sans",
-        sans-serif;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.25);
-
-    cursor:pointer;
-}
-
-body.admin-mode .admin-image-btn.show{
-    display:block;
-}
-
-
-/* =========================================================
-   ADMIN HINT
-========================================================= */
-
-.admin-hint{
-
-    position:fixed;
-
-    left:20px;
-
-    bottom:20px;
-
-    z-index:99980;
-
-    display:none;
-
-    max-width:310px;
-
-    padding:12px 15px;
-
-    border-radius:16px;
-
-    background:rgba(11,18,32,.92);
-
-    color:#fff;
-
-    font-size:12px;
-
-    line-height:1.5;
-
-    box-shadow:
-        0 15px 45px
-        rgba(0,0,0,.18);
-}
-
-body.admin-mode .admin-hint{
-    display:block;
-}
-
-
-@media(max-width:600px){
+    .admin-form-full{
+        grid-column:auto;
+    }
 
     #adminToolbar{
-
-        top:10px;
-
-        width:calc(100% - 20px);
-
-        justify-content:center;
-
-        flex-wrap:wrap;
-
-        border-radius:20px;
+        overflow:auto;
     }
 
-    .admin-toolbar-status{
-        display:none;
-    }
-
-    .admin-hint{
-
-        left:10px;
-        right:10px;
-
-        bottom:10px;
-
-        max-width:none;
+    .admin-toolbar-inner{
+        align-items:flex-start;
+        flex-direction:column;
     }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<div class="cursor-glow"></div>
 
 <!-- ======================================================
-     CURSOR
+     ADMIN LOGIN
 ====================================================== -->
 
-<div class="cursor-glow"></div>
+<div id="adminLoginScreen">
+
+    <div class="admin-login-box">
+
+        <div class="admin-login-logo">M</div>
+
+        <h2>Admin Login</h2>
+
+        <p>
+            Login to manage website content, images,
+            services, projects, testimonials, FAQs and sections.
+        </p>
+
+        <div class="admin-field">
+            <label>Username</label>
+            <input id="adminUsername" type="text" placeholder="Enter username">
+        </div>
+
+        <div class="admin-field">
+            <label>Password</label>
+            <input id="adminPassword" type="password" placeholder="Enter password">
+        </div>
+
+        <div id="adminError" class="admin-error">
+            Invalid username or password.
+        </div>
+
+        <div class="admin-login-actions">
+
+            <button class="cancel-btn" onclick="closeAdminLogin()">
+                Cancel
+            </button>
+
+            <button class="login-btn" onclick="loginAdmin()">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     ADMIN TOOLBAR
+====================================================== -->
+
+<div id="adminToolbar">
+
+    <div class="admin-toolbar-inner">
+
+        <div class="admin-toolbar-title">
+            ⚡ ADMIN MODE
+        </div>
+
+        <div class="admin-toolbar-actions">
+
+            <button class="admin-tool-btn"
+            onclick="openAddMenu()">
+                + Add
+            </button>
+
+            <button class="admin-tool-btn"
+            onclick="toggleSectionManager()">
+                ☰ Sections
+            </button>
+
+            <button class="admin-tool-btn save"
+            onclick="saveAllChanges()">
+                ✓ Save
+            </button>
+
+            <button class="admin-tool-btn"
+            onclick="resetAllChanges()">
+                ↺ Reset
+            </button>
+
+            <button class="admin-tool-btn logout"
+            onclick="logoutAdmin()">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="admin-edit-tip">
+    Admin Mode: Text पर click करके edit करें • Image पर click करके replace करें
+</div>
+
+
+<!-- ======================================================
+     SECTION MANAGER
+====================================================== -->
+
+<div id="sectionManager">
+
+    <div class="section-manager-title">
+        Section Manager
+    </div>
+
+    <div class="section-manager-actions">
+
+        <button onclick="addSection('text')">
+            + Text Section
+        </button>
+
+        <button onclick="addSection('image')">
+            + Image + Text
+        </button>
+
+        <button onclick="addSection('gallery')">
+            + Gallery
+        </button>
+
+        <button onclick="addSection('cta')">
+            + CTA Section
+        </button>
+
+    </div>
+
+    <div id="sectionManagerList"></div>
+
+</div>
+
+
+<!-- ======================================================
+     ADMIN MODAL
+====================================================== -->
+
+<div id="adminModal">
+
+    <div class="admin-modal">
+
+        <div class="admin-modal-head">
+
+            <h3 id="adminModalTitle">
+                Add Content
+            </h3>
+
+            <button
+            class="admin-modal-close"
+            onclick="closeAdminModal()">
+                ×
+            </button>
+
+        </div>
+
+        <div id="adminModalBody"></div>
+
+    </div>
+
+</div>
 
 
 <!-- ======================================================
@@ -2181,37 +1884,21 @@ body.admin-mode .admin-hint{
         M
     </div>
 
-    <span>
+    <span data-admin-editable>
         Marwar Infotech
     </span>
 
 </a>
 
-
 <nav class="nav-links">
 
-<a href="#services">
-    Services
-</a>
-
-<a href="#about">
-    About
-</a>
-
-<a href="#work">
-    Work
-</a>
-
-<a href="#process">
-    Process
-</a>
-
-<a href="#faq">
-    FAQ
-</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#work">Work</a>
+<a href="#process">Process</a>
+<a href="#faq">FAQ</a>
 
 </nav>
-
 
 <button
 class="nav-btn magnetic"
@@ -2234,39 +1921,34 @@ onclick="openDrawer()">
 
 <div class="container hero-grid">
 
-
 <div class="hero-content reveal-left">
 
-<div class="hero-eyebrow">
+<div
+class="hero-eyebrow"
+data-admin-editable>
 
     <i></i>
-
     Digital Experiences That Stand Out
 
 </div>
 
+<h1 data-admin-editable>
 
-<h1>
-
-We build
-
-<span>
-    websites
-</span>
-
-people remember.
+    We build
+    <span>websites</span>
+    people remember.
 
 </h1>
 
-
-<p class="hero-text">
+<p
+class="hero-text"
+data-admin-editable>
 
 Marwar Infotech creates premium, modern and conversion-focused
 digital experiences for businesses that want to look different
 from everyone else.
 
 </p>
-
 
 <div class="hero-actions">
 
@@ -2278,7 +1960,6 @@ Start a Project →
 
 </button>
 
-
 <a
 href="#work"
 class="secondary-btn magnetic">
@@ -2289,15 +1970,12 @@ Explore Our Work
 
 </div>
 
-
-<div class="hero-note">
+<div class="hero-note" data-admin-editable>
 
 <span></span>
-
 Available for selected projects
 
 </div>
-
 
 </div>
 
@@ -2308,47 +1986,43 @@ Available for selected projects
 
 <img
 class="hero-image"
+data-admin-image
 src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=90"
 alt="Creative digital design">
 
 </div>
 
-
 <div class="floating-card card-top">
 
-<div class="card-icon">
-    ✦
-</div>
+<div class="card-icon">✦</div>
 
 <div>
 
-<div class="card-small">
-    Design
+<div class="card-small" data-admin-editable>
+Design
 </div>
 
-<div class="card-bold">
-    Premium UI / UX
+<div class="card-bold" data-admin-editable>
+Premium UI / UX
 </div>
 
 </div>
 
 </div>
-
 
 <div class="floating-card card-bottom">
 
-<div class="card-small">
-    Digital Growth
+<div class="card-small" data-admin-editable>
+Digital Growth
 </div>
 
-<strong>
-    ∞
+<strong data-admin-editable>
+∞
 </strong>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -2364,43 +2038,35 @@ alt="Creative digital design">
 <div class="marquee-track">
 
 <div class="marquee-item">
-    Web Design
-    <span>✦</span>
+Web Design <span>✦</span>
 </div>
 
 <div class="marquee-item">
-    Creative Development
-    <span>✦</span>
+Creative Development <span>✦</span>
 </div>
 
 <div class="marquee-item">
-    UI / UX
-    <span>✦</span>
+UI / UX <span>✦</span>
 </div>
 
 <div class="marquee-item">
-    Digital Experiences
-    <span>✦</span>
+Digital Experiences <span>✦</span>
 </div>
 
 <div class="marquee-item">
-    Brand Websites
-    <span>✦</span>
+Brand Websites <span>✦</span>
 </div>
 
 <div class="marquee-item">
-    Web Design
-    <span>✦</span>
+Web Design <span>✦</span>
 </div>
 
 <div class="marquee-item">
-    Creative Development
-    <span>✦</span>
+Creative Development <span>✦</span>
 </div>
 
 <div class="marquee-item">
-    UI / UX
-    <span>✦</span>
+UI / UX <span>✦</span>
 </div>
 
 </div>
@@ -2418,32 +2084,30 @@ id="services">
 
 <div class="container">
 
-
 <div class="reveal">
 
-<div class="section-label">
+<div
+class="section-label"
+data-admin-editable>
 
 <span></span>
-
 What We Do
 
 </div>
 
-
-<h2 class="section-title">
+<h2
+class="section-title"
+data-admin-editable>
 
 Digital work with
-
-<span>
-    character.
-</span>
+<span>character.</span>
 
 </h2>
 
-
 <p
 class="section-copy"
-style="max-width:600px;margin-top:22px;">
+style="max-width:600px;margin-top:22px;"
+data-admin-editable>
 
 From strategy to final pixels, we create digital experiences
 that look premium and feel effortless.
@@ -2453,26 +2117,19 @@ that look premium and feel effortless.
 </div>
 
 
-<div class="services-grid">
+<div class="services-grid" id="servicesGrid">
 
+<div class="service-card reveal">
 
-<div
-class="service-card reveal"
-style="--delay:.05s">
+<div class="service-number">01</div>
 
-<div class="service-number">
-    01
-</div>
+<div class="service-icon">◈</div>
 
-<div class="service-icon">
-    ◈
-</div>
-
-<h3>
-    Website Design
+<h3 data-admin-editable>
+Website Design
 </h3>
 
-<p>
+<p data-admin-editable>
 Modern, premium and responsive websites designed
 around your brand and customers.
 </p>
@@ -2480,23 +2137,17 @@ around your brand and customers.
 </div>
 
 
-<div
-class="service-card reveal"
-style="--delay:.15s">
+<div class="service-card reveal">
 
-<div class="service-number">
-    02
-</div>
+<div class="service-number">02</div>
 
-<div class="service-icon">
-    ✦
-</div>
+<div class="service-icon">✦</div>
 
-<h3>
-    UI / UX Design
+<h3 data-admin-editable>
+UI / UX Design
 </h3>
 
-<p>
+<p data-admin-editable>
 Beautiful interfaces with thoughtful interactions,
 motion and user experience.
 </p>
@@ -2504,23 +2155,17 @@ motion and user experience.
 </div>
 
 
-<div
-class="service-card reveal"
-style="--delay:.25s">
+<div class="service-card reveal">
 
-<div class="service-number">
-    03
-</div>
+<div class="service-number">03</div>
 
-<div class="service-icon">
-    ⌁
-</div>
+<div class="service-icon">⌁</div>
 
-<h3>
-    Creative Development
+<h3 data-admin-editable>
+Creative Development
 </h3>
 
-<p>
+<p data-admin-editable>
 High-performance front-end experiences with
 animations and advanced interactions.
 </p>
@@ -2528,23 +2173,17 @@ animations and advanced interactions.
 </div>
 
 
-<div
-class="service-card reveal"
-style="--delay:.35s">
+<div class="service-card reveal">
 
-<div class="service-number">
-    04
-</div>
+<div class="service-number">04</div>
 
-<div class="service-icon">
-    ◎
-</div>
+<div class="service-icon">◎</div>
 
-<h3>
-    Business Websites
+<h3 data-admin-editable>
+Business Websites
 </h3>
 
-<p>
+<p data-admin-editable>
 Professional websites built to make local and
 growing businesses look premium.
 </p>
@@ -2552,23 +2191,17 @@ growing businesses look premium.
 </div>
 
 
-<div
-class="service-card reveal"
-style="--delay:.45s">
+<div class="service-card reveal">
 
-<div class="service-number">
-    05
-</div>
+<div class="service-number">05</div>
 
-<div class="service-icon">
-    ↗
-</div>
+<div class="service-icon">↗</div>
 
-<h3>
-    Landing Pages
+<h3 data-admin-editable>
+Landing Pages
 </h3>
 
-<p>
+<p data-admin-editable>
 Conversion-focused pages designed to turn visitors
 into enquiries and customers.
 </p>
@@ -2576,29 +2209,22 @@ into enquiries and customers.
 </div>
 
 
-<div
-class="service-card reveal"
-style="--delay:.55s">
+<div class="service-card reveal">
 
-<div class="service-number">
-    06
-</div>
+<div class="service-number">06</div>
 
-<div class="service-icon">
-    ∞
-</div>
+<div class="service-icon">∞</div>
 
-<h3>
-    Digital Solutions
+<h3 data-admin-editable>
+Digital Solutions
 </h3>
 
-<p>
+<p data-admin-editable>
 Smart digital experiences tailored to the way
 your business actually works.
 </p>
 
 </div>
-
 
 </div>
 
@@ -2615,80 +2241,61 @@ your business actually works.
 
 <div class="container stats-grid">
 
-
 <div class="stat reveal">
 
 <div
 class="stat-number"
 data-target="50">
-
 0+
-
 </div>
 
-<p>
+<p data-admin-editable>
 Projects & Concepts
 </p>
 
 </div>
 
-
-<div
-class="stat reveal"
-style="--delay:.1s">
+<div class="stat reveal">
 
 <div
 class="stat-number"
 data-target="30">
-
 0+
-
 </div>
 
-<p>
+<p data-admin-editable>
 Businesses Served
 </p>
 
 </div>
 
-
-<div
-class="stat reveal"
-style="--delay:.2s">
+<div class="stat reveal">
 
 <div
 class="stat-number"
 data-target="100">
-
 0%
-
 </div>
 
-<p>
+<p data-admin-editable>
 Creative Focus
 </p>
 
 </div>
 
-
-<div
-class="stat reveal"
-style="--delay:.3s">
+<div class="stat reveal">
 
 <div
 class="stat-number"
 data-target="24">
-
 0/7
-
 </div>
 
-<p>
+<p data-admin-editable>
 Ideas Never Stop
 </p>
 
 </div>
-
 
 </div>
 
@@ -2705,10 +2312,10 @@ id="about">
 
 <div class="container about-grid">
 
-
 <div class="about-image reveal-left">
 
 <img
+data-admin-image
 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
 alt="Creative team">
 
@@ -2717,27 +2324,27 @@ alt="Creative team">
 
 <div class="about-content reveal-right">
 
-<div class="section-label">
+<div
+class="section-label"
+data-admin-editable>
 
 <span></span>
-
 About Marwar
 
 </div>
 
-
-<h2 class="section-title">
+<h2
+class="section-title"
+data-admin-editable>
 
 Not just a
-
-<span>
-    website.
-</span>
+<span>website.</span>
 
 </h2>
 
-
-<p class="section-copy">
+<p
+class="section-copy"
+data-admin-editable>
 
 We believe a website should do more than simply
 exist online. It should communicate your brand,
@@ -2749,50 +2356,25 @@ your business.
 
 <div class="about-list">
 
-
-<div>
-
-<span class="check">
-    ✓
-</span>
-
+<div data-admin-editable>
+<span class="check">✓</span>
 Premium visual design
-
 </div>
 
-
-<div>
-
-<span class="check">
-    ✓
-</span>
-
+<div data-admin-editable>
+<span class="check">✓</span>
 Smooth animations & interactions
-
 </div>
 
-
-<div>
-
-<span class="check">
-    ✓
-</span>
-
+<div data-admin-editable>
+<span class="check">✓</span>
 Mobile-first responsive experience
-
 </div>
 
-
-<div>
-
-<span class="check">
-    ✓
-</span>
-
+<div data-admin-editable>
+<span class="check">✓</span>
 Business-focused design
-
 </div>
-
 
 </div>
 
@@ -2813,48 +2395,49 @@ id="work">
 
 <div class="container">
 
-
 <div class="reveal">
 
-<div class="section-label">
+<div
+class="section-label"
+data-admin-editable>
 
 <span></span>
-
 Selected Work
 
 </div>
 
-
-<h2 class="section-title">
+<h2
+class="section-title"
+data-admin-editable>
 
 Made to be
-
-<span>
-    noticed.
-</span>
+<span>noticed.</span>
 
 </h2>
 
 </div>
 
 
-<div class="portfolio-grid">
+<div
+class="portfolio-grid"
+id="portfolioGrid">
 
 
 <div class="project reveal">
 
 <img
+data-admin-image
 src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85"
 alt="Modern office website concept">
 
 <div class="project-info">
 
-<small>
-    Business Website
+<small data-admin-editable>
+Business Website
 </small>
 
-<h3>
-    Modern Corporate
+<h3 data-admin-editable>
+Modern Corporate
 </h3>
 
 </div>
@@ -2862,22 +2445,21 @@ alt="Modern office website concept">
 </div>
 
 
-<div
-class="project reveal"
-style="--delay:.15s">
+<div class="project reveal">
 
 <img
+data-admin-image
 src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=85"
 alt="Business workspace">
 
 <div class="project-info">
 
-<small>
-    Digital Experience
+<small data-admin-editable>
+Digital Experience
 </small>
 
-<h3>
-    Business Growth
+<h3 data-admin-editable>
+Business Growth
 </h3>
 
 </div>
@@ -2885,22 +2467,21 @@ alt="Business workspace">
 </div>
 
 
-<div
-class="project reveal"
-style="--delay:.1s">
+<div class="project reveal">
 
 <img
+data-admin-image
 src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85"
 alt="Creative website design">
 
 <div class="project-info">
 
-<small>
-    Creative Website
+<small data-admin-editable>
+Creative Website
 </small>
 
-<h3>
-    Digital Studio
+<h3 data-admin-editable>
+Digital Studio
 </h3>
 
 </div>
@@ -2908,22 +2489,21 @@ alt="Creative website design">
 </div>
 
 
-<div
-class="project reveal"
-style="--delay:.25s">
+<div class="project reveal">
 
 <img
+data-admin-image
 src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=85"
 alt="UI UX design">
 
 <div class="project-info">
 
-<small>
-    UI / UX
+<small data-admin-editable>
+UI / UX
 </small>
 
-<h3>
-    Future Interface
+<h3 data-admin-editable>
+Future Interface
 </h3>
 
 </div>
@@ -2946,13 +2526,10 @@ alt="UI UX design">
 
 <div class="container reveal">
 
-<h2>
+<h2 data-admin-editable>
 
 Your business deserves a
-
-<span>
-    better first impression.
-</span>
+<span>better first impression.</span>
 
 </h2>
 
@@ -2971,25 +2548,23 @@ id="process">
 
 <div class="container">
 
-
 <div class="reveal">
 
-<div class="section-label">
+<div
+class="section-label"
+data-admin-editable>
 
 <span></span>
-
 Our Process
 
 </div>
 
-
-<h2 class="section-title">
+<h2
+class="section-title"
+data-admin-editable>
 
 Simple process.
-
-<span>
-    Big results.
-</span>
+<span>Big results.</span>
 
 </h2>
 
@@ -2998,18 +2573,17 @@ Simple process.
 
 <div class="process-grid">
 
-
 <div class="process-card reveal">
 
 <div class="process-num">
-    01 / DISCOVER
+01 / DISCOVER
 </div>
 
-<h3>
-    Understand
+<h3 data-admin-editable>
+Understand
 </h3>
 
-<p>
+<p data-admin-editable>
 We understand your business, audience,
 goals and what makes your brand different.
 </p>
@@ -3017,19 +2591,17 @@ goals and what makes your brand different.
 </div>
 
 
-<div
-class="process-card reveal"
-style="--delay:.15s">
+<div class="process-card reveal">
 
 <div class="process-num">
-    02 / DESIGN
+02 / DESIGN
 </div>
 
-<h3>
-    Design
+<h3 data-admin-editable>
+Design
 </h3>
 
-<p>
+<p data-admin-editable>
 We turn the strategy into a visual experience
 with premium UI, motion and interactions.
 </p>
@@ -3037,19 +2609,17 @@ with premium UI, motion and interactions.
 </div>
 
 
-<div
-class="process-card reveal"
-style="--delay:.3s">
+<div class="process-card reveal">
 
 <div class="process-num">
-    03 / BUILD
+03 / BUILD
 </div>
 
-<h3>
-    Develop
+<h3 data-admin-editable>
+Develop
 </h3>
 
-<p>
+<p data-admin-editable>
 The approved experience is transformed into
 a fast and responsive working website.
 </p>
@@ -3057,25 +2627,22 @@ a fast and responsive working website.
 </div>
 
 
-<div
-class="process-card reveal"
-style="--delay:.45s">
+<div class="process-card reveal">
 
 <div class="process-num">
-    04 / LAUNCH
+04 / LAUNCH
 </div>
 
-<h3>
-    Launch
+<h3 data-admin-editable>
+Launch
 </h3>
 
-<p>
+<p data-admin-editable>
 We test everything and prepare your website
 for its next stage of growth.
 </p>
 
 </div>
-
 
 </div>
 
@@ -3094,19 +2661,16 @@ for its next stage of growth.
 
 <div class="testimonial reveal">
 
-<div class="quote">
+<div class="quote" data-admin-editable>
 
 “Good design gets attention.
-
-<span>
-    Great design gets remembered.
-</span>
-
-”
+<span>Great design gets remembered.</span>”
 
 </div>
 
-<div class="testimonial-author">
+<div
+class="testimonial-author"
+data-admin-editable>
 
 — Marwar Infotech
 
@@ -3129,50 +2693,53 @@ id="faq">
 
 <div class="container">
 
-
 <div class="reveal">
 
-<div class="section-label">
+<div
+class="section-label"
+data-admin-editable>
 
 <span></span>
-
 FAQ
 
 </div>
 
-
-<h2 class="section-title">
+<h2
+class="section-title"
+data-admin-editable>
 
 Have a
-
-<span>
-    question?
-</span>
+<span>question?</span>
 
 </h2>
 
 </div>
 
 
-<div class="faq-wrap">
+<div
+class="faq-wrap"
+id="faqWrap">
 
 
 <div class="faq-item reveal">
 
 <button class="faq-question">
 
+<span data-admin-editable>
 How long does a website take?
+</span>
 
 <span class="faq-plus">
-    +
++
 </span>
 
 </button>
 
-
 <div class="faq-answer">
 
-<div class="faq-answer-inner">
+<div
+class="faq-answer-inner"
+data-admin-editable>
 
 Depending on the project, a professional
 business website can usually be designed
@@ -3185,24 +2752,25 @@ and developed within a few days to a few weeks.
 </div>
 
 
-<div
-class="faq-item reveal"
-style="--delay:.1s">
+<div class="faq-item reveal">
 
 <button class="faq-question">
 
+<span data-admin-editable>
 Can you create custom animations?
+</span>
 
 <span class="faq-plus">
-    +
++
 </span>
 
 </button>
 
-
 <div class="faq-answer">
 
-<div class="faq-answer-inner">
+<div
+class="faq-answer-inner"
+data-admin-editable>
 
 Yes. We can build custom scroll animations,
 magnetic interactions, hover effects,
@@ -3215,24 +2783,25 @@ transitions and other interactive elements.
 </div>
 
 
-<div
-class="faq-item reveal"
-style="--delay:.2s">
+<div class="faq-item reveal">
 
 <button class="faq-question">
 
+<span data-admin-editable>
 Will the website work on mobile?
+</span>
 
 <span class="faq-plus">
-    +
++
 </span>
 
 </button>
 
-
 <div class="faq-answer">
 
-<div class="faq-answer-inner">
+<div
+class="faq-answer-inner"
+data-admin-editable>
 
 Yes. Websites are designed responsively
 so the experience adapts to phones,
@@ -3245,24 +2814,25 @@ tablets and desktop screens.
 </div>
 
 
-<div
-class="faq-item reveal"
-style="--delay:.3s">
+<div class="faq-item reveal">
 
 <button class="faq-question">
 
+<span data-admin-editable>
 Can you redesign an existing website?
+</span>
 
 <span class="faq-plus">
-    +
++
 </span>
 
 </button>
 
-
 <div class="faq-answer">
 
-<div class="faq-answer-inner">
+<div
+class="faq-answer-inner"
+data-admin-editable>
 
 Absolutely. We can redesign an existing
 website with a completely new visual direction,
@@ -3283,6 +2853,13 @@ better UX and modern interactions.
 
 
 <!-- ======================================================
+     DYNAMIC SECTIONS GO HERE
+====================================================== -->
+
+<div id="dynamicSections"></div>
+
+
+<!-- ======================================================
      CTA
 ====================================================== -->
 
@@ -3290,26 +2867,19 @@ better UX and modern interactions.
 
 <div class="container cta-inner">
 
-
 <div class="reveal-left">
 
-<h2>
-
+<h2 data-admin-editable>
 Let's build something
 different.
-
 </h2>
 
-
-<p>
-
+<p data-admin-editable>
 Have an idea, a business or an existing website
 that needs a serious upgrade? Let's talk.
-
 </p>
 
 </div>
-
 
 <button
 class="primary-btn magnetic reveal-right"
@@ -3318,7 +2888,6 @@ onclick="openDrawer()">
 Start a Conversation →
 
 </button>
-
 
 </div>
 
@@ -3333,30 +2902,25 @@ Start a Conversation →
 
 <div class="container">
 
-
 <div class="footer-top">
-
 
 <div class="footer-brand">
 
 <a href="#" class="logo">
 
 <div class="logo-mark">
-    M
+M
 </div>
 
-<span>
-    Marwar Infotech
+<span data-admin-editable>
+Marwar Infotech
 </span>
 
 </a>
 
-
-<p>
-
+<p data-admin-editable>
 Building modern digital experiences
 for ambitious businesses.
-
 </p>
 
 </div>
@@ -3364,56 +2928,43 @@ for ambitious businesses.
 
 <div class="footer-links">
 
-
 <div class="footer-col">
 
-<h4>
-    Explore
+<h4 data-admin-editable>
+Explore
 </h4>
 
-<a href="#services">
-    Services
-</a>
-
-<a href="#about">
-    About
-</a>
-
-<a href="#work">
-    Work
-</a>
-
-<a href="#process">
-    Process
-</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#work">Work</a>
+<a href="#process">Process</a>
 
 </div>
 
 
 <div class="footer-col">
 
-<h4>
-    Contact
+<h4 data-admin-editable>
+Contact
 </h4>
 
 <a href="tel:+917979346610">
-    Call Us
+Call Us
 </a>
 
 <a
 href="https://wa.me/917976346610"
 target="_blank">
 
-    WhatsApp
+WhatsApp
 
 </a>
 
 <a href="mailto:marwarinfotechh@gmail.com">
-    Email
+Email
 </a>
 
 </div>
-
 
 </div>
 
@@ -3422,25 +2973,26 @@ target="_blank">
 
 <div class="footer-bottom">
 
-<div>
+<div data-admin-editable>
 © 2026 Marwar Infotech. All rights reserved.
 </div>
 
-<div class="footer-credit">
+<div
+class="footer-credit"
+data-admin-editable>
+
 Designed by Marwar Infotech
-</div>
 
 </div>
 
+</div>
 
 </div>
 
 </footer>
 
 
-<!-- ======================================================
-     WHATSAPP
-====================================================== -->
+<!-- WHATSAPP -->
 
 <a
 class="whatsapp magnetic"
@@ -3453,9 +3005,7 @@ aria-label="WhatsApp">
 </a>
 
 
-<!-- ======================================================
-     ENQUIRY OVERLAY
-====================================================== -->
+<!-- ENQUIRY -->
 
 <div
 class="overlay"
@@ -3473,20 +3023,14 @@ onclick="closeDrawer()">
 
 </button>
 
-
-<h2>
-
+<h2 data-admin-editable>
 Let's create
 something great.
-
 </h2>
 
-
-<p>
-
+<p data-admin-editable>
 Tell us a little about your project and
 we'll get back to you.
-
 </p>
 
 
@@ -3511,288 +3055,88 @@ placeholder="Email Address">
 <select>
 
 <option value="">
-    Select Service
+Select Service
 </option>
 
-<option>
-    Website Design
-</option>
-
-<option>
-    Business Website
-</option>
-
-<option>
-    UI / UX Design
-</option>
-
-<option>
-    Landing Page
-</option>
-
-<option>
-    Website Redesign
-</option>
+<option>Website Design</option>
+<option>Business Website</option>
+<option>UI / UX Design</option>
+<option>Landing Page</option>
+<option>Website Redesign</option>
 
 </select>
-
 
 <textarea
 placeholder="Tell us about your project...">
 </textarea>
 
-
 <button type="submit">
-
 Send Enquiry →
-
 </button>
 
 </form>
-
-</div>
-
-
-<!-- ======================================================
-     ADMIN LOGIN
-====================================================== -->
-
-<div
-id="adminLoginScreen"
-aria-hidden="true">
-
-<div class="admin-login-card">
-
-
-<div class="admin-login-brand">
-
-<div class="admin-login-mark">
-    M
-</div>
-
-<span>
-    Marwar Infotech
-</span>
-
-</div>
-
-
-<h2>
-    Admin Login
-</h2>
-
-
-<p>
-
-Sign in to test the website editor.
-Visitors will never see the editing controls.
-
-</p>
-
-
-<form id="adminLoginForm">
-
-<input
-id="adminUsername"
-type="text"
-placeholder="Username"
-autocomplete="username"
-required>
-
-
-<input
-id="adminPassword"
-type="password"
-placeholder="Password"
-autocomplete="current-password"
-required>
-
-
-<div
-id="adminLoginError"
-class="admin-login-error">
-</div>
-
-
-<div class="admin-login-actions">
-
-<button
-type="button"
-class="admin-login-cancel"
-onclick="closeAdminLogin()">
-
-Cancel
-
-</button>
-
-
-<button
-type="submit"
-class="admin-login-submit">
-
-Login →
-
-</button>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-
-<!-- ======================================================
-     ADMIN TOOLBAR
-====================================================== -->
-
-<div id="adminToolbar">
-
-<div class="admin-toolbar-status">
-
-<i></i>
-
-ADMIN MODE
-
-</div>
-
-
-<button
-class="admin-toolbar-btn admin-save-btn"
-onclick="saveAdminChanges()">
-
-Save Changes
-
-</button>
-
-
-<button
-class="admin-toolbar-btn admin-reset-btn"
-onclick="resetAdminChanges()">
-
-Reset
-
-</button>
-
-
-<button
-class="admin-toolbar-btn admin-logout-btn"
-onclick="adminLogout()">
-
-Logout
-
-</button>
-
-</div>
-
-
-<!-- ======================================================
-     FLOATING ADMIN EDIT BUTTONS
-====================================================== -->
-
-<button
-id="adminEditBtn"
-class="admin-edit-btn"
-type="button">
-
-✎ Edit Text
-
-</button>
-
-
-<button
-id="adminImageBtn"
-class="admin-image-btn"
-type="button">
-
-✦ Change Image
-
-</button>
-
-
-<div class="admin-hint">
-
-<strong>
-    Admin mode:
-</strong>
-
-Blue outlined content can be edited.
-
-Hover an item and click
-<b>✎ Edit Text</b>.
-
-For images, use
-<b>Change Image</b>.
-
-Click
-<b>Save Changes</b>
-when finished.
 
 </div>
 
 
 <script>
 
-
 /* =========================================================
-   NAVBAR
+   ORIGINAL FUNCTIONALITY
 ========================================================= */
 
-const navbar =
-document.querySelector(".navbar");
+const navbar=document.querySelector(".navbar");
 
 window.addEventListener("scroll",()=>{
-
-    if(window.scrollY > 50){
-
+    if(window.scrollY>50){
         navbar.classList.add("scrolled");
-
     }else{
-
         navbar.classList.remove("scrolled");
-
     }
-
 });
 
 
-/* =========================================================
-   CURSOR GLOW
-========================================================= */
-
-const cursor =
-document.querySelector(".cursor-glow");
+const cursor=document.querySelector(".cursor-glow");
 
 window.addEventListener("mousemove",(e)=>{
+    if(!cursor)return;
 
     cursor.animate({
-
-        left:e.clientX + "px",
-        top:e.clientY + "px"
-
+        left:e.clientX+"px",
+        top:e.clientY+"px"
     },{
         duration:500,
         fill:"forwards"
     });
-
 });
 
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+function setupReveal(){
 
-const revealElements =
-document.querySelectorAll(
-    ".reveal,.reveal-left,.reveal-right"
-);
+    document
+    .querySelectorAll(".reveal,.reveal-left,.reveal-right")
+    .forEach(el=>{
 
-const revealObserver =
+        if(el.dataset.revealReady)
+            return;
+
+        el.dataset.revealReady="1";
+
+        if(
+            el.classList.contains("active")
+        )
+            return;
+
+        revealObserver.observe(el);
+
+    });
+
+}
+
+
+const revealObserver=
 new IntersectionObserver(
-
 (entries)=>{
-
     entries.forEach(entry=>{
 
         if(entry.isIntersecting){
@@ -3806,265 +3150,165 @@ new IntersectionObserver(
         }
 
     });
-
 },
-
 {
     threshold:.12,
     rootMargin:"0px 0px -60px 0px"
-}
-
-);
-
-
-revealElements.forEach(el=>{
-
-    revealObserver.observe(el);
-
 });
 
 
-/* =========================================================
-   MAGNETIC BUTTONS
-========================================================= */
-
-document.querySelectorAll(".magnetic")
-.forEach(button=>{
-
-    button.addEventListener(
-        "mousemove",
-        function(e){
-
-            const rect =
-            this.getBoundingClientRect();
-
-            const x =
-            e.clientX -
-            rect.left -
-            rect.width / 2;
-
-            const y =
-            e.clientY -
-            rect.top -
-            rect.height / 2;
-
-            this.style.transform =
-            `translate(${x * .18}px,
-                       ${y * .18}px)`;
-
-        }
-    );
+setupReveal();
 
 
-    button.addEventListener(
-        "mouseleave",
-        function(){
+function setupMagnetic(){
 
-            this.style.transform =
-            "translate(0,0)";
+    document
+    .querySelectorAll(".magnetic")
+    .forEach(button=>{
 
-        }
-    );
-
-});
-
-
-/* =========================================================
-   3D TILT
-========================================================= */
-
-document.querySelectorAll(
-    ".service-card,.project"
-).forEach(card=>{
-
-    card.addEventListener(
-        "mousemove",
-        function(e){
-
-            const rect =
-            this.getBoundingClientRect();
-
-            const x =
-            e.clientX - rect.left;
-
-            const y =
-            e.clientY - rect.top;
-
-            const rotateX =
-            ((y / rect.height) - .5) * -5;
-
-            const rotateY =
-            ((x / rect.width) - .5) * 5;
-
-            this.style.transform =
-            `perspective(900px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-8px)`;
-
-        }
-    );
-
-
-    card.addEventListener(
-        "mouseleave",
-        function(){
-
-            this.style.transform =
-            "";
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   COUNTERS
-========================================================= */
-
-const counters =
-document.querySelectorAll(".stat-number");
-
-const counterObserver =
-new IntersectionObserver(
-
-(entries,observer)=>{
-
-    entries.forEach(entry=>{
-
-        if(!entry.isIntersecting)
+        if(button.dataset.magneticReady)
             return;
 
-        const counter =
-        entry.target;
+        button.dataset.magneticReady="1";
 
-        const target =
-        Number(counter.dataset.target);
+        button.addEventListener(
+            "mousemove",
+            function(e){
 
-        let current = 0;
+                const rect=
+                this.getBoundingClientRect();
 
-        const duration = 1300;
+                const x=
+                e.clientX-
+                rect.left-
+                rect.width/2;
 
-        const start =
-        performance.now();
+                const y=
+                e.clientY-
+                rect.top-
+                rect.height/2;
 
-
-        function animate(time){
-
-            const progress =
-            Math.min(
-                (time - start) / duration,
-                1
-            );
-
-
-            current =
-            Math.floor(
-                progress * target
-            );
-
-
-            if(target === 100){
-
-                counter.textContent =
-                current + "%";
+                this.style.transform=
+                `translate(${x*.18}px,${y*.18}px)`;
 
             }
-
-            else if(target === 24){
-
-                counter.textContent =
-                current + "/7";
-
-            }
-
-            else{
-
-                counter.textContent =
-                current + "+";
-
-            }
-
-
-            if(progress < 1){
-
-                requestAnimationFrame(
-                    animate
-                );
-
-            }
-
-        }
-
-
-        requestAnimationFrame(
-            animate
         );
 
+        button.addEventListener(
+            "mouseleave",
+            function(){
 
-        observer.unobserve(counter);
+                this.style.transform=
+                "translate(0,0)";
+
+            }
+        );
 
     });
 
-},
+}
 
-{
-    threshold:.7
-});
+setupMagnetic();
 
 
-counters.forEach(counter=>{
+function setupTilt(){
 
-    counterObserver.observe(counter);
+    document
+    .querySelectorAll(".service-card,.project")
+    .forEach(card=>{
 
-});
+        if(card.dataset.tiltReady)
+            return;
+
+        card.dataset.tiltReady="1";
+
+        card.addEventListener(
+            "mousemove",
+            function(e){
+
+                const rect=
+                this.getBoundingClientRect();
+
+                const x=
+                e.clientX-rect.left;
+
+                const y=
+                e.clientY-rect.top;
+
+                const rotateX=
+                ((y/rect.height)-.5)*-5;
+
+                const rotateY=
+                ((x/rect.width)-.5)*5;
+
+                this.style.transform=
+                `perspective(900px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-8px)`;
+
+            }
+        );
+
+        card.addEventListener(
+            "mouseleave",
+            function(){
+                this.style.transform="";
+            }
+        );
+
+    });
+
+}
+
+setupTilt();
 
 
-/* =========================================================
-   FAQ
-========================================================= */
+function setupFAQ(){
 
-document.querySelectorAll(
-    ".faq-question"
-).forEach(question=>{
+    document
+    .querySelectorAll(".faq-question")
+    .forEach(question=>{
 
-    question.addEventListener(
-        "click",
-        ()=>{
+        if(question.dataset.faqReady)
+            return;
 
-            const item =
-            question.parentElement;
+        question.dataset.faqReady="1";
 
+        question.addEventListener(
+            "click",
+            ()=>{
 
-            document.querySelectorAll(
-                ".faq-item"
-            ).forEach(other=>{
+                const item=
+                question.parentElement;
 
-                if(other !== item){
+                document
+                .querySelectorAll(".faq-item")
+                .forEach(other=>{
 
-                    other.classList.remove(
-                        "active"
-                    );
+                    if(other!==item){
 
-                }
+                        other.classList.remove(
+                            "active"
+                        );
 
-            });
+                    }
 
+                });
 
-            item.classList.toggle(
-                "active"
-            );
+                item.classList.toggle(
+                    "active"
+                );
 
-        }
-    );
+            }
+        );
 
-});
+    });
 
+}
 
-/* =========================================================
-   ENQUIRY DRAWER
-========================================================= */
+setupFAQ();
+
 
 function openDrawer(){
 
@@ -4072,14 +3316,11 @@ function openDrawer(){
     .querySelector(".drawer")
     .classList.add("active");
 
-
     document
     .querySelector(".overlay")
     .classList.add("active");
 
-
-    document.body.style.overflow =
-    "hidden";
+    document.body.style.overflow="hidden";
 
 }
 
@@ -4090,51 +3331,32 @@ function closeDrawer(){
     .querySelector(".drawer")
     .classList.remove("active");
 
-
     document
     .querySelector(".overlay")
     .classList.remove("active");
 
-
-    document.body.style.overflow =
-    "";
+    document.body.style.overflow="";
 
 }
 
-
-/* =========================================================
-   FORM
-========================================================= */
 
 function submitForm(e){
 
     e.preventDefault();
 
-
-    const inputs =
+    const inputs=
     e.target.querySelectorAll(
         "input,select,textarea"
     );
 
+    const name=inputs[0].value;
+    const phone=inputs[1].value;
+    const email=inputs[2].value;
+    const service=inputs[3].value;
+    const message=inputs[4].value;
 
-    const name =
-    inputs[0].value;
-
-    const phone =
-    inputs[1].value;
-
-    const email =
-    inputs[2].value;
-
-    const service =
-    inputs[3].value;
-
-    const message =
-    inputs[4].value;
-
-
-    const whatsappMessage =
-    `Hello Marwar Infotech,
+    const whatsappMessage=
+`Hello Marwar Infotech,
 
 Name: ${name}
 Phone: ${phone}
@@ -4144,45 +3366,32 @@ Service: ${service}
 Project:
 ${message}`;
 
-
-    const url =
-    "https://wa.me/917976346610?text="
-    +
+    const url=
+    "https://wa.me/917976346610?text="+
     encodeURIComponent(
         whatsappMessage
     );
 
-
-    window.open(
-        url,
-        "_blank"
-    );
+    window.open(url,"_blank");
 
 }
 
-
-/* =========================================================
-   ESC CLOSE
-========================================================= */
 
 document.addEventListener(
 "keydown",
 (e)=>{
 
-    if(e.key === "Escape"){
+    if(e.key==="Escape"){
 
         closeDrawer();
+        closeAdminModal();
 
     }
 
 });
 
 
-/* =========================================================
-   HERO PARALLAX
-========================================================= */
-
-const heroVisual =
+const heroVisual=
 document.querySelector(".hero-visual");
 
 window.addEventListener(
@@ -4192,15 +3401,13 @@ window.addEventListener(
     if(!heroVisual)
         return;
 
-
-    const scroll =
+    const scroll=
     window.scrollY;
 
+    if(scroll<window.innerHeight){
 
-    if(scroll < window.innerHeight){
-
-        heroVisual.style.transform =
-        `translateY(${scroll * .08}px)`;
+        heroVisual.style.transform=
+        `translateY(${scroll*.08}px)`;
 
     }
 
@@ -4208,449 +3415,197 @@ window.addEventListener(
 
 
 /* =========================================================
-   DEMO ADMIN EDITOR
+   ADMIN CONFIG
 ========================================================= */
 
-/*
+const ADMIN_USERNAME="admin";
+const ADMIN_PASSWORD="1234";
 
-IMPORTANT:
+const AUTH_KEY=
+"marwar_admin_authenticated";
 
-This admin system is for TESTING ONLY.
+const CONTENT_KEY=
+"marwar_admin_content_v2";
 
-Username:
-admin
-
-Password:
-1234
-
-For production/client website:
-Use real authentication + database/backend.
-
-*/
+const DYNAMIC_KEY=
+"marwar_dynamic_sections_v2";
 
 
-const DEMO_ADMIN_USERNAME =
-"admin";
-
-const DEMO_ADMIN_PASSWORD =
-"1234";
-
-
-const ADMIN_AUTH_KEY =
-"marwar_demo_admin_auth";
-
-
-const ADMIN_CONTENT_KEY =
-"marwar_demo_site_content";
-
-
-let adminCurrentTarget =
-null;
-
-
-let adminCurrentImage =
-null;
-
-
-const adminLoginScreen =
-document.getElementById(
-    "adminLoginScreen"
-);
-
-
-const adminLoginForm =
-document.getElementById(
-    "adminLoginForm"
-);
-
-
-const adminLoginError =
-document.getElementById(
-    "adminLoginError"
-);
-
-
-const adminEditBtn =
-document.getElementById(
-    "adminEditBtn"
-);
-
-
-const adminImageBtn =
-document.getElementById(
-    "adminImageBtn"
-);
+let isAdmin=false;
 
 
 /* =========================================================
-   OPEN LOGIN
+   ADMIN LOGIN
 ========================================================= */
 
 function openAdminLogin(){
 
-    if(!adminLoginScreen)
-        return;
+    document
+    .getElementById("adminLoginScreen")
+    .style.display="flex";
 
-
-    adminLoginScreen.classList.add(
-        "show"
-    );
-
-
-    adminLoginScreen.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    const user =
-    document.getElementById(
-        "adminUsername"
-    );
-
-
-    if(user){
-
-        setTimeout(
-            ()=>user.focus(),
-            100
-        );
-
-    }
+    setTimeout(()=>{
+        document
+        .getElementById("adminUsername")
+        .focus();
+    },100);
 
 }
 
-
-/* =========================================================
-   CLOSE LOGIN
-========================================================= */
 
 function closeAdminLogin(){
 
-    if(!adminLoginScreen)
-        return;
-
-
-    adminLoginScreen.classList.remove(
-        "show"
-    );
-
-
-    adminLoginScreen.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-
-    if(adminLoginError){
-
-        adminLoginError.textContent =
-        "";
-
-    }
-
-
-    if(adminLoginForm){
-
-        adminLoginForm.reset();
-
-    }
+    document
+    .getElementById("adminLoginScreen")
+    .style.display="none";
 
 }
 
 
-/* =========================================================
-   CHECK LOGIN
-========================================================= */
+function loginAdmin(){
 
-function adminIsLoggedIn(){
+    const username=
+    document
+    .getElementById("adminUsername")
+    .value
+    .trim();
 
-    return sessionStorage.getItem(
-        ADMIN_AUTH_KEY
-    ) === "true";
+    const password=
+    document
+    .getElementById("adminPassword")
+    .value;
 
-}
+    const error=
+    document
+    .getElementById("adminError");
 
+    if(
+        username===ADMIN_USERNAME &&
+        password===ADMIN_PASSWORD
+    ){
 
-/* =========================================================
-   LOGOUT
-========================================================= */
-
-function adminLogout(){
-
-    sessionStorage.removeItem(
-        ADMIN_AUTH_KEY
-    );
-
-
-    document.body.classList.remove(
-        "admin-mode"
-    );
-
-
-    if(adminCurrentTarget){
-
-        adminCurrentTarget.removeAttribute(
-            "contenteditable"
+        sessionStorage.setItem(
+            AUTH_KEY,
+            "true"
         );
 
-    }
+        error.style.display="none";
 
+        closeAdminLogin();
 
-    adminCurrentTarget = null;
+        enterAdminMode();
 
-    adminCurrentImage = null;
+    }else{
 
-
-    hideAdminControls();
-
-
-    if(location.hash === "#admin"){
-
-        history.replaceState(
-            null,
-            "",
-            location.pathname +
-            location.search
-        );
+        error.style.display="block";
 
     }
-
-
-    window.scrollTo(0,0);
-
-
-    location.reload();
 
 }
 
-
-/* =========================================================
-   ENTER ADMIN MODE
-========================================================= */
 
 function enterAdminMode(){
+
+    isAdmin=true;
 
     document.body.classList.add(
         "admin-mode"
     );
 
+    document
+    .getElementById("adminToolbar")
+    .style.display="block";
 
-    closeAdminLogin();
+    loadSavedContent();
+
+    loadDynamicSections();
+
+    prepareAdminEditors();
+
+    renderSectionManager();
+
+    setTimeout(()=>{
+        setupReveal();
+        setupMagnetic();
+        setupTilt();
+        setupFAQ();
+    },100);
+
+}
 
 
-    setupAdminEditableElements();
+function logoutAdmin(){
 
+    if(
+        !confirm(
+            "Logout from Admin Mode?"
+        )
+    )
+        return;
 
-    loadAdminChanges();
+    sessionStorage.removeItem(
+        AUTH_KEY
+    );
+
+    isAdmin=false;
+
+    document.body.classList.remove(
+        "admin-mode"
+    );
+
+    document
+    .getElementById("adminToolbar")
+    .style.display="none";
+
+    document
+    .getElementById("sectionManager")
+    .style.display="none";
+
+    document
+    .querySelectorAll(
+        "[contenteditable='true']"
+    )
+    .forEach(el=>{
+
+        el.removeAttribute(
+            "contenteditable"
+        );
+
+    });
 
 }
 
 
 /* =========================================================
-   SETUP EDITABLE ELEMENTS
+   ADMIN EDITABLE TEXT
 ========================================================= */
 
-function setupAdminEditableElements(){
+function prepareAdminEditors(){
 
-
-    const textSelectors = [
-
-        ".logo > span",
-
-        ".hero-eyebrow",
-
-        ".hero h1",
-
-        ".hero-text",
-
-        ".hero-note",
-
-        ".card-small",
-
-        ".card-bold",
-
-        ".section-label",
-
-        ".section-title",
-
-        ".section-copy",
-
-        ".service-card h3",
-
-        ".service-card p",
-
-        ".stat-number",
-
-        ".stat p",
-
-        ".about-list > div",
-
-        ".project-info small",
-
-        ".project-info h3",
-
-        ".statement h2",
-
-        ".process-num",
-
-        ".process-card h3",
-
-        ".process-card p",
-
-        ".quote",
-
-        ".testimonial-author",
-
-        ".faq-question",
-
-        ".faq-answer-inner",
-
-        ".cta h2",
-
-        ".cta p",
-
-        ".footer-brand .logo > span",
-
-        ".footer-brand p",
-
-        ".footer-col h4",
-
-        ".footer-col a",
-
-        ".footer-bottom > div",
-
-        ".nav-btn",
-
-        ".primary-btn",
-
-        ".secondary-btn"
-
-    ];
-
+    if(!isAdmin)
+        return;
 
     document
     .querySelectorAll(
-        textSelectors.join(",")
+        "[data-admin-editable]"
     )
-    .forEach((el,index)=>{
+    .forEach(el=>{
 
-
-        if(
-            el.closest(
-                "#adminLoginScreen,#adminToolbar,.admin-hint"
-            )
-        )
+        if(el.dataset.adminReady)
             return;
 
-
-        if(
-            el.matches(".faq-plus")
-        )
-            return;
-
-
-        if(
-            el.dataset.adminEditable === "true"
-        )
-            return;
-
-
-        el.dataset.adminEditable =
-        "true";
-
-
-        el.dataset.adminKey =
-        "text_" + index;
-
-
-        el.addEventListener(
-            "mouseenter",
-            function(){
-
-                if(
-                    !adminIsLoggedIn()
-                )
-                    return;
-
-
-                showTextEditButton(
-                    this
-                );
-
-            }
-        );
-
-
-        el.addEventListener(
-            "mouseleave",
-            function(){
-
-                setTimeout(()=>{
-
-                    if(
-                        !adminEditBtn.matches(":hover")
-                    ){
-
-                        adminEditBtn.classList.remove(
-                            "show"
-                        );
-
-                    }
-
-                },150);
-
-            }
-        );
-
+        el.dataset.adminReady="1";
 
         el.addEventListener(
             "click",
             function(e){
 
-                if(
-                    !adminIsLoggedIn()
-                )
+                if(!isAdmin)
                     return;
 
+                e.stopPropagation();
 
-                if(
-                    e.target.closest(
-                        ".admin-edit-btn,.admin-image-btn"
-                    )
-                )
-                    return;
-
-
-                adminCurrentTarget =
-                this;
-
-
-                document
-                .querySelectorAll(
-                    "[data-admin-editable='true']"
-                )
-                .forEach(item=>{
-
-                    item.removeAttribute(
-                        "contenteditable"
-                    );
-
-                });
-
-
-                this.setAttribute(
-                    "contenteditable",
-                    "true"
-                );
-
-
-                this.focus();
-
-
-                showTextEditButton(
-                    this
-                );
+                editTextElement(this);
 
             }
         );
@@ -4658,465 +3613,1679 @@ function setupAdminEditableElements(){
     });
 
 
-    /* =====================================================
-       IMAGES
-    ===================================================== */
-
     document
     .querySelectorAll(
-        ".hero-image,.about-image img,.project img"
-    )
-    .forEach((img,index)=>{
-
-
-        img.dataset.adminImage =
-        "true";
-
-
-        img.dataset.adminImageKey =
-        "image_" + index;
-
-
-        img.addEventListener(
-            "mouseenter",
-            function(){
-
-                if(
-                    !adminIsLoggedIn()
-                )
-                    return;
-
-
-                adminCurrentImage =
-                this;
-
-
-                showImageEditButton(
-                    this
-                );
-
-            }
-        );
-
-
-        img.addEventListener(
-            "mouseleave",
-            function(){
-
-                setTimeout(()=>{
-
-                    if(
-                        !adminImageBtn.matches(":hover")
-                    ){
-
-                        adminImageBtn.classList.remove(
-                            "show"
-                        );
-
-                    }
-
-                },150);
-
-            }
-        );
-
-    });
-
-}
-
-
-/* =========================================================
-   TEXT EDIT BUTTON
-========================================================= */
-
-function showTextEditButton(el){
-
-    if(!adminEditBtn)
-        return;
-
-
-    const rect =
-    el.getBoundingClientRect();
-
-
-    adminEditBtn.style.left =
-    Math.max(
-        8,
-        Math.min(
-            window.innerWidth - 110,
-            rect.right - 95
-        )
-    ) + "px";
-
-
-    adminEditBtn.style.top =
-    Math.max(
-        8,
-        rect.top - 42
-    ) + "px";
-
-
-    adminEditBtn.classList.add(
-        "show"
-    );
-
-
-    adminEditBtn.onclick =
-    function(e){
-
-        e.stopPropagation();
-
-
-        const oldValue =
-        el.innerText.trim();
-
-
-        const newValue =
-        prompt(
-            "Edit this text:",
-            oldValue
-        );
-
-
-        if(
-            newValue !== null
-        ){
-
-            el.innerText =
-            newValue;
-
-        }
-
-
-        el.setAttribute(
-            "contenteditable",
-            "false"
-        );
-
-
-        adminCurrentTarget =
-        null;
-
-
-        adminEditBtn.classList.remove(
-            "show"
-        );
-
-    };
-
-}
-
-
-/* =========================================================
-   IMAGE EDIT BUTTON
-========================================================= */
-
-function showImageEditButton(img){
-
-    if(!adminImageBtn)
-        return;
-
-
-    const rect =
-    img.getBoundingClientRect();
-
-
-    adminImageBtn.style.left =
-    Math.max(
-        8,
-        Math.min(
-            window.innerWidth - 135,
-            rect.right - 125
-        )
-    ) + "px";
-
-
-    adminImageBtn.style.top =
-    Math.max(
-        8,
-        rect.top + 12
-    ) + "px";
-
-
-    adminImageBtn.classList.add(
-        "show"
-    );
-
-
-    adminImageBtn.onclick =
-    function(e){
-
-        e.stopPropagation();
-
-
-        const newUrl =
-        prompt(
-            "Enter new image URL:",
-            img.getAttribute(
-                "src"
-            ) || ""
-        );
-
-
-        if(
-            newUrl !== null &&
-            newUrl.trim()
-        ){
-
-            img.src =
-            newUrl.trim();
-
-        }
-
-
-        adminImageBtn.classList.remove(
-            "show"
-        );
-
-    };
-
-}
-
-
-/* =========================================================
-   HIDE ADMIN CONTROLS
-========================================================= */
-
-function hideAdminControls(){
-
-    if(adminEditBtn){
-
-        adminEditBtn.classList.remove(
-            "show"
-        );
-
-    }
-
-
-    if(adminImageBtn){
-
-        adminImageBtn.classList.remove(
-            "show"
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   COLLECT CHANGES
-========================================================= */
-
-function collectAdminChanges(){
-
-    const data = {
-
-        texts:{},
-
-        images:{}
-
-    };
-
-
-    document
-    .querySelectorAll(
-        "[data-admin-editable='true']"
-    )
-    .forEach(el=>{
-
-        const key =
-        el.dataset.adminKey;
-
-
-        if(key){
-
-            data.texts[key] =
-            el.innerHTML;
-
-        }
-
-    });
-
-
-    document
-    .querySelectorAll(
-        "[data-admin-image='true']"
+        "img[data-admin-image]"
     )
     .forEach(img=>{
 
-        const key =
-        img.dataset.adminImageKey;
+        if(img.dataset.imageReady)
+            return;
 
+        img.dataset.imageReady="1";
 
-        if(key){
+        img.addEventListener(
+            "click",
+            function(e){
 
-            data.images[key] =
-            img.getAttribute(
-                "src"
-            ) || "";
+                if(!isAdmin)
+                    return;
 
-        }
+                e.preventDefault();
+                e.stopPropagation();
+
+                openImageEditor(this);
+
+            }
+        );
 
     });
 
+}
 
-    return data;
+
+function editTextElement(el){
+
+    if(!isAdmin)
+        return;
+
+    document
+    .querySelectorAll(
+        "[contenteditable='true']"
+    )
+    .forEach(other=>{
+
+        if(other!==el)
+            other.blur();
+
+    });
+
+    el.contentEditable="true";
+
+    el.focus();
+
+    const range=
+    document.createRange();
+
+    range.selectNodeContents(el);
+
+    range.collapse(false);
+
+    const selection=
+    window.getSelection();
+
+    selection.removeAllRanges();
+
+    selection.addRange(range);
+
+    el.onblur=()=>{
+
+        el.removeAttribute(
+            "contenteditable"
+        );
+
+    };
 
 }
 
 
 /* =========================================================
-   SAVE
+   IMAGE REPLACE / UPLOAD
 ========================================================= */
 
-function saveAdminChanges(){
+function openImageEditor(img){
+
+    openAdminModal(
+        "Replace Image",
+        `
+
+        <div class="admin-form-grid">
+
+            <div class="admin-form-full">
+
+                <label>Image URL</label>
+
+                <input
+                id="imageUrlInput"
+                value="${escapeAttr(img.src)}"
+                placeholder="https://example.com/image.jpg">
+
+            </div>
+
+            <div class="admin-form-full">
+
+                <label>Or upload from your device</label>
+
+                <input
+                id="imageFileInput"
+                type="file"
+                accept="image/*"
+                style="display:none">
+
+                <div
+                class="upload-box"
+                onclick="
+                    document
+                    .getElementById('imageFileInput')
+                    .click()
+                ">
+
+                    📤 Click here to upload image
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="admin-modal-actions">
+
+            <button
+            class="secondary"
+            onclick="closeAdminModal()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="primary"
+            onclick="applyImageChange()">
+
+                Replace Image
+
+            </button>
+
+        </div>
+
+        `
+    );
+
+    window.currentEditingImage=img;
+
+    document
+    .getElementById("imageFileInput")
+    .addEventListener(
+        "change",
+        function(){
+
+            const file=this.files[0];
+
+            if(!file)
+                return;
+
+            if(file.size>1800000){
+
+                alert(
+                    "Demo upload limit is 1.8MB per image."
+                );
+
+                this.value="";
+                return;
+
+            }
+
+            const reader=
+            new FileReader();
+
+            reader.onload=()=>{
+                document
+                .getElementById("imageUrlInput")
+                .value=reader.result;
+            };
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+function applyImageChange(){
+
+    const img=
+    window.currentEditingImage;
+
+    if(!img)
+        return;
+
+    const url=
+    document
+    .getElementById("imageUrlInput")
+    .value
+    .trim();
+
+    if(!url){
+
+        alert("Please enter an image URL or upload an image.");
+        return;
+
+    }
+
+    img.src=url;
+
+    closeAdminModal();
+
+}
+
+
+/* =========================================================
+   ADD MENU
+========================================================= */
+
+function openAddMenu(){
+
+    openAdminModal(
+        "Add New Content",
+        `
+
+        <div
+        style="
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+        ">
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="openAddService()">
+
+                + Add Service
+
+            </button>
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="openAddProject()">
+
+                + Add Project
+
+            </button>
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="openAddTestimonial()">
+
+                + Add Testimonial
+
+            </button>
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="openAddFAQ()">
+
+                + Add FAQ
+
+            </button>
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="addSection('text');closeAdminModal()">
+
+                + Add Text Section
+
+            </button>
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="addSection('image');closeAdminModal()">
+
+                + Image + Text Section
+
+            </button>
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="addSection('gallery');closeAdminModal()">
+
+                + Gallery Section
+
+            </button>
+
+            <button
+            class="admin-tool-btn"
+            style="padding:20px;background:#edf4ff;color:#1463ff"
+            onclick="addSection('cta');closeAdminModal()">
+
+                + CTA Section
+
+            </button>
+
+        </div>
+
+        `
+    );
+
+}
+
+
+/* =========================================================
+   ADD SERVICE
+========================================================= */
+
+function openAddService(){
+
+    openAdminModal(
+        "Add Service",
+        `
+
+        <div class="admin-form-grid">
+
+            <div>
+                <label>Service Name</label>
+                <input id="serviceName"
+                placeholder="SEO Services">
+            </div>
+
+            <div>
+                <label>Icon</label>
+                <input id="serviceIcon"
+                value="✦"
+                placeholder="✦">
+            </div>
+
+            <div class="admin-form-full">
+                <label>Description</label>
+                <textarea id="serviceDescription"
+                placeholder="Describe your service..."></textarea>
+            </div>
+
+        </div>
+
+        <div class="admin-modal-actions">
+
+            <button
+            class="secondary"
+            onclick="openAddMenu()">
+                Back
+            </button>
+
+            <button
+            class="primary"
+            onclick="createService()">
+                Add Service
+            </button>
+
+        </div>
+
+        `
+    );
+
+}
+
+
+function createService(){
+
+    const name=
+    document.getElementById("serviceName").value.trim();
+
+    const icon=
+    document.getElementById("serviceIcon").value.trim();
+
+    const desc=
+    document
+    .getElementById("serviceDescription")
+    .value
+    .trim();
+
+    if(!name||!desc){
+
+        alert("Service name and description required.");
+        return;
+
+    }
+
+    const grid=
+    document.getElementById("servicesGrid");
+
+    const number=
+    String(
+        grid.children.length+1
+    ).padStart(2,"0");
+
+    const card=
+    document.createElement("div");
+
+    card.className=
+    "service-card reveal admin-added";
+
+    card.innerHTML=`
+
+        <button
+        class="admin-delete"
+        onclick="deleteDynamicElement(this)">
+            ×
+        </button>
+
+        <div class="service-number">
+            ${number}
+        </div>
+
+        <div class="service-icon">
+            ${escapeHTML(icon||"✦")}
+        </div>
+
+        <h3 data-admin-editable>
+            ${escapeHTML(name)}
+        </h3>
+
+        <p data-admin-editable>
+            ${escapeHTML(desc)}
+        </p>
+
+    `;
+
+    grid.appendChild(card);
+
+    closeAdminModal();
+
+    prepareAdminEditors();
+    setupReveal();
+    setupTilt();
+
+}
+
+
+/* =========================================================
+   ADD PROJECT
+========================================================= */
+
+function openAddProject(){
+
+    openAdminModal(
+        "Add Project",
+        `
+
+        <div class="admin-form-grid">
+
+            <div>
+                <label>Project Category</label>
+                <input id="projectCategory"
+                placeholder="Business Website">
+            </div>
+
+            <div>
+                <label>Project Name</label>
+                <input id="projectName"
+                placeholder="Luxury Brand Website">
+            </div>
+
+            <div class="admin-form-full">
+
+                <label>Image URL</label>
+
+                <input
+                id="projectImage"
+                placeholder="https://example.com/image.jpg">
+
+            </div>
+
+            <div class="admin-form-full">
+
+                <label>Or Upload Image</label>
+
+                <input
+                id="projectFile"
+                type="file"
+                accept="image/*">
+
+            </div>
+
+        </div>
+
+        <div class="admin-modal-actions">
+
+            <button
+            class="secondary"
+            onclick="openAddMenu()">
+                Back
+            </button>
+
+            <button
+            class="primary"
+            onclick="createProject()">
+                Add Project
+            </button>
+
+        </div>
+
+        `
+    );
+
+}
+
+
+function createProject(){
+
+    const category=
+    document.getElementById(
+        "projectCategory"
+    ).value.trim();
+
+    const name=
+    document.getElementById(
+        "projectName"
+    ).value.trim();
+
+    const urlInput=
+    document.getElementById(
+        "projectImage"
+    );
+
+    const file=
+    document.getElementById(
+        "projectFile"
+    ).files[0];
+
+    if(!category||!name){
+
+        alert("Category and project name required.");
+        return;
+
+    }
+
+    if(file){
+
+        if(file.size>1800000){
+
+            alert("Demo upload limit is 1.8MB.");
+            return;
+
+        }
+
+        const reader=
+        new FileReader();
+
+        reader.onload=()=>{
+            appendProject(
+                category,
+                name,
+                reader.result
+            );
+        };
+
+        reader.readAsDataURL(file);
+
+    }else{
+
+        appendProject(
+            category,
+            name,
+            urlInput.value.trim()||
+            "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=90"
+        );
+
+    }
+
+}
+
+
+function appendProject(
+    category,
+    name,
+    image
+){
+
+    const grid=
+    document.getElementById(
+        "portfolioGrid"
+    );
+
+    const project=
+    document.createElement("div");
+
+    project.className=
+    "project reveal admin-added";
+
+    project.innerHTML=`
+
+        <button
+        class="admin-delete"
+        onclick="deleteDynamicElement(this)">
+            ×
+        </button>
+
+        <img
+        data-admin-image
+        src="${escapeAttr(image)}"
+        alt="${escapeAttr(name)}">
+
+        <div class="project-info">
+
+            <small data-admin-editable>
+                ${escapeHTML(category)}
+            </small>
+
+            <h3 data-admin-editable>
+                ${escapeHTML(name)}
+            </h3>
+
+        </div>
+
+    `;
+
+    grid.appendChild(project);
+
+    closeAdminModal();
+
+    prepareAdminEditors();
+    setupReveal();
+    setupTilt();
+
+}
+
+
+/* =========================================================
+   ADD TESTIMONIAL
+========================================================= */
+
+function openAddTestimonial(){
+
+    openAdminModal(
+        "Add Testimonial",
+        `
+
+        <div class="admin-form-grid">
+
+            <div class="admin-form-full">
+
+                <label>Testimonial</label>
+
+                <textarea
+                id="testimonialText"
+                placeholder="Amazing service..."></textarea>
+
+            </div>
+
+            <div class="admin-form-full">
+
+                <label>Client Name</label>
+
+                <input
+                id="testimonialAuthor"
+                placeholder="— Client Name">
+
+            </div>
+
+        </div>
+
+        <div class="admin-modal-actions">
+
+            <button
+            class="secondary"
+            onclick="openAddMenu()">
+                Back
+            </button>
+
+            <button
+            class="primary"
+            onclick="createTestimonial()">
+                Add Testimonial
+            </button>
+
+        </div>
+
+        `
+    );
+
+}
+
+
+function createTestimonial(){
+
+    const text=
+    document.getElementById(
+        "testimonialText"
+    ).value.trim();
+
+    const author=
+    document.getElementById(
+        "testimonialAuthor"
+    ).value.trim();
+
+    if(!text||!author){
+
+        alert("Testimonial and client name required.");
+        return;
+
+    }
+
+    const section=
+    document.createElement("section");
+
+    section.className=
+    "testimonials section-space admin-added";
+
+    section.innerHTML=`
+
+        <button
+        class="admin-delete"
+        onclick="deleteDynamicElement(this)">
+            ×
+        </button>
+
+        <div class="container">
+
+            <div class="testimonial">
+
+                <div
+                class="quote"
+                data-admin-editable>
+
+                    “${escapeHTML(text)}”
+
+                </div>
+
+                <div
+                class="testimonial-author"
+                data-admin-editable>
+
+                    — ${escapeHTML(author)}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+    document
+    .getElementById("dynamicSections")
+    .appendChild(section);
+
+    closeAdminModal();
+
+    prepareAdminEditors();
+
+}
+
+
+/* =========================================================
+   ADD FAQ
+========================================================= */
+
+function openAddFAQ(){
+
+    openAdminModal(
+        "Add FAQ",
+        `
+
+        <div class="admin-form-grid">
+
+            <div class="admin-form-full">
+
+                <label>Question</label>
+
+                <input
+                id="faqQuestion"
+                placeholder="What services do you offer?">
+
+            </div>
+
+            <div class="admin-form-full">
+
+                <label>Answer</label>
+
+                <textarea
+                id="faqAnswer"
+                placeholder="We offer..."></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="admin-modal-actions">
+
+            <button
+            class="secondary"
+            onclick="openAddMenu()">
+                Back
+            </button>
+
+            <button
+            class="primary"
+            onclick="createFAQ()">
+                Add FAQ
+            </button>
+
+        </div>
+
+        `
+    );
+
+}
+
+
+function createFAQ(){
+
+    const question=
+    document
+    .getElementById("faqQuestion")
+    .value.trim();
+
+    const answer=
+    document
+    .getElementById("faqAnswer")
+    .value.trim();
+
+    if(!question||!answer){
+
+        alert("Question and answer required.");
+        return;
+
+    }
+
+    const item=
+    document.createElement("div");
+
+    item.className=
+    "faq-item reveal admin-added";
+
+    item.innerHTML=`
+
+        <button
+        class="admin-delete"
+        onclick="deleteDynamicElement(this)">
+            ×
+        </button>
+
+        <button class="faq-question">
+
+            <span data-admin-editable>
+                ${escapeHTML(question)}
+            </span>
+
+            <span class="faq-plus">
+                +
+            </span>
+
+        </button>
+
+        <div class="faq-answer">
+
+            <div
+            class="faq-answer-inner"
+            data-admin-editable>
+
+                ${escapeHTML(answer)}
+
+            </div>
+
+        </div>
+
+    `;
+
+    document
+    .getElementById("faqWrap")
+    .appendChild(item);
+
+    closeAdminModal();
+
+    prepareAdminEditors();
+    setupFAQ();
+    setupReveal();
+
+}
+
+
+/* =========================================================
+   ADD CUSTOM SECTION
+========================================================= */
+
+function addSection(type){
+
+    const id=
+    "custom_"+Date.now();
+
+    let html="";
+
+    if(type==="text"){
+
+        html=`
+
+        <section
+        class="section-space"
+        data-custom-section="${id}">
+
+        <div class="container">
+
+            <div class="reveal">
+
+                <div
+                class="section-label"
+                data-admin-editable>
+
+                    <span></span>
+                    New Section
+
+                </div>
+
+                <h2
+                class="section-title"
+                data-admin-editable>
+
+                    New
+                    <span>Section.</span>
+
+                </h2>
+
+                <p
+                class="section-copy"
+                style="max-width:700px;margin-top:25px"
+                data-admin-editable>
+
+                    Click this text in Admin Mode
+                    to edit this new section.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        </section>
+
+        `;
+
+    }
+
+
+    if(type==="image"){
+
+        html=`
+
+        <section
+        class="about section-space"
+        data-custom-section="${id}">
+
+        <div class="container about-grid">
+
+            <div class="about-image reveal-left">
+
+                <img
+                data-admin-image
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
+                alt="New section">
+
+            </div>
+
+            <div class="about-content reveal-right">
+
+                <div
+                class="section-label"
+                data-admin-editable>
+
+                    <span></span>
+                    New Section
+
+                </div>
+
+                <h2
+                class="section-title"
+                data-admin-editable>
+
+                    Image &
+                    <span>Content.</span>
+
+                </h2>
+
+                <p
+                class="section-copy"
+                data-admin-editable>
+
+                    Add your own content here.
+                    You can replace this image and
+                    edit every text from Admin Mode.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        </section>
+
+        `;
+
+    }
+
+
+    if(type==="gallery"){
+
+        html=`
+
+        <section
+        class="portfolio section-space"
+        data-custom-section="${id}">
+
+        <div class="container">
+
+            <div class="reveal">
+
+                <div
+                class="section-label"
+                data-admin-editable>
+
+                    <span></span>
+                    Gallery
+
+                </div>
+
+                <h2
+                class="section-title"
+                data-admin-editable>
+
+                    Our
+                    <span>Gallery.</span>
+
+                </h2>
+
+            </div>
+
+            <div
+            class="portfolio-grid">
+
+                <div class="project reveal">
+
+                    <img
+                    data-admin-image
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85">
+
+                    <div class="project-info">
+
+                        <h3 data-admin-editable>
+                            Gallery Image
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div class="project reveal">
+
+                    <img
+                    data-admin-image
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=85">
+
+                    <div class="project-info">
+
+                        <h3 data-admin-editable>
+                            Gallery Image
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </section>
+
+        `;
+
+    }
+
+
+    if(type==="cta"){
+
+        html=`
+
+        <section
+        class="cta"
+        data-custom-section="${id}">
+
+        <div class="container cta-inner">
+
+            <div>
+
+                <h2 data-admin-editable>
+                    Your Next Big
+                    <br>
+                    Project.
+                </h2>
+
+                <p data-admin-editable>
+                    Add your custom CTA message here.
+                </p>
+
+            </div>
+
+            <button
+            class="primary-btn"
+            onclick="openDrawer()">
+
+                Get Started →
+
+            </button>
+
+        </div>
+
+        </section>
+
+        `;
+
+    }
+
+
+    if(!html)
+        return;
+
+
+    const wrapper=
+    document.createElement("div");
+
+    wrapper.innerHTML=html;
+
+    const section=
+    wrapper.firstElementChild;
+
+    section.classList.add(
+        "admin-added"
+    );
+
+    const deleteButton=
+    document.createElement("button");
+
+    deleteButton.className=
+    "admin-delete";
+
+    deleteButton.innerHTML="×";
+
+    deleteButton.onclick=()=>{
+        section.remove();
+        renderSectionManager();
+    };
+
+    section.appendChild(
+        deleteButton
+    );
+
+    document
+    .getElementById("dynamicSections")
+    .appendChild(section);
+
+    prepareAdminEditors();
+
+    setupReveal();
+    setupMagnetic();
+    setupTilt();
+    setupFAQ();
+
+    renderSectionManager();
+
+    section.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
+   DELETE ELEMENT
+========================================================= */
+
+function deleteDynamicElement(button){
+
+    if(!confirm(
+        "Delete this item?"
+    ))
+        return;
+
+    const parent=
+    button.closest(
+        ".admin-added"
+    );
+
+    if(parent){
+
+        parent.remove();
+
+        renderSectionManager();
+
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function openAdminModal(
+    title,
+    body
+){
+
+    document
+    .getElementById("adminModalTitle")
+    .textContent=title;
+
+    document
+    .getElementById("adminModalBody")
+    .innerHTML=body;
+
+    document
+    .getElementById("adminModal")
+    .style.display="flex";
+
+}
+
+
+function closeAdminModal(){
+
+    document
+    .getElementById("adminModal")
+    .style.display="none";
+
+    window.currentEditingImage=null;
+
+}
+
+
+/* =========================================================
+   SECTION MANAGER
+========================================================= */
+
+function toggleSectionManager(){
+
+    const manager=
+    document.getElementById(
+        "sectionManager"
+    );
+
+    manager.style.display=
+    manager.style.display==="block"
+    ?"none"
+    :"block";
+
+    renderSectionManager();
+
+}
+
+
+function renderSectionManager(){
+
+    if(!isAdmin)
+        return;
+
+    const list=
+    document.getElementById(
+        "sectionManagerList"
+    );
+
+    list.innerHTML="";
+
+    const sections=
+    [
+        ...document.querySelectorAll(
+            "body > section"
+        ),
+        ...document.querySelectorAll(
+            "#dynamicSections > section"
+        )
+    ];
+
+    sections.forEach(
+        (section,index)=>{
+
+            const name=
+            section.id||
+            section.querySelector(
+                ".section-title"
+            )?.textContent
+            ?.trim()
+            .replace(/\s+/g," ")
+            .slice(0,35)||
+            section.className
+            .split(" ")[0];
+
+            const item=
+            document.createElement(
+                "div"
+            );
+
+            item.className=
+            "manager-section-item";
+
+            item.innerHTML=`
+
+                <span class="manager-section-name">
+                    ${index+1}. ${escapeHTML(name)}
+                </span>
+
+                <button
+                title="Move Up"
+                onclick="moveSection(this,-1)">
+                    ↑
+                </button>
+
+                <button
+                title="Move Down"
+                onclick="moveSection(this,1)">
+                    ↓
+                </button>
+
+                ${
+                    section.closest("#dynamicSections")
+                    ?
+                    `
+                    <button
+                    title="Delete"
+                    onclick="deleteSectionFromManager(this)"
+                    style="color:#e53935">
+                        ×
+                    </button>
+                    `
+                    :""
+                }
+
+            `;
+
+            item.dataset.sectionIndex=
+            index;
+
+            item.dataset.targetSection=
+            "1";
+
+            item._section=section;
+
+            list.appendChild(item);
+
+        }
+    );
+
+}
+
+
+function moveSection(button,direction){
+
+    const item=
+    button.parentElement;
+
+    const section=
+    item._section;
+
+    if(!section)
+        return;
+
+    const all=
+    [
+        ...document.querySelectorAll(
+            "body > section"
+        ),
+        ...document.querySelectorAll(
+            "#dynamicSections > section"
+        )
+    ];
+
+    const index=
+    all.indexOf(section);
+
+    const targetIndex=
+    index+direction;
 
     if(
-        !adminIsLoggedIn()
+        targetIndex<0||
+        targetIndex>=all.length
     )
         return;
 
+    const target=
+    all[targetIndex];
 
-    const data =
-    collectAdminChanges();
+    if(direction<0){
+
+        target.parentNode.insertBefore(
+            section,
+            target
+        );
+
+    }else{
+
+        target.parentNode.insertBefore(
+            target,
+            section
+        );
+
+    }
+
+    renderSectionManager();
+
+}
 
 
-    localStorage.setItem(
-        ADMIN_CONTENT_KEY,
-        JSON.stringify(data)
-    );
+function deleteSectionFromManager(button){
 
+    const item=
+    button.parentElement;
 
-    alert(
-        "Changes saved successfully!"
-    );
+    const section=
+    item._section;
+
+    if(!section)
+        return;
+
+    if(
+        !confirm(
+            "Delete this added section?"
+        )
+    )
+        return;
+
+    section.remove();
+
+    renderSectionManager();
 
 }
 
 
 /* =========================================================
-   LOAD
+   SAVE TEXT + IMAGES
 ========================================================= */
 
-function loadAdminChanges(){
+function collectContent(){
 
-    const raw =
-    localStorage.getItem(
-        ADMIN_CONTENT_KEY
+    const data=[];
+
+    document
+    .querySelectorAll(
+        "[data-admin-editable]"
+    )
+    .forEach(
+        (el,index)=>{
+
+            data.push({
+                index,
+                text:el.innerHTML
+            });
+
+        }
     );
 
 
-    if(!raw)
-        return;
+    const images=[];
 
+    document
+    .querySelectorAll(
+        "img[data-admin-image]"
+    )
+    .forEach(
+        (img,index)=>{
+
+            images.push({
+                index,
+                src:img.src
+            });
+
+        }
+    );
+
+
+    return {
+        texts:data,
+        images:images
+    };
+
+}
+
+
+function saveAllChanges(){
+
+    if(!isAdmin)
+        return;
 
     try{
 
-        const data =
-        JSON.parse(raw);
+        const content=
+        collectContent();
+
+        localStorage.setItem(
+            CONTENT_KEY,
+            JSON.stringify(content)
+        );
+
+        localStorage.setItem(
+            DYNAMIC_KEY,
+            document
+            .getElementById(
+                "dynamicSections"
+            )
+            .innerHTML
+        );
+
+        alert(
+            "✓ Changes saved successfully in this browser."
+        );
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Could not save. Browser storage may be full. Large uploaded images can cause this."
+        );
+
+    }
+
+}
 
 
-        document
-        .querySelectorAll(
-            "[data-admin-editable='true']"
-        )
-        .forEach(el=>{
+/* =========================================================
+   LOAD SAVED CONTENT
+========================================================= */
 
-            const key =
-            el.dataset.adminKey;
+function loadSavedContent(){
 
+    try{
 
-            if(
-                data.texts &&
-                Object.prototype.hasOwnProperty.call(
-                    data.texts,
-                    key
-                )
-            ){
+        const raw=
+        localStorage.getItem(
+            CONTENT_KEY
+        );
 
-                el.innerHTML =
-                data.texts[key];
+        if(raw){
 
-            }
+            const data=
+            JSON.parse(raw);
 
-        });
+            const texts=
+            document
+            .querySelectorAll(
+                "[data-admin-editable]"
+            );
 
+            if(data.texts){
 
-        /* Restore counter target values */
+                data.texts.forEach(
+                    (item,index)=>{
 
-        document
-        .querySelectorAll(
-            ".stat-number"
-        )
-        .forEach(el=>{
+                        if(texts[index]){
 
-            const key =
-            el.dataset.adminKey;
+                            texts[index].innerHTML=
+                            item.text;
 
+                        }
 
-            if(
-                data.texts &&
-                data.texts[key]
-            ){
-
-                const saved =
-                el.innerText.trim();
-
-
-                const number =
-                parseInt(
-                    saved.replace(
-                        /[^0-9]/g,
-                        ""
-                    ),
-                    10
+                    }
                 );
 
+            }
 
-                if(
-                    !isNaN(number)
-                ){
 
-                    el.dataset.target =
-                    number;
+            const images=
+            document
+            .querySelectorAll(
+                "img[data-admin-image]"
+            );
 
-                }
+            if(data.images){
+
+                data.images.forEach(
+                    (item,index)=>{
+
+                        if(images[index]){
+
+                            images[index].src=
+                            item.src;
+
+                        }
+
+                    }
+                );
 
             }
 
-        });
-
-
-        document
-        .querySelectorAll(
-            "[data-admin-image='true']"
-        )
-        .forEach(img=>{
-
-            const key =
-            img.dataset.adminImageKey;
-
-
-            if(
-                data.images &&
-                data.images[key]
-            ){
-
-                img.src =
-                data.images[key];
-
-            }
-
-        });
-
+        }
 
     }catch(error){
 
         console.error(
-            "Admin content load error:",
+            "Content load error:",
             error
         );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD DYNAMIC SECTIONS
+========================================================= */
+
+function loadDynamicSections(){
+
+    const saved=
+    localStorage.getItem(
+        DYNAMIC_KEY
+    );
+
+    if(!saved)
+        return;
+
+    try{
+
+        document
+        .getElementById(
+            "dynamicSections"
+        )
+        .innerHTML=saved;
+
+        document
+        .querySelectorAll(
+            "#dynamicSections .admin-added"
+        )
+        .forEach(section=>{
+
+            let btn=
+            section.querySelector(
+                ".admin-delete"
+            );
+
+            if(!btn){
+
+                btn=
+                document.createElement(
+                    "button"
+                );
+
+                btn.className=
+                "admin-delete";
+
+                btn.textContent="×";
+
+                btn.onclick=()=>{
+                    section.remove();
+                    renderSectionManager();
+                };
+
+                section.appendChild(btn);
+
+            }
+
+        });
+
+        prepareAdminEditors();
+
+        setupReveal();
+        setupMagnetic();
+        setupTilt();
+        setupFAQ();
+
+    }catch(error){
+
+        console.error(error);
 
     }
 
@@ -5127,28 +5296,20 @@ function loadAdminChanges(){
    RESET
 ========================================================= */
 
-function resetAdminChanges(){
+function resetAllChanges(){
 
-    if(
-        !adminIsLoggedIn()
-    )
+    if(!confirm(
+        "Reset all saved admin changes and return to original website?"
+    ))
         return;
-
-
-    const yes =
-    confirm(
-        "Reset all saved demo edits and restore the original website?"
-    );
-
-
-    if(!yes)
-        return;
-
 
     localStorage.removeItem(
-        ADMIN_CONTENT_KEY
+        CONTENT_KEY
     );
 
+    localStorage.removeItem(
+        DYNAMIC_KEY
+    );
 
     location.reload();
 
@@ -5156,186 +5317,235 @@ function resetAdminChanges(){
 
 
 /* =========================================================
-   LOGIN FORM
+   HELPERS
 ========================================================= */
 
-if(adminLoginForm){
+function escapeHTML(str){
 
-    adminLoginForm.addEventListener(
-        "submit",
-        function(e){
+    return String(str)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
-            e.preventDefault();
-
-
-            const username =
-            document
-            .getElementById(
-                "adminUsername"
-            )
-            .value
-            .trim();
+}
 
 
-            const password =
-            document
-            .getElementById(
-                "adminPassword"
-            )
-            .value;
+function escapeAttr(str){
 
-
-            if(
-                username ===
-                DEMO_ADMIN_USERNAME
-                &&
-                password ===
-                DEMO_ADMIN_PASSWORD
-            ){
-
-                sessionStorage.setItem(
-                    ADMIN_AUTH_KEY,
-                    "true"
-                );
-
-
-                if(
-                    location.hash === "#admin"
-                ){
-
-                    history.replaceState(
-                        null,
-                        "",
-                        location.pathname +
-                        location.search
-                    );
-
-                }
-
-
-                enterAdminMode();
-
-            }else{
-
-                adminLoginError.textContent =
-                "Incorrect username or password.";
-
-            }
-
-        }
-    );
+    return String(str)
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
 /* =========================================================
-   OPEN ADMIN LOGIN USING #admin
+   ADMIN URL / SHORTCUT
 ========================================================= */
 
-if(
-    location.hash.toLowerCase() ===
-    "#admin"
-){
+function checkAdminAccess(){
 
-    setTimeout(
-        openAdminLogin,
-        100
-    );
+    const authenticated=
+    sessionStorage.getItem(
+        AUTH_KEY
+    )==="true";
+
+    if(authenticated){
+
+        enterAdminMode();
+
+    }
 
 }
 
 
-/* =========================================================
-   RESTORE ADMIN MODE
-========================================================= */
+/*
+    Open admin login by:
 
-if(
-    adminIsLoggedIn()
-){
+    yourwebsite.com/#admin
 
-    setTimeout(
-        enterAdminMode,
-        50
-    );
+    OR press:
+
+    CTRL + SHIFT + A
+*/
+
+function checkHash(){
+
+    if(
+        window.location.hash.toLowerCase()
+        ==="#admin"
+    ){
+
+        openAdminLogin();
+
+    }
 
 }
 
 
-/* =========================================================
-   KEYBOARD SHORTCUT
-========================================================= */
+window.addEventListener(
+"hashchange",
+checkHash
+);
+
 
 document.addEventListener(
-    "keydown",
-    function(e){
+"keydown",
+(e)=>{
 
-        if(
-            e.ctrlKey &&
-            e.shiftKey &&
-            e.key.toLowerCase() === "a"
-        ){
+    if(
+        e.ctrlKey &&
+        e.shiftKey &&
+        e.key.toLowerCase()==="a"
+    ){
 
-            e.preventDefault();
+        e.preventDefault();
+
+        if(isAdmin){
+
+            alert(
+                "You are already in Admin Mode."
+            );
+
+        }else{
+
+            openAdminLogin();
+
+        }
+
+    }
+
+});
 
 
-            if(
-                adminIsLoggedIn()
-            ){
+/* =========================================================
+   COUNTERS
+========================================================= */
 
-                document.body.classList.toggle(
-                    "admin-mode"
-                );
+function runCounters(){
+
+    document
+    .querySelectorAll(".stat-number")
+    .forEach(counter=>{
+
+        if(counter.dataset.counterDone)
+            return;
+
+        const target=
+        Number(counter.dataset.target);
+
+        if(!target)
+            return;
+
+        counter.dataset.counterDone="1";
+
+        let current=0;
+
+        const duration=1300;
+
+        const start=
+        performance.now();
+
+        function animate(time){
+
+            const progress=
+            Math.min(
+                (time-start)/duration,
+                1
+            );
+
+            current=
+            Math.floor(
+                progress*target
+            );
+
+            if(target===100){
+
+                counter.textContent=
+                current+"%";
+
+            }else if(target===24){
+
+                counter.textContent=
+                current+"/7";
 
             }else{
 
-                openAdminLogin();
+                counter.textContent=
+                current+"+";
+
+            }
+
+            if(progress<1){
+
+                requestAnimationFrame(
+                    animate
+                );
 
             }
 
         }
 
+        requestAnimationFrame(
+            animate
+        );
 
-        if(
-            e.key === "Escape" &&
-            adminLoginScreen.classList.contains(
-                "show"
-            )
-        ){
+    });
 
-            closeAdminLogin();
+}
+
+
+const counterObserver=
+new IntersectionObserver(
+(entries)=>{
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            runCounters();
+
+            counterObserver.unobserve(
+                entry.target
+            );
 
         }
 
-    }
-);
+    });
+},
+{
+    threshold:.4
+});
+
+
+document
+.querySelectorAll(".stat-number")
+.forEach(counter=>{
+    counterObserver.observe(counter);
+});
 
 
 /* =========================================================
-   HIDE EDIT CONTROLS ON SCROLL / RESIZE
+   START
 ========================================================= */
 
-window.addEventListener(
-    "scroll",
-    function(){
-
-        hideAdminControls();
-
-    }
-);
+checkAdminAccess();
+checkHash();
 
 
-window.addEventListener(
-    "resize",
-    function(){
+/*
+   Admin login can also be opened
+   by directly typing:
 
-        hideAdminControls();
+   #admin
 
-    }
-);
+   Example:
 
+   index.html#admin
+*/
 
 </script>
-
 
 </body>
 </html>
