@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>Marwar Infotech — Digital Experiences</title>
+<title>Marwar Infotech — Digital Experiences & Web Development Company</title>
 
 <meta name="description"
-content="Marwar Infotech creates premium websites, digital experiences and modern business solutions.">
+content="Marwar Infotech creates premium websites, digital experiences and modern business solutions. Founded by Pratap Singh Rathore and Co-founded by Harshvardhan Singh Rathore.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@ content="Marwar Infotech creates premium websites, digital experiences and moder
 <style>
 
 /* =========================================================
-   ORIGINAL WEBSITE DESIGN
+   ORIGINAL WEBSITE DESIGN (PRESERVED)
 ========================================================= */
 
 *{
@@ -219,7 +219,7 @@ section{
     transition:transform .25s cubic-bezier(.2,.8,.2,1);
 }
 
-/* HERO */
+/* HERO WITH BACKGROUND SLIDER */
 
 .hero{
     min-height:100vh;
@@ -227,13 +227,38 @@ section{
     align-items:center;
     padding:150px 0 80px;
     overflow:hidden;
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(65,135,255,.16),
-            transparent 35%
-        ),
-        linear-gradient(180deg,#fff,#f4f8ff);
+    position:relative;
+}
+
+.hero-bg-slider{
+    position:absolute;
+    inset:0;
+    z-index:0;
+}
+
+.hero-slide{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active{
+    opacity:1;
+}
+
+.hero-slide::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg, rgba(255,255,255,0.92), rgba(244,248,255,0.88));
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
 }
 
 .hero-grid{
@@ -457,7 +482,7 @@ section{
     to{transform:translateX(-50%)}
 }
 
-/* SERVICES */
+/* SERVICES WITH IMAGES */
 
 .services{
     background:#fff;
@@ -467,30 +492,38 @@ section{
     margin-top:65px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    gap:25px;
 }
 
 .service-card{
     background:#f8faff;
     border:1px solid var(--border);
     border-radius:var(--radius);
-    padding:35px;
-    min-height:300px;
+    overflow:hidden;
     transition:transform .45s,box-shadow .45s,background .45s;
+    position:relative;
+}
+
+.service-card-img{
+    height:180px;
+    width:100%;
     position:relative;
     overflow:hidden;
 }
 
-.service-card::before{
-    content:"";
-    position:absolute;
-    width:150px;
-    height:150px;
-    background:rgba(20,99,255,.08);
-    border-radius:50%;
-    top:-70px;
-    right:-70px;
-    transition:.5s;
+.service-card-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s;
+}
+
+.service-card:hover .service-card-img img{
+    transform:scale(1.1);
+}
+
+.service-card-content{
+    padding:30px;
 }
 
 .service-card:hover{
@@ -499,33 +532,17 @@ section{
     box-shadow:var(--shadow);
 }
 
-.service-card:hover::before{
-    transform:scale(2);
-}
-
 .service-number{
     font-size:12px;
     color:var(--blue);
     font-weight:800;
-    margin-bottom:60px;
-}
-
-.service-icon{
-    width:52px;
-    height:52px;
-    border-radius:16px;
-    background:#eaf2ff;
-    display:grid;
-    place-items:center;
-    color:var(--blue);
-    font-size:20px;
-    margin-bottom:22px;
+    margin-bottom:15px;
 }
 
 .service-card h3{
     font-family:"Manrope";
-    font-size:23px;
-    margin-bottom:12px;
+    font-size:22px;
+    margin-bottom:10px;
 }
 
 .service-card p{
@@ -570,10 +587,76 @@ section{
     font-size:14px;
 }
 
+/* FOUNDERS SECTION */
+
+.founders{
+    background:#fff;
+    padding:100px 0;
+}
+
+.founders-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:40px;
+    margin-top:60px;
+}
+
+.founder-card{
+    background:#f8faff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:40px;
+    display:flex;
+    gap:30px;
+    align-items:center;
+    transition:.4s;
+}
+
+.founder-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow);
+    background:#fff;
+}
+
+.founder-img{
+    width:140px;
+    height:140px;
+    border-radius:24px;
+    overflow:hidden;
+    flex-shrink:0;
+    box-shadow:0 15px 35px rgba(20,99,255,0.15);
+}
+
+.founder-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.founder-info small{
+    color:var(--blue);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:11px;
+}
+
+.founder-info h3{
+    font-family:"Manrope";
+    font-size:24px;
+    margin:6px 0 12px;
+}
+
+.founder-info p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+}
+
 /* ABOUT */
 
 .about{
-    background:#fff;
+    background:#f5f8fd;
 }
 
 .about-grid{
@@ -625,10 +708,10 @@ section{
     font-size:12px;
 }
 
-/* PORTFOLIO */
+/* PORTFOLIO WITH SHOWCASE MODAL */
 
 .portfolio{
-    background:#f5f8fd;
+    background:#fff;
 }
 
 .portfolio-grid{
@@ -685,13 +768,67 @@ section{
     margin-top:5px;
 }
 
+/* SHOWCASE DETAILS MODAL */
+
+.showcase-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(5,12,25,0.8);
+    backdrop-filter:blur(10px);
+    z-index:20000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.showcase-modal{
+    width:min(900px, 100%);
+    background:#fff;
+    border-radius:30px;
+    padding:40px;
+    max-height:90vh;
+    overflow-y:auto;
+    position:relative;
+    box-shadow:0 40px 100px rgba(0,0,0,0.4);
+}
+
+.showcase-close{
+    position:absolute;
+    top:25px;
+    right:25px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#f0f3f8;
+    border:0;
+    font-size:20px;
+    cursor:pointer;
+    display:grid;
+    place-items:center;
+}
+
+.showcase-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.showcase-gallery img{
+    height:220px;
+    width:100%;
+    object-fit:cover;
+    border-radius:18px;
+}
+
 /* STATEMENT */
 
 .statement{
     padding:160px 0;
     background:
         radial-gradient(circle at 50% 50%,rgba(20,99,255,.12),transparent 50%),
-        #fff;
+        #f5f8fd;
     text-align:center;
 }
 
@@ -752,34 +889,49 @@ section{
     line-height:1.7;
 }
 
-/* TESTIMONIAL */
+/* CLIENT REVIEWS / TESTIMONIALS */
 
 .testimonials{
     background:#f5f8fd;
+    padding:120px 0;
 }
 
-.testimonial{
-    max-width:850px;
-    margin:70px auto 0;
-    text-align:center;
+.reviews-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:60px;
 }
 
-.quote{
-    font-family:"Manrope";
-    font-size:clamp(28px,4vw,48px);
-    line-height:1.15;
-    letter-spacing:-2px;
-    font-weight:700;
+.review-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:35px;
+    box-shadow:var(--shadow);
 }
 
-.quote span{
-    color:var(--blue);
+.review-stars{
+    color:#ffb800;
+    font-size:16px;
+    margin-bottom:15px;
 }
 
-.testimonial-author{
-    margin-top:30px;
+.review-card p{
     color:var(--muted);
-    font-size:14px;
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.review-author h4{
+    font-family:"Manrope";
+    font-size:16px;
+}
+
+.review-author span{
+    font-size:12px;
+    color:var(--muted);
 }
 
 /* FAQ */
@@ -888,7 +1040,7 @@ section{
     flex-shrink:0;
 }
 
-/* FOOTER */
+/* FOOTER WITH NORMAL ICONS */
 
 footer{
     background:#080d17;
@@ -923,7 +1075,9 @@ footer{
 }
 
 .footer-col a{
-    display:block;
+    display:flex;
+    align-items:center;
+    gap:8px;
     color:#7d899f;
     font-size:13px;
     margin-bottom:12px;
@@ -946,26 +1100,39 @@ footer{
     color:#9ebcff;
 }
 
-/* WHATSAPP */
+/* FLOATING BUTTONS (WHATSAPP & CALL) WITH NORMAL ICONS */
 
-.legacy-whatsapp{
+.floating-buttons{
     position:fixed;
     right:25px;
     bottom:25px;
-    width:58px;
-    height:58px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    z-index:1000;
+}
+
+.float-btn{
+    width:55px;
+    height:55px;
     border-radius:50%;
-    background:#18bf65;
     color:white;
     display:grid;
     place-items:center;
-    font-size:25px;
-    z-index:1000;
-    box-shadow:0 15px 35px rgba(24,191,101,.3);
+    font-size:22px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
     transition:.3s;
 }
 
-.legacy-whatsapp:hover{
+.float-btn.whatsapp{
+    background:#25d366;
+}
+
+.float-btn.call{
+    background:#1463ff;
+}
+
+.float-btn:hover{
     transform:scale(1.1);
 }
 
@@ -1113,724 +1280,42 @@ footer{
     filter:blur(0);
 }
 
-/* =========================================================
-   ADMIN SYSTEM
-   DOES NOT CHANGE PUBLIC DESIGN
-========================================================= */
-
-#adminLoginScreen{
-    position:fixed;
-    inset:0;
-    background:rgba(5,12,25,.88);
-    backdrop-filter:blur(18px);
-    z-index:99999;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.admin-login-box{
-    width:min(430px,100%);
-    background:#fff;
-    border-radius:28px;
-    padding:38px;
-    box-shadow:0 40px 120px rgba(0,0,0,.35);
-}
-
-.admin-login-logo{
-    width:55px;
-    height:55px;
-    border-radius:16px;
-    background:linear-gradient(135deg,#1463ff,#70a2ff);
-    color:#fff;
-    display:grid;
-    place-items:center;
-    font-weight:800;
-    font-size:20px;
-    margin-bottom:22px;
-}
-
-.admin-login-box h2{
-    font-family:Manrope;
-    font-size:32px;
-    letter-spacing:-1px;
-}
-
-.admin-login-box p{
-    color:#657086;
-    margin:10px 0 25px;
-    line-height:1.6;
-}
-
-.admin-field{
-    margin-bottom:15px;
-}
-
-.admin-field label{
-    display:block;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:7px;
-    color:#39445a;
-}
-
-.admin-field input,
-.admin-modal input,
-.admin-modal textarea,
-.admin-modal select{
-    width:100%;
-    border:1px solid #dce3ef;
-    background:#f8faff;
-    padding:13px 15px;
-    border-radius:13px;
-    outline:none;
-    font-family:inherit;
-}
-
-.admin-field input:focus,
-.admin-modal input:focus,
-.admin-modal textarea:focus,
-.admin-modal select:focus{
-    border-color:#1463ff;
-    box-shadow:0 0 0 4px rgba(20,99,255,.08);
-}
-
-.admin-login-actions{
-    display:flex;
-    gap:10px;
-    margin-top:20px;
-}
-
-.admin-login-actions button{
-    flex:1;
-    padding:14px;
-    border:0;
-    border-radius:13px;
-    cursor:pointer;
-    font-weight:700;
-}
-
-.admin-login-actions .login-btn{
-    background:#1463ff;
-    color:#fff;
-}
-
-.admin-login-actions .cancel-btn{
-    background:#eef2f8;
-    color:#0b1220;
-}
-
-.admin-error{
-    color:#e53935;
-    font-size:12px;
-    font-weight:700;
-    margin-top:10px;
-    display:none;
-}
-
-/* ADMIN TOP BAR */
-
-#adminToolbar{
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    background:#0b1220;
-    color:#fff;
-    z-index:9998;
-    display:none;
-    padding:10px 14px;
-    box-shadow:0 8px 30px rgba(0,0,0,.2);
-}
-
-.admin-toolbar-inner{
-    max-width:1250px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-}
-
-.admin-toolbar-title{
-    font-weight:800;
-    font-size:13px;
-}
-
-.admin-toolbar-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-}
-
-.admin-tool-btn{
-    border:0;
-    border-radius:9px;
-    padding:9px 12px;
-    cursor:pointer;
-    background:#1b2b4b;
-    color:#fff;
-    font-size:12px;
-    font-weight:700;
-}
-
-.admin-tool-btn:hover{
-    background:#1463ff;
-}
-
-.admin-tool-btn.save{
-    background:#18bf65;
-}
-
-.admin-tool-btn.logout{
-    background:#e53935;
-}
-
-/* ADMIN HIGHLIGHT */
-
-body.admin-mode [data-admin-editable]{
-    outline:1px dashed rgba(20,99,255,.25);
-    outline-offset:4px;
-    cursor:text;
-}
-
-body.admin-mode [data-admin-editable]:hover{
-    outline:2px dashed #1463ff;
-    background:rgba(20,99,255,.04);
-}
-
-body.admin-mode img[data-admin-image]{
-    cursor:pointer;
-    outline:2px dashed rgba(20,99,255,.35);
-    outline-offset:4px;
-}
-
-.admin-edit-tip{
-    position:fixed;
-    bottom:22px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:9997;
-    background:#0b1220;
-    color:#fff;
-    padding:10px 17px;
-    border-radius:50px;
-    font-size:12px;
-    pointer-events:none;
-    display:none;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
-
-body.admin-mode .admin-edit-tip{
-    display:block;
-}
-
-/* ADMIN MODAL */
-
-#adminModal{
-    position:fixed;
-    inset:0;
-    z-index:100000;
-    background:rgba(3,10,22,.72);
-    backdrop-filter:blur(12px);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.admin-modal{
-    width:min(720px,100%);
-    max-height:90vh;
-    overflow:auto;
-    background:#fff;
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 40px 120px rgba(0,0,0,.4);
-}
-
-.admin-modal-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:25px;
-}
-
-.admin-modal-head h3{
-    font-family:Manrope;
-    font-size:25px;
-}
-
-.admin-modal-close{
-    width:38px;
-    height:38px;
-    border:0;
-    border-radius:50%;
-    background:#eef2f8;
-    cursor:pointer;
-    font-size:20px;
-}
-
-.admin-form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.admin-form-full{
-    grid-column:1/-1;
-}
-
-.admin-modal label{
-    display:block;
-    font-size:11px;
-    font-weight:800;
-    color:#536078;
-    margin-bottom:7px;
-    text-transform:uppercase;
-    letter-spacing:.6px;
-}
-
-.admin-modal textarea{
-    min-height:130px;
-    resize:vertical;
-}
-
-.admin-modal-actions{
-    display:flex;
-    justify-content:flex-end;
-    gap:10px;
-    margin-top:20px;
-}
-
-.admin-modal-actions button{
-    padding:12px 18px;
-    border:0;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:700;
-}
-
-.admin-modal-actions .primary{
-    background:#1463ff;
-    color:#fff;
-}
-
-.admin-modal-actions .secondary{
-    background:#eef2f8;
-}
-
-/* SECTION MANAGER */
-
-#sectionManager{
-    display:none;
-    position:fixed;
-    top:65px;
-    right:15px;
-    width:min(390px,calc(100% - 30px));
-    max-height:calc(100vh - 90px);
-    overflow:auto;
-    background:#fff;
-    z-index:9996;
-    border-radius:20px;
-    box-shadow:0 25px 80px rgba(0,0,0,.22);
-    padding:20px;
-}
-
-.section-manager-title{
-    font-family:Manrope;
-    font-size:18px;
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-.section-manager-actions{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    margin-bottom:15px;
-}
-
-.section-manager-actions button{
-    border:0;
-    padding:10px;
-    border-radius:10px;
-    cursor:pointer;
-    background:#edf4ff;
-    color:#1463ff;
-    font-weight:700;
-    font-size:11px;
-}
-
-.manager-section-item{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    padding:9px;
-    border:1px solid #e4e9f2;
-    border-radius:11px;
-    margin-bottom:7px;
-    font-size:12px;
-}
-
-.manager-section-name{
-    flex:1;
-    font-weight:700;
-}
-
-.manager-section-item button{
-    border:0;
-    width:27px;
-    height:27px;
-    border-radius:7px;
-    cursor:pointer;
-    background:#f0f3f8;
-}
-
-/* ADD CARD DELETE */
-
-body.admin-mode .admin-added{
-    position:relative;
-}
-
-.admin-delete{
-    position:absolute;
-    right:12px;
-    top:12px;
-    width:32px;
-    height:32px;
-    border:0;
-    border-radius:50%;
-    background:#e53935;
-    color:#fff;
-    cursor:pointer;
-    z-index:20;
-    display:none;
-}
-
-body.admin-mode .admin-added .admin-delete{
-    display:block;
-}
-
-/* UPLOAD BOX */
-
-.upload-box{
-    border:2px dashed #d6deeb;
-    border-radius:15px;
-    padding:18px;
-    text-align:center;
-    color:#69758b;
-    font-size:12px;
-    cursor:pointer;
-    margin-top:8px;
-}
-
-.upload-box:hover{
-    border-color:#1463ff;
-    color:#1463ff;
-}
-
 /* RESPONSIVE */
 
 @media(max-width:900px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero-grid,
-    .about-grid{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
-
-    .hero{
-        padding-top:130px;
-    }
-
-    .hero h1{
-        font-size:60px;
-    }
-
-    .hero-visual{
-        height:450px;
-    }
-
-    .hero-image-wrap{
-        height:390px;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .process-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .cta-inner{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .footer-top{
-        flex-direction:column;
-    }
-
-    .footer-links{
-        gap:50px;
-    }
+    .nav-links{display:none;}
+    .hero-grid, .about-grid, .founders-grid, .reviews-grid{grid-template-columns:1fr; gap:50px;}
+    .hero{padding-top:130px;}
+    .hero h1{font-size:60px;}
+    .hero-visual{height:450px;}
+    .hero-image-wrap{height:390px;}
+    .services-grid, .stats-grid, .process-grid{grid-template-columns:1fr 1fr;}
+    .cta-inner{flex-direction:column; align-items:flex-start;}
+    .footer-top{flex-direction:column;}
+    .footer-links{gap:50px;}
 }
 
 @media(max-width:600px){
-
-    .container{
-        width:min(100% - 28px,1180px);
-    }
-
-    .section-space{
-        padding:90px 0;
-    }
-
-    .hero h1{
-        font-size:50px;
-        letter-spacing:-3px;
-    }
-
-    .hero-text{
-        font-size:16px;
-    }
-
-    .hero-actions{
-        flex-direction:column;
-    }
-
-    .primary-btn,
-    .secondary-btn{
-        justify-content:center;
-    }
-
-    .hero-visual{
-        height:400px;
-    }
-
-    .hero-image-wrap{
-        width:100%;
-        height:350px;
-        border-radius:28px;
-    }
-
-    .floating-card{
-        transform:scale(.85);
-    }
-
-    .card-top{
-        left:-15px;
-    }
-
-    .card-bottom{
-        right:-15px;
-    }
-
-    .services-grid,
-    .portfolio-grid,
-    .process-grid{
-        grid-template-columns:1fr;
-    }
-
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .stat{
-        border-right:0;
-        border-bottom:1px solid var(--border);
-    }
-
-    .about-image{
-        height:400px;
-    }
-
-    .project{
-        height:350px;
-    }
-
-    .statement{
-        padding:100px 0;
-    }
-
-    .statement h2{
-        letter-spacing:-3px;
-    }
-
-    .footer-links{
-        flex-direction:column;
-        gap:30px;
-    }
-
-    .footer-bottom{
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .drawer{
-        padding:25px;
-    }
-
-    .admin-form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .admin-form-full{
-        grid-column:auto;
-    }
-
-    #adminToolbar{
-        overflow:auto;
-    }
-
-    .admin-toolbar-inner{
-        align-items:flex-start;
-        flex-direction:column;
-    }
-}
-
-
-/* =========================================================
-   PROFESSIONAL POLISH — KEEPS ORIGINAL THEME / MOTION
-========================================================= */
-.logo-mark{
-  position:relative;
-  overflow:hidden;
-}
-.logo-mark::after{
-  content:"";
-  position:absolute;
-  inset:-50%;
-  background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.55),transparent 65%);
-  transform:translateX(-60%) rotate(12deg);
-  animation:logoShine 4.5s ease-in-out infinite;
-}
-@keyframes logoShine{
-  0%,55%{transform:translateX(-70%) rotate(12deg)}
-  75%,100%{transform:translateX(70%) rotate(12deg)}
-}
-
-.hero-slider{position:relative;background:#dfe9fb;}
-.hero-slide{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center;
-  opacity:0;transform:scale(1.04);
-  transition:opacity 1.1s ease,transform 5.5s ease;
-}
-.hero-slide.active{opacity:1;transform:scale(1);}
-.hero-slider-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(120deg,rgba(5,18,45,.10),rgba(20,99,255,.08));
-  z-index:2;pointer-events:none;
-}
-.hero-slider-dots{
-  position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
-  display:flex;gap:7px;z-index:4;
-}
-.hero-dot{
-  width:8px;height:8px;border:0;border-radius:50%;
-  background:rgba(255,255,255,.55);padding:0;cursor:pointer;
-  transition:.3s;
-}
-.hero-dot.active{width:24px;border-radius:20px;background:#fff;}
-
-.service-card{padding:0;min-height:330px;}
-.service-card-image{
-  width:100%;height:150px;object-fit:cover;
-  border-radius:var(--radius) var(--radius) 0 0;
-  filter:saturate(1.05);
-}
-.service-card-content{padding:30px 35px 35px;}
-.service-card .service-number{margin-bottom:25px;}
-
-.project-clickable{cursor:pointer;}
-.project-clickable:focus{outline:3px solid rgba(20,99,255,.25);outline-offset:4px;}
-
-.client-reviews{background:#fff;}
-.reviews-grid-premium{
-  margin-top:60px;display:grid;
-  grid-template-columns:repeat(4,1fr);gap:18px;
-}
-.review-premium{
-  padding:30px;border:1px solid var(--border);border-radius:24px;
-  background:#f8faff;box-shadow:0 18px 55px rgba(22,55,110,.07);
-}
-.review-premium .stars{color:#1463ff;letter-spacing:3px;margin-bottom:18px;}
-.review-premium p{color:var(--muted);line-height:1.75;font-size:14px;min-height:105px;}
-.review-premium strong{display:block;margin-top:22px;font-family:Manrope;}
-.review-premium small{display:block;color:#7b8495;margin-top:4px;}
-
-.floating-contact{
-  position:fixed;right:25px;bottom:25px;z-index:1100;
-  display:flex;flex-direction:column;gap:12px;
-}
-.floating-contact-btn{
-  width:56px;height:56px;border-radius:50%;
-  display:grid;place-items:center;color:#fff;
-  font-size:22px;text-decoration:none;
-  box-shadow:0 15px 35px rgba(20,50,100,.22);
-}
-.floating-contact-btn.whatsapp{background:#18bf65;}
-.floating-contact-btn.call{background:#1463ff;}
-.floating-contact-btn:hover{transform:scale(1.08);}
-
-.footer-socials{display:flex;gap:10px;margin-top:25px;}
-.footer-socials a{
-  width:40px;height:40px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.13);
-  display:grid;place-items:center;color:#fff;
-  transition:.3s;
-}
-.footer-socials a:hover{background:#1463ff;border-color:#1463ff;transform:translateY(-3px);}
-
-.project-detail-modal{
-  position:fixed;inset:0;z-index:10000;
-  background:rgba(3,10,22,.78);backdrop-filter:blur(12px);
-  display:none;align-items:center;justify-content:center;padding:20px;
-}
-.project-detail-modal.active{display:flex;}
-.project-detail-box{
-  width:min(1050px,100%);max-height:90vh;overflow:auto;
-  background:#fff;border-radius:28px;padding:28px;
-  box-shadow:0 40px 120px rgba(0,0,0,.35);
-}
-.project-detail-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;}
-.project-detail-head h3{font:800 34px Manrope;letter-spacing:-1.5px;}
-.project-detail-close{
-  width:42px;height:42px;border-radius:50%;border:1px solid var(--border);
-  background:#fff;font-size:22px;cursor:pointer;
-}
-.project-detail-description{color:var(--muted);line-height:1.8;margin:10px 0 24px;}
-.project-detail-gallery{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-}
-.project-detail-gallery img{
-  width:100%;height:220px;object-fit:cover;border-radius:18px;
-}
-
-@media(max-width:900px){
-  .reviews-grid-premium{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:600px){
-  .reviews-grid-premium{grid-template-columns:1fr;}
-  .project-detail-gallery{grid-template-columns:1fr;}
-  .project-detail-gallery img{height:230px;}
-  .floating-contact{right:15px;bottom:15px;}
+    .container{width:min(100% - 28px,1180px);}
+    .section-space{padding:90px 0;}
+    .hero h1{font-size:50px; letter-spacing:-3px;}
+    .hero-text{font-size:16px;}
+    .hero-actions{flex-direction:column;}
+    .primary-btn, .secondary-btn{justify-content:center;}
+    .hero-visual{height:400px;}
+    .hero-image-wrap{width:100%; height:350px; border-radius:28px;}
+    .services-grid, .portfolio-grid, .process-grid, .stats-grid{grid-template-columns:1fr;}
+    .stat{border-right:0; border-bottom:1px solid var(--border);}
+    .about-image{height:400px;}
+    .project{height:350px;}
+    .statement{padding:100px 0;}
+    .statement h2{letter-spacing:-3px;}
+    .footer-links{flex-direction:column; gap:30px;}
+    .footer-bottom{flex-direction:column; gap:10px;}
+    .drawer{padding:25px;}
 }
 
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -1838,330 +1323,85 @@ body.admin-mode .admin-added .admin-delete{
 <div class="cursor-glow"></div>
 
 <!-- ======================================================
-     ADMIN LOGIN
-====================================================== -->
-
-<div id="adminLoginScreen">
-
-    <div class="admin-login-box">
-
-        <div class="admin-login-logo">M</div>
-
-        <h2>Admin Login</h2>
-
-        <p>
-            Login to manage website content, images,
-            services, projects, testimonials, FAQs and sections.
-        </p>
-
-        <div class="admin-field">
-            <label>Username</label>
-            <input id="adminUsername" type="text" placeholder="Enter username">
-        </div>
-
-        <div class="admin-field">
-            <label>Password</label>
-            <input id="adminPassword" type="password" placeholder="Enter password">
-        </div>
-
-        <div id="adminError" class="admin-error">
-            Invalid username or password.
-        </div>
-
-        <div class="admin-login-actions">
-
-            <button class="cancel-btn" onclick="closeAdminLogin()">
-                Cancel
-            </button>
-
-            <button class="login-btn" onclick="loginAdmin()">
-                Login
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ======================================================
-     ADMIN TOOLBAR
-====================================================== -->
-
-<div id="adminToolbar">
-
-    <div class="admin-toolbar-inner">
-
-        <div class="admin-toolbar-title">
-            ⚡ ADMIN MODE
-        </div>
-
-        <div class="admin-toolbar-actions">
-
-            <button class="admin-tool-btn"
-            onclick="openAddMenu()">
-                + Add
-            </button>
-
-            <button class="admin-tool-btn"
-            onclick="toggleSectionManager()">
-                ☰ Sections
-            </button>
-
-            <button class="admin-tool-btn save"
-            onclick="saveAllChanges()">
-                ✓ Save
-            </button>
-
-            <button class="admin-tool-btn"
-            onclick="resetAllChanges()">
-                ↺ Reset
-            </button>
-
-            <button class="admin-tool-btn logout"
-            onclick="logoutAdmin()">
-                Logout
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="admin-edit-tip">
-    Admin Mode: Text पर click करके edit करें • Image पर click करके replace करें
-</div>
-
-
-<!-- ======================================================
-     SECTION MANAGER
-====================================================== -->
-
-<div id="sectionManager">
-
-    <div class="section-manager-title">
-        Section Manager
-    </div>
-
-    <div class="section-manager-actions">
-
-        <button onclick="addSection('text')">
-            + Text Section
-        </button>
-
-        <button onclick="addSection('image')">
-            + Image + Text
-        </button>
-
-        <button onclick="addSection('gallery')">
-            + Gallery
-        </button>
-
-        <button onclick="addSection('cta')">
-            + CTA Section
-        </button>
-
-    </div>
-
-    <div id="sectionManagerList"></div>
-
-</div>
-
-
-<!-- ======================================================
-     ADMIN MODAL
-====================================================== -->
-
-<div id="adminModal">
-
-    <div class="admin-modal">
-
-        <div class="admin-modal-head">
-
-            <h3 id="adminModalTitle">
-                Add Content
-            </h3>
-
-            <button
-            class="admin-modal-close"
-            onclick="closeAdminModal()">
-                ×
-            </button>
-
-        </div>
-
-        <div id="adminModalBody"></div>
-
-    </div>
-
-</div>
-
-
-<!-- ======================================================
      NAVBAR
 ====================================================== -->
 
 <header class="navbar">
-
 <div class="container nav-inner">
-
 <a href="#" class="logo">
-
-    <div class="logo-mark">
-        M
-    </div>
-
-    <span data-admin-editable>
-        Marwar Infotech
-    </span>
-
+    <div class="logo-mark">M</div>
+    <span data-admin-editable>Marwar Infotech</span>
 </a>
 
 <nav class="nav-links">
-
 <a href="#services">Services</a>
 <a href="#about">About</a>
+<a href="#founders">Founders</a>
 <a href="#work">Work</a>
 <a href="#process">Process</a>
+<a href="#reviews">Reviews</a>
 <a href="#faq">FAQ</a>
-
 </nav>
 
-<button
-class="nav-btn magnetic"
-onclick="openDrawer()">
-
-    Let's Talk
-
-</button>
-
+<button class="nav-btn magnetic" onclick="openDrawer()">Let's Talk</button>
 </div>
-
 </header>
 
 
 <!-- ======================================================
-     HERO
+     HERO WITH AUTO-SLIDING BACKGROUND IMAGES
 ====================================================== -->
 
 <section class="hero">
+<div class="hero-bg-slider" id="heroSlider">
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&q=90')"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=90')"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=90')"></div>
+</div>
 
 <div class="container hero-grid">
-
 <div class="hero-content reveal-left">
-
-<div
-class="hero-eyebrow"
-data-admin-editable>
-
-    <i></i>
-    Digital Experiences That Stand Out
-
+<div class="hero-eyebrow" data-admin-editable>
+    <i></i>Digital Experiences That Stand Out
 </div>
 
 <h1 data-admin-editable>
-
-    We build
-    <span>websites</span>
-    people remember.
-
+    We build <span>websites</span> people remember.
 </h1>
 
-<p
-class="hero-text"
-data-admin-editable>
-
-Marwar Infotech creates premium, modern and conversion-focused
-digital experiences for businesses that want to look different
-from everyone else.
-
+<p class="hero-text" data-admin-editable>
+    Marwar Infotech creates premium, modern and conversion-focused digital experiences for businesses that want to look different from everyone else.
 </p>
 
 <div class="hero-actions">
-
-<button
-class="primary-btn magnetic"
-onclick="openDrawer()">
-
-Start a Project →
-
-</button>
-
-<a
-href="#work"
-class="secondary-btn magnetic">
-
-Explore Our Work
-
-</a>
-
+<button class="primary-btn magnetic" onclick="openDrawer()">Start a Project →</button>
+<a href="#work" class="secondary-btn magnetic">Explore Our Work</a>
 </div>
 
 <div class="hero-note" data-admin-editable>
-
-<span></span>
-Available for selected projects
-
+<span></span>Available for selected projects
 </div>
-
 </div>
-
 
 <div class="hero-visual reveal-right">
-
-<div class="hero-image-wrap hero-slider" aria-label="Marwar Infotech website showcase">
-    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1600&q=90')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1600&q=90')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=90')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=90')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=90')"></div>
-    <div class="hero-slider-overlay"></div>
-    <div class="hero-slider-dots">
-        <button class="hero-dot active" aria-label="Slide 1"></button>
-        <button class="hero-dot" aria-label="Slide 2"></button>
-        <button class="hero-dot" aria-label="Slide 3"></button>
-        <button class="hero-dot" aria-label="Slide 4"></button>
-        <button class="hero-dot" aria-label="Slide 5"></button>
-    </div>
+<div class="hero-image-wrap">
+<img class="hero-image" src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=90" alt="Creative digital design">
 </div>
 
 <div class="floating-card card-top">
-
 <div class="card-icon">✦</div>
-
 <div>
-
-<div class="card-small" data-admin-editable>
-Design
+<div class="card-small">Design</div>
+<div class="card-bold">Premium UI / UX</div>
 </div>
-
-<div class="card-bold" data-admin-editable>
-Premium UI / UX
-</div>
-
-</div>
-
 </div>
 
 <div class="floating-card card-bottom">
-
-<div class="card-small" data-admin-editable>
-Digital Growth
+<div class="card-small">Digital Growth</div>
+<strong>∞</strong>
 </div>
-
-<strong data-admin-editable>
-∞
-</strong>
-
 </div>
-
 </div>
-
-</div>
-
 </section>
 
 
@@ -2170,274 +1410,166 @@ Digital Growth
 ====================================================== -->
 
 <div class="marquee">
-
 <div class="marquee-track">
-
-<div class="marquee-item">
-Web Design <span>✦</span>
+<div class="marquee-item">Web Design <span>✦</span></div>
+<div class="marquee-item">Creative Development <span>✦</span></div>
+<div class="marquee-item">UI / UX <span>✦</span></div>
+<div class="marquee-item">Digital Experiences <span>✦</span></div>
+<div class="marquee-item">Brand Websites <span>✦</span></div>
+<div class="marquee-item">Web Design <span>✦</span></div>
+<div class="marquee-item">Creative Development <span>✦</span></div>
+<div class="marquee-item">UI / UX <span>✦</span></div>
 </div>
-
-<div class="marquee-item">
-Creative Development <span>✦</span>
-</div>
-
-<div class="marquee-item">
-UI / UX <span>✦</span>
-</div>
-
-<div class="marquee-item">
-Digital Experiences <span>✦</span>
-</div>
-
-<div class="marquee-item">
-Brand Websites <span>✦</span>
-</div>
-
-<div class="marquee-item">
-Web Design <span>✦</span>
-</div>
-
-<div class="marquee-item">
-Creative Development <span>✦</span>
-</div>
-
-<div class="marquee-item">
-UI / UX <span>✦</span>
-</div>
-
-</div>
-
 </div>
 
 
 <!-- ======================================================
-     SERVICES
+     SERVICES (WITH IMAGES & TEXT OVERVIEW)
 ====================================================== -->
 
-<section
-class="services section-space"
-id="services">
-
+<section class="services section-space" id="services">
 <div class="container">
-
 <div class="reveal">
-
-<div
-class="section-label"
-data-admin-editable>
-
-<span></span>
-What We Do
-
+<div class="section-label"><span></span>What We Do</div>
+<h2 class="section-title">Digital work with <span>character.</span></h2>
+<p class="section-copy" style="max-width:600px;margin-top:22px;">From strategy to final pixels, we create digital experiences that look premium and feel effortless.</p>
 </div>
-
-<h2
-class="section-title"
-data-admin-editable>
-
-Digital work with
-<span>character.</span>
-
-</h2>
-
-<p
-class="section-copy"
-style="max-width:600px;margin-top:22px;"
-data-admin-editable>
-
-From strategy to final pixels, we create digital experiences
-that look premium and feel effortless.
-
-</p>
-
-</div>
-
 
 <div class="services-grid" id="servicesGrid">
 
 <div class="service-card reveal">
-<img class="service-card-image" src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=88" alt="Marwar Infotech service visual">
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Website Design">
+</div>
 <div class="service-card-content">
-
 <div class="service-number">01</div>
-
-<div class="service-icon">◈</div>
-
-<h3 data-admin-editable>
-Website Design
-</h3>
-
-<p data-admin-editable>
-Modern, premium and responsive websites designed
-around your brand and customers.
-</p>
-
+<h3>Website Design</h3>
+<p>Modern, premium and responsive websites designed around your brand and customers.</p>
 </div>
 </div>
-
 
 <div class="service-card reveal">
-
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="UI / UX Design">
+</div>
+<div class="service-card-content">
 <div class="service-number">02</div>
-
-<div class="service-icon">✦</div>
-
-<h3 data-admin-editable>
-UI / UX Design
-</h3>
-
-<p data-admin-editable>
-Beautiful interfaces with thoughtful interactions,
-motion and user experience.
-</p>
-
+<h3>UI / UX Design</h3>
+<p>Beautiful interfaces with thoughtful interactions, motion and user experience.</p>
+</div>
 </div>
 
-
 <div class="service-card reveal">
-
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Creative Development">
+</div>
+<div class="service-card-content">
 <div class="service-number">03</div>
-
-<div class="service-icon">⌁</div>
-
-<h3 data-admin-editable>
-Creative Development
-</h3>
-
-<p data-admin-editable>
-High-performance front-end experiences with
-animations and advanced interactions.
-</p>
-
+<h3>Creative Development</h3>
+<p>High-performance front-end experiences with animations and advanced interactions.</p>
+</div>
 </div>
 
-
 <div class="service-card reveal">
-
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Business Websites">
+</div>
+<div class="service-card-content">
 <div class="service-number">04</div>
-
-<div class="service-icon">◎</div>
-
-<h3 data-admin-editable>
-Business Websites
-</h3>
-
-<p data-admin-editable>
-Professional websites built to make local and
-growing businesses look premium.
-</p>
-
+<h3>Business Websites</h3>
+<p>Professional websites built to make local and growing businesses look premium.</p>
+</div>
 </div>
 
-
 <div class="service-card reveal">
-
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1533750349077-cdcd106d29b2?auto=format&fit=crop&w=800&q=80" alt="Landing Pages">
+</div>
+<div class="service-card-content">
 <div class="service-number">05</div>
-
-<div class="service-icon">↗</div>
-
-<h3 data-admin-editable>
-Landing Pages
-</h3>
-
-<p data-admin-editable>
-Conversion-focused pages designed to turn visitors
-into enquiries and customers.
-</p>
-
+<h3>Landing Pages</h3>
+<p>Conversion-focused pages designed to turn visitors into enquiries and customers.</p>
 </div>
-
+</div>
 
 <div class="service-card reveal">
-
+<div class="service-card-img">
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Digital Solutions">
+</div>
+<div class="service-card-content">
 <div class="service-number">06</div>
-
-<div class="service-icon">∞</div>
-
-<h3 data-admin-editable>
-Digital Solutions
-</h3>
-
-<p data-admin-editable>
-Smart digital experiences tailored to the way
-your business actually works.
-</p>
-
+<h3>Digital Solutions</h3>
+<p>Smart digital experiences tailored to the way your business actually works.</p>
+</div>
 </div>
 
 </div>
-
 </div>
-
 </section>
 
 
 <!-- ======================================================
-     STATS
+     STATS / COUNTERS SECTION
 ====================================================== -->
 
 <section class="stats">
-
 <div class="container stats-grid">
-
 <div class="stat reveal">
-
-<div
-class="stat-number"
-data-target="50">
-0+
+<div class="stat-number" data-target="50">0+</div>
+<p>Projects & Concepts</p>
 </div>
-
-<p data-admin-editable>
-Projects & Concepts
-</p>
-
-</div>
-
 <div class="stat reveal">
-
-<div
-class="stat-number"
-data-target="30">
-0+
+<div class="stat-number" data-target="30">0+</div>
+<p>Businesses Served</p>
 </div>
-
-<p data-admin-editable>
-Businesses Served
-</p>
-
-</div>
-
 <div class="stat reveal">
-
-<div
-class="stat-number"
-data-target="100">
-0%
+<div class="stat-number" data-target="100">0%</div>
+<p>Creative Focus</p>
 </div>
-
-<p data-admin-editable>
-Creative Focus
-</p>
-
-</div>
-
 <div class="stat reveal">
+<div class="stat-number" data-target="24">0/7</div>
+<p>Ideas Never Stop</p>
+</div>
+</div>
+</section>
 
-<div
-class="stat-number"
-data-target="24">
-0/7
+
+<!-- ======================================================
+     FOUNDERS SECTION (Pratap Singh Rathore & Harshvardhan)
+====================================================== -->
+
+<section class="founders section-space" id="founders">
+<div class="container">
+<div class="reveal">
+<div class="section-label"><span></span>Leadership</div>
+<h2 class="section-title">Meet the <span>Minds.</span></h2>
+<p class="section-copy" style="max-width:600px;margin-top:20px;">The vision and leadership driving Marwar Infotech towards excellence.</p>
 </div>
 
-<p data-admin-editable>
-Ideas Never Stop
-</p>
-
+<div class="founders-grid">
+<div class="founder-card reveal">
+<div class="founder-img">
+<img src="f.jpeg" alt="Pratap Singh Rathore - Founder">
+</div>
+<div class="founder-info">
+<small>Founder</small>
+<h3>Pratap Singh Rathore</h3>
+<p>Leading the core vision, business development and overall strategy to deliver top-tier digital solutions.</p>
+</div>
 </div>
 
+<div class="founder-card reveal">
+<div class="founder-img">
+<img src="co.jpeg" alt="Harshvardhan Singh Rathore - Co-Founder">
 </div>
-
+<div class="founder-info">
+<small>Co-Founder</small>
+<h3>Harshvardhan Singh Rathore</h3>
+<p>Managing creative technical implementation, design standards and cutting-edge web developments.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 
@@ -2445,216 +1577,93 @@ Ideas Never Stop
      ABOUT
 ====================================================== -->
 
-<section
-class="about section-space"
-id="about">
-
+<section class="about section-space" id="about">
 <div class="container about-grid">
-
 <div class="about-image reveal-left">
-
-<img
-data-admin-image
-src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
-alt="Creative team">
-
+<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" alt="Creative team">
 </div>
-
 
 <div class="about-content reveal-right">
-
-<div
-class="section-label"
-data-admin-editable>
-
-<span></span>
-About Marwar
-
-</div>
-
-<h2
-class="section-title"
-data-admin-editable>
-
-Not just a
-<span>website.</span>
-
-</h2>
-
-<p
-class="section-copy"
-data-admin-editable>
-
-We believe a website should do more than simply
-exist online. It should communicate your brand,
-create trust and make people want to interact with
-your business.
-
+<div class="section-label"><span></span>About Marwar</div>
+<h2 class="section-title">Not just a <span>website.</span></h2>
+<p class="section-copy">
+We believe a website should do more than simply exist online. It should communicate your brand, create trust and make people want to interact with your business.
 </p>
 
-
 <div class="about-list">
-
-<div data-admin-editable>
-<span class="check">✓</span>
-Premium visual design
+<div><span class="check">✓</span>Premium visual design</div>
+<div><span class="check">✓</span>Smooth animations & interactions</div>
+<div><span class="check">✓</span>Mobile-first responsive experience</div>
+<div><span class="check">✓</span>Business-focused design</div>
 </div>
-
-<div data-admin-editable>
-<span class="check">✓</span>
-Smooth animations & interactions
 </div>
-
-<div data-admin-editable>
-<span class="check">✓</span>
-Mobile-first responsive experience
 </div>
-
-<div data-admin-editable>
-<span class="check">✓</span>
-Business-focused design
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 
 <!-- ======================================================
-     PORTFOLIO
+     PORTFOLIO / WEBSITE SHOWCASE (CLICKABLE FOR MORE IMAGES)
 ====================================================== -->
 
-<section
-class="portfolio section-space"
-id="work">
-
+<section class="portfolio section-space" id="work">
 <div class="container">
-
 <div class="reveal">
-
-<div
-class="section-label"
-data-admin-editable>
-
-<span></span>
-Selected Work
-
+<div class="section-label"><span></span>Selected Work</div>
+<h2 class="section-title">Made to be <span>noticed.</span></h2>
+<p class="section-copy" style="margin-top:15px; color:var(--muted);">Click on any project to view comprehensive details and project screenshots.</p>
 </div>
 
-<h2
-class="section-title"
-data-admin-editable>
+<div class="portfolio-grid" id="portfolioGrid">
 
-Made to be
-<span>noticed.</span>
-
-</h2>
-
-</div>
-
-
-<div
-class="portfolio-grid"
-id="portfolioGrid">
-
-
-<div class="project reveal project-clickable" tabindex="0" role="button" data-project-title="Corporate Website" data-project-description="A premium business website focused on trust, services and lead generation." data-project-images="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&amp;fit=crop&amp;w=1400&amp;q=88">
-
-<img
-data-admin-image
-src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85"
-alt="Modern office website concept">
-
+<div class="project reveal" onclick="openShowcase('Modern Corporate', 'A state-of-the-art corporate web design built for high-end enterprise clients with smooth navigation and advanced UI.', ['https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85', 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=85'])">
+<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85" alt="Modern office website concept">
 <div class="project-info">
-
-<small data-admin-editable>
-Business Website
-</small>
-
-<h3 data-admin-editable>
-Modern Corporate
-</h3>
-
+<small>Business Website</small>
+<h3>Modern Corporate</h3>
+</div>
 </div>
 
-</div>
-
-
-<div class="project reveal project-clickable" tabindex="0" role="button" data-project-title="Business Growth Website" data-project-description="A conversion-focused digital presence built around credibility and enquiries." data-project-images="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=1400&amp;q=88">
-
-<img
-data-admin-image
-src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=85"
-alt="Business workspace">
-
+<div class="project reveal" onclick="openShowcase('Business Growth Hub', 'A dynamic platform designed to elevate local businesses into market leaders through high conversion layouts.', ['https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=85', 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=85'])">
+<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=85" alt="Business workspace">
 <div class="project-info">
-
-<small data-admin-editable>
-Digital Experience
-</small>
-
-<h3 data-admin-editable>
-Business Growth
-</h3>
-
+<small>Digital Experience</small>
+<h3>Business Growth</h3>
+</div>
 </div>
 
-</div>
-
-
-<div class="project reveal project-clickable" tabindex="0" role="button" data-project-title="Creative Studio" data-project-description="A visual-first website for brands that want a memorable digital identity." data-project-images="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=1400&amp;q=88">
-
-<img
-data-admin-image
-src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85"
-alt="Creative website design">
-
+<div class="project reveal" onclick="openShowcase('Digital Studio Showcase', 'An immersive creative studio website featuring webgl elements, custom animations and striking visuals.', ['https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=85'])">
+<img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1400&q=85" alt="Creative website design">
 <div class="project-info">
-
-<small data-admin-editable>
-Creative Website
-</small>
-
-<h3 data-admin-editable>
-Digital Studio
-</h3>
-
+<small>Creative Website</small>
+<h3>Digital Studio</h3>
+</div>
 </div>
 
-</div>
-
-
-<div class="project reveal project-clickable" tabindex="0" role="button" data-project-title="UI / UX Experience" data-project-description="A modern interface concept combining clarity, motion and premium interaction." data-project-images="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&amp;fit=crop&amp;w=1400&amp;q=88|https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;w=1400&amp;q=88">
-
-<img
-data-admin-image
-src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=85"
-alt="UI UX design">
-
+<div class="project reveal" onclick="openShowcase('Future Interface UI/UX', 'Next-gen dashboard user experience focused on intuitive control systems and ultra-clean typography.', ['https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1000&q=85', 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=85'])">
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1400&q=85" alt="UI UX design">
 <div class="project-info">
-
-<small data-admin-editable>
-UI / UX
-</small>
-
-<h3 data-admin-editable>
-Future Interface
-</h3>
-
+<small>UI / UX</small>
+<h3>Future Interface</h3>
+</div>
 </div>
 
 </div>
-
-
 </div>
-
-</div>
-
 </section>
+
+
+<!-- ======================================================
+     SHOWCASE POPUP MODAL
+====================================================== -->
+
+<div class="showcase-modal-overlay" id="showcaseModal" onclick="closeShowcase(event)">
+<div class="showcase-modal">
+<button class="showcase-close" onclick="closeShowcaseModal()">×</button>
+<h3 id="showcaseTitle" style="font-family:'Manrope'; font-size:30px; margin-bottom:12px;">Project Title</h3>
+<p id="showcaseDesc" style="color:var(--muted); line-height:1.7; font-size:16px;">Description goes here...</p>
+<div class="showcase-gallery" id="showcaseGalleryImages"></div>
+</div>
+</div>
 
 
 <!-- ======================================================
@@ -2662,18 +1671,9 @@ Future Interface
 ====================================================== -->
 
 <section class="statement">
-
 <div class="container reveal">
-
-<h2 data-admin-editable>
-
-Your business deserves a
-<span>better first impression.</span>
-
-</h2>
-
+<h2>Your business deserves a <span>better first impression.</span></h2>
 </div>
-
 </section>
 
 
@@ -2681,353 +1681,142 @@ Your business deserves a
      PROCESS
 ====================================================== -->
 
-<section
-class="process section-space"
-id="process">
-
+<section class="process section-space" id="process">
 <div class="container">
-
 <div class="reveal">
-
-<div
-class="section-label"
-data-admin-editable>
-
-<span></span>
-Our Process
-
+<div class="section-label"><span></span>Our Process</div>
+<h2 class="section-title">Simple process. <span>Big results.</span></h2>
 </div>
-
-<h2
-class="section-title"
-data-admin-editable>
-
-Simple process.
-<span>Big results.</span>
-
-</h2>
-
-</div>
-
 
 <div class="process-grid">
+<div class="process-card reveal">
+<div class="process-num">01 / DISCOVER</div>
+<h3>Understand</h3>
+<p>We understand your business, audience, goals and what makes your brand different.</p>
+</div>
 
 <div class="process-card reveal">
-
-<div class="process-num">
-01 / DISCOVER
+<div class="process-num">02 / DESIGN</div>
+<h3>Design</h3>
+<p>We turn the strategy into a visual experience with premium UI, motion and interactions.</p>
 </div>
-
-<h3 data-admin-editable>
-Understand
-</h3>
-
-<p data-admin-editable>
-We understand your business, audience,
-goals and what makes your brand different.
-</p>
-
-</div>
-
 
 <div class="process-card reveal">
-
-<div class="process-num">
-02 / DESIGN
+<div class="process-num">03 / BUILD</div>
+<h3>Develop</h3>
+<p>The approved experience is transformed into a fast and responsive working website.</p>
 </div>
-
-<h3 data-admin-editable>
-Design
-</h3>
-
-<p data-admin-editable>
-We turn the strategy into a visual experience
-with premium UI, motion and interactions.
-</p>
-
-</div>
-
 
 <div class="process-card reveal">
-
-<div class="process-num">
-03 / BUILD
+<div class="process-num">04 / LAUNCH</div>
+<h3>Launch</h3>
+<p>We test everything and prepare your website for its next stage of growth.</p>
 </div>
-
-<h3 data-admin-editable>
-Develop
-</h3>
-
-<p data-admin-editable>
-The approved experience is transformed into
-a fast and responsive working website.
-</p>
-
 </div>
-
-
-<div class="process-card reveal">
-
-<div class="process-num">
-04 / LAUNCH
 </div>
-
-<h3 data-admin-editable>
-Launch
-</h3>
-
-<p data-admin-editable>
-We test everything and prepare your website
-for its next stage of growth.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
 
 <!-- ======================================================
-     TESTIMONIAL
+     CLIENT REVIEWS SECTION
 ====================================================== -->
 
-<section class="testimonials section-space">
-
+<section class="testimonials section-space" id="reviews">
 <div class="container">
-
-<div class="testimonial reveal">
-
-<div class="quote" data-admin-editable>
-
-“Good design gets attention.
-<span>Great design gets remembered.</span>”
-
+<div class="reveal" style="text-align:center;">
+<div class="section-label"><span></span>Testimonials</div>
+<h2 class="section-title">Loved by <span>clients.</span></h2>
+<p class="section-copy" style="max-width:600px; margin:15px auto 0;">Here is what business owners say about working with Marwar Infotech.</p>
 </div>
 
-<div
-class="testimonial-author"
-data-admin-editable>
-
-— Marwar Infotech
-
+<div class="reviews-grid">
+<div class="review-card reveal">
+<div class="review-stars">★★★★★</div>
+<p>"Marwar Infotech completely transformed our online presence. The website looks incredibly luxurious and professional!"</p>
+<div class="review-author">
+<h4>Rahul Sharma</h4>
+<span>CEO, TechVenture</span>
+</div>
 </div>
 
+<div class="review-card reveal">
+<div class="review-stars">★★★★★</div>
+<p>"Pratap and Harshvardhan delivered beyond expectations. Clean code, smooth animations, and amazing support."</p>
+<div class="review-author">
+<h4>Amitabh Joshi</h4>
+<span>Founder, UrbanSpaces</span>
+</div>
 </div>
 
+<div class="review-card reveal">
+<div class="review-stars">★★★★★</div>
+<p>"Our customer enquiries tripled within a week of launching our new landing page. Highly recommended team!"</p>
+<div class="review-author">
+<h4>Priya Rathore</h4>
+<span>Director, LuxeLiving</span>
 </div>
-
+</div>
+</div>
+</div>
 </section>
 
-
-
-<section class="client-reviews section-space" id="client-reviews">
-  <div class="container">
-    <div class="reveal">
-      <div class="section-label"><span></span> Client Reviews</div>
-      <h2 class="section-title">Built for businesses.<br><span>Trusted by clients.</span></h2>
-    </div>
-    <div class="reviews-grid-premium">
-      <article class="review-premium reveal">
-        <div class="stars">★★★★★</div>
-        <p>“Marwar Infotech understood our requirements quickly and gave the business a much more professional online presence.”</p>
-        <strong>Ramkirpal Yadav</strong><small>Khush Marbles</small>
-      </article>
-      <article class="review-premium reveal">
-        <div class="stars">★★★★★</div>
-        <p>“The website was modern, responsive and easy for our customers to understand. Communication was smooth throughout.”</p>
-        <strong>Neha Gupta</strong><small>Neha Associates</small>
-      </article>
-      <article class="review-premium reveal">
-        <div class="stars">★★★★★</div>
-        <p>“The team delivered a clean website with strong visuals and a professional feel across mobile and desktop.”</p>
-        <strong>Sheetal Joshi</strong><small>Joshi Marbles & Granite</small>
-      </article>
-      <article class="review-premium reveal">
-        <div class="stars">★★★★★</div>
-        <p>“Fast, responsive and professional service. The final website represented our business much better online.”</p>
-        <strong>Mool Singh Rathore</strong><small>Business Client</small>
-      </article>
-    </div>
-  </div>
-</section>
 
 <!-- ======================================================
      FAQ
 ====================================================== -->
 
-<section
-class="faq section-space"
-id="faq">
-
+<section class="faq section-space" id="faq">
 <div class="container">
-
 <div class="reveal">
-
-<div
-class="section-label"
-data-admin-editable>
-
-<span></span>
-FAQ
-
+<div class="section-label"><span></span>FAQ</div>
+<h2 class="section-title">Have a <span>question?</span></h2>
 </div>
 
-<h2
-class="section-title"
-data-admin-editable>
-
-Have a
-<span>question?</span>
-
-</h2>
-
-</div>
-
-
-<div
-class="faq-wrap"
-id="faqWrap">
-
+<div class="faq-wrap" id="faqWrap">
 
 <div class="faq-item reveal">
-
 <button class="faq-question">
-
-<span data-admin-editable>
-How long does a website take?
-</span>
-
-<span class="faq-plus">
-+
-</span>
-
+<span>How long does a website take?</span>
+<span class="faq-plus">+</span>
 </button>
-
 <div class="faq-answer">
-
-<div
-class="faq-answer-inner"
-data-admin-editable>
-
-Depending on the project, a professional
-business website can usually be designed
-and developed within a few days to a few weeks.
-
+<div class="faq-answer-inner">Depending on the project, a professional business website can usually be designed and developed within a few days to a few weeks.</div>
 </div>
-
 </div>
-
-</div>
-
 
 <div class="faq-item reveal">
-
 <button class="faq-question">
-
-<span data-admin-editable>
-Can you create custom animations?
-</span>
-
-<span class="faq-plus">
-+
-</span>
-
+<span>Can you create custom animations?</span>
+<span class="faq-plus">+</span>
 </button>
-
 <div class="faq-answer">
-
-<div
-class="faq-answer-inner"
-data-admin-editable>
-
-Yes. We can build custom scroll animations,
-magnetic interactions, hover effects,
-transitions and other interactive elements.
-
+<div class="faq-answer-inner">Yes. We can build custom scroll animations, magnetic interactions, hover effects, transitions and other interactive elements.</div>
 </div>
-
 </div>
-
-</div>
-
 
 <div class="faq-item reveal">
-
 <button class="faq-question">
-
-<span data-admin-editable>
-Will the website work on mobile?
-</span>
-
-<span class="faq-plus">
-+
-</span>
-
+<span>Will the website work on mobile?</span>
+<span class="faq-plus">+</span>
 </button>
-
 <div class="faq-answer">
-
-<div
-class="faq-answer-inner"
-data-admin-editable>
-
-Yes. Websites are designed responsively
-so the experience adapts to phones,
-tablets and desktop screens.
-
+<div class="faq-answer-inner">Yes. Websites are designed responsively so the experience adapts to phones, tablets and desktop screens.</div>
 </div>
-
 </div>
-
-</div>
-
 
 <div class="faq-item reveal">
-
 <button class="faq-question">
-
-<span data-admin-editable>
-Can you redesign an existing website?
-</span>
-
-<span class="faq-plus">
-+
-</span>
-
+<span>Can you redesign an existing website?</span>
+<span class="faq-plus">+</span>
 </button>
-
 <div class="faq-answer">
-
-<div
-class="faq-answer-inner"
-data-admin-editable>
-
-Absolutely. We can redesign an existing
-website with a completely new visual direction,
-better UX and modern interactions.
-
+<div class="faq-answer-inner">Absolutely. We can redesign an existing website with a completely new visual direction, better UX and modern interactions.</div>
+</div>
 </div>
 
 </div>
-
 </div>
-
-
-</div>
-
-</div>
-
 </section>
-
-
-<!-- ======================================================
-     DYNAMIC SECTIONS GO HERE
-====================================================== -->
-
-<div id="dynamicSections"></div>
 
 
 <!-- ======================================================
@@ -3035,231 +1824,100 @@ better UX and modern interactions.
 ====================================================== -->
 
 <section class="cta">
-
 <div class="container cta-inner">
-
 <div class="reveal-left">
-
-<h2 data-admin-editable>
-Let's build something
-different.
-</h2>
-
-<p data-admin-editable>
-Have an idea, a business or an existing website
-that needs a serious upgrade? Let's talk.
-</p>
-
+<h2>Let's build something different.</h2>
+<p>Have an idea, a business or an existing website that needs a serious upgrade? Let's talk.</p>
 </div>
-
-<button
-class="primary-btn magnetic reveal-right"
-onclick="openDrawer()">
-
-Start a Conversation →
-
-</button>
-
+<button class="primary-btn magnetic reveal-right" onclick="openDrawer()">Start a Conversation →</button>
 </div>
-
 </section>
 
 
 <!-- ======================================================
-     FOOTER
+     FOOTER (WITH NORMAL ICONS & INSTAGRAM)
 ====================================================== -->
 
 <footer>
-
 <div class="container">
-
 <div class="footer-top">
 
 <div class="footer-brand">
-
 <a href="#" class="logo">
-
-<div class="logo-mark">
-M
-</div>
-
-<span data-admin-editable>
-Marwar Infotech
-</span>
-
+<div class="logo-mark">M</div>
+<span>Marwar Infotech</span>
 </a>
-
-<p data-admin-editable>
-Building modern digital experiences
-for ambitious businesses.
-</p>
-
+<p>Building modern digital experiences for ambitious businesses under leadership of Pratap Singh Rathore & Harshvardhan Singh Rathore.</p>
 </div>
 
-
-<div class="footer-socials">
-  <a href="https://www.instagram.com/marwarinfotech/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-  <a href="https://wa.me/917976346610" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <a href="tel:+917976346610" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
-  <a href="mailto:marwarinfotechh@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-</div>
 <div class="footer-links">
-
 <div class="footer-col">
-
-<h4 data-admin-editable>
-Explore
-</h4>
-
+<h4>Explore</h4>
 <a href="#services">Services</a>
 <a href="#about">About</a>
+<a href="#founders">Founders</a>
 <a href="#work">Work</a>
 <a href="#process">Process</a>
-
 </div>
-
 
 <div class="footer-col">
-
-<h4 data-admin-editable>
-Contact
-</h4>
-
-<a href="tel:+917979346610">
-Call Us
-</a>
-
-<a
-href="https://wa.me/917976346610"
-target="_blank">
-
-WhatsApp
-
-</a>
-
-<a href="mailto:marwarinfotechh@gmail.com">
-Email
-</a>
-
+<h4>Connect</h4>
+<a href="tel:+917979346610">📞 Call Us</a>
+<a href="https://wa.me/917976346610" target="_blank">💬 WhatsApp</a>
+<a href="https://instagram.com/marwarinfotech" target="_blank">📷 Instagram (@marwarinfotech)</a>
+<a href="mailto:marwarinfotechh@gmail.com">✉️ Email</a>
+</div>
 </div>
 
 </div>
-
-</div>
-
 
 <div class="footer-bottom">
-
-<div data-admin-editable>
-© 2026 Marwar Infotech. All rights reserved.
+<div>© 2026 Marwar Infotech. All rights reserved.</div>
+<div class="footer-credit">Designed by Marwar Infotech</div>
 </div>
-
-<div
-class="footer-credit"
-data-admin-editable>
-
-Designed by Marwar Infotech
-
 </div>
-
-</div>
-
-</div>
-
 </footer>
 
 
-<!-- WHATSAPP -->
+<!-- FLOATING WHATSAPP & CALL BUTTONS WITH NORMAL ICONS -->
 
-<a
-class="whatsapp magnetic"
-href="https://wa.me/917976346610"
-target="_blank"
-aria-label="WhatsApp">
-
-☏
-
-</a>
-
-
-<!-- ENQUIRY -->
-
-<div
-class="overlay"
-onclick="closeDrawer()">
+<div class="floating-buttons">
+<a class="float-btn whatsapp magnetic" href="https://wa.me/917976346610" target="_blank" aria-label="WhatsApp">💬</a>
+<a class="float-btn call magnetic" href="tel:+917979346610" aria-label="Call">📞</a>
 </div>
 
 
+<!-- ENQUIRY DRAWER -->
+
+<div class="overlay" onclick="closeDrawer()"></div>
+
 <div class="drawer">
+<button class="drawer-close" onclick="closeDrawer()">×</button>
+<h2>Let's create something great.</h2>
+<p>Tell us a little about your project and we'll get back to you.</p>
 
-<button
-class="drawer-close"
-onclick="closeDrawer()">
-
-×
-
-</button>
-
-<h2 data-admin-editable>
-Let's create
-something great.
-</h2>
-
-<p data-admin-editable>
-Tell us a little about your project and
-we'll get back to you.
-</p>
-
-
-<form
-class="form"
-onsubmit="submitForm(event)">
-
-<input
-type="text"
-placeholder="Your Name"
-required>
-
-<input
-type="tel"
-placeholder="Phone Number"
-required>
-
-<input
-type="email"
-placeholder="Email Address">
-
+<form class="form" onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="email" placeholder="Email Address">
 <select>
-
-<option value="">
-Select Service
-</option>
-
+<option value="">Select Service</option>
 <option>Website Design</option>
 <option>Business Website</option>
 <option>UI / UX Design</option>
 <option>Landing Page</option>
 <option>Website Redesign</option>
-
 </select>
-
-<textarea
-placeholder="Tell us about your project...">
-</textarea>
-
-<button type="submit">
-Send Enquiry →
-</button>
-
+<textarea placeholder="Tell us about your project..."></textarea>
+<button type="submit">Send Enquiry →</button>
 </form>
-
 </div>
 
 
 <script>
 
 /* =========================================================
-   ORIGINAL FUNCTIONALITY
+   JAVASCRIPT FUNCTIONALITY
 ========================================================= */
 
 const navbar=document.querySelector(".navbar");
@@ -3277,7 +1935,6 @@ const cursor=document.querySelector(".cursor-glow");
 
 window.addEventListener("mousemove",(e)=>{
     if(!cursor)return;
-
     cursor.animate({
         left:e.clientX+"px",
         top:e.clientY+"px"
@@ -3288,2507 +1945,211 @@ window.addEventListener("mousemove",(e)=>{
 });
 
 
-function setupReveal(){
+// HERO BACKGROUND AUTO SLIDER
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+function nextHeroSlide() {
+    if(slides.length === 0) return;
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+setInterval(nextHeroSlide, 4500);
 
-    document
-    .querySelectorAll(".reveal,.reveal-left,.reveal-right")
-    .forEach(el=>{
 
-        if(el.dataset.revealReady)
-            return;
-
-        el.dataset.revealReady="1";
-
-        if(
-            el.classList.contains("active")
-        )
-            return;
-
-        revealObserver.observe(el);
-
+// PROJECT SHOWCASE POPUP MODAL
+function openShowcase(title, description, images) {
+    document.getElementById('showcaseTitle').textContent = title;
+    document.getElementById('showcaseDesc').textContent = description;
+    const galleryEl = document.getElementById('showcaseGalleryImages');
+    galleryEl.innerHTML = '';
+    images.forEach(imgUrl => {
+        const img = document.createElement('img');
+        img.src = imgUrl;
+        galleryEl.appendChild(img);
     });
+    document.getElementById('showcaseModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
 
+function closeShowcaseModal() {
+    document.getElementById('showcaseModal').style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+function closeShowcase(e) {
+    if(e.target.id === 'showcaseModal') {
+        closeShowcaseModal();
+    }
 }
 
 
-const revealObserver=
-new IntersectionObserver(
-(entries)=>{
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("active");
-
-            revealObserver.unobserve(
-                entry.target
-            );
-
-        }
-
+function setupReveal(){
+    document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach(el=>{
+        if(el.dataset.revealReady) return;
+        el.dataset.revealReady="1";
+        if(el.classList.contains("active")) return;
+        revealObserver.observe(el);
     });
-},
-{
+}
+
+
+const revealObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+},{
     threshold:.12,
     rootMargin:"0px 0px -60px 0px"
 });
-
 
 setupReveal();
 
 
 function setupMagnetic(){
-
-    document
-    .querySelectorAll(".magnetic")
-    .forEach(button=>{
-
-        if(button.dataset.magneticReady)
-            return;
-
+    document.querySelectorAll(".magnetic").forEach(button=>{
+        if(button.dataset.magneticReady) return;
         button.dataset.magneticReady="1";
-
-        button.addEventListener(
-            "mousemove",
-            function(e){
-
-                const rect=
-                this.getBoundingClientRect();
-
-                const x=
-                e.clientX-
-                rect.left-
-                rect.width/2;
-
-                const y=
-                e.clientY-
-                rect.top-
-                rect.height/2;
-
-                this.style.transform=
-                `translate(${x*.18}px,${y*.18}px)`;
-
-            }
-        );
-
-        button.addEventListener(
-            "mouseleave",
-            function(){
-
-                this.style.transform=
-                "translate(0,0)";
-
-            }
-        );
-
+        button.addEventListener("mousemove",function(e){
+            const rect=this.getBoundingClientRect();
+            const x=e.clientX-rect.left-rect.width/2;
+            const y=e.clientY-rect.top-rect.height/2;
+            this.style.transform=`translate(${x*.18}px,${y*.18}px)`;
+        });
+        button.addEventListener("mouseleave",function(){
+            this.style.transform="translate(0,0)";
+        });
     });
-
 }
 
 setupMagnetic();
 
 
 function setupTilt(){
-
-    document
-    .querySelectorAll(".service-card,.project")
-    .forEach(card=>{
-
-        if(card.dataset.tiltReady)
-            return;
-
+    document.querySelectorAll(".service-card,.project,.founder-card").forEach(card=>{
+        if(card.dataset.tiltReady) return;
         card.dataset.tiltReady="1";
-
-        card.addEventListener(
-            "mousemove",
-            function(e){
-
-                const rect=
-                this.getBoundingClientRect();
-
-                const x=
-                e.clientX-rect.left;
-
-                const y=
-                e.clientY-rect.top;
-
-                const rotateX=
-                ((y/rect.height)-.5)*-5;
-
-                const rotateY=
-                ((x/rect.width)-.5)*5;
-
-                this.style.transform=
-                `perspective(900px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-8px)`;
-
-            }
-        );
-
-        card.addEventListener(
-            "mouseleave",
-            function(){
-                this.style.transform="";
-            }
-        );
-
+        card.addEventListener("mousemove",function(e){
+            const rect=this.getBoundingClientRect();
+            const x=e.clientX-rect.left;
+            const y=e.clientY-rect.top;
+            const rotateX=((y/rect.height)-.5)*-5;
+            const rotateY=((x/rect.width)-.5)*5;
+            this.style.transform=`perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+        card.addEventListener("mouseleave",function(){
+            this.style.transform="";
+        });
     });
-
 }
 
 setupTilt();
 
 
 function setupFAQ(){
-
-    document
-    .querySelectorAll(".faq-question")
-    .forEach(question=>{
-
-        if(question.dataset.faqReady)
-            return;
-
+    document.querySelectorAll(".faq-question").forEach(question=>{
+        if(question.dataset.faqReady) return;
         question.dataset.faqReady="1";
-
-        question.addEventListener(
-            "click",
-            ()=>{
-
-                const item=
-                question.parentElement;
-
-                document
-                .querySelectorAll(".faq-item")
-                .forEach(other=>{
-
-                    if(other!==item){
-
-                        other.classList.remove(
-                            "active"
-                        );
-
-                    }
-
-                });
-
-                item.classList.toggle(
-                    "active"
-                );
-
-            }
-        );
-
+        question.addEventListener("click",()=>{
+            const item=question.parentElement;
+            document.querySelectorAll(".faq-item").forEach(other=>{
+                if(other!==item){
+                    other.classList.remove("active");
+                }
+            });
+            item.classList.toggle("active");
+        });
     });
-
 }
 
 setupFAQ();
 
 
 function openDrawer(){
-
-    document
-    .querySelector(".drawer")
-    .classList.add("active");
-
-    document
-    .querySelector(".overlay")
-    .classList.add("active");
-
+    document.querySelector(".drawer").classList.add("active");
+    document.querySelector(".overlay").classList.add("active");
     document.body.style.overflow="hidden";
-
 }
 
 
 function closeDrawer(){
-
-    document
-    .querySelector(".drawer")
-    .classList.remove("active");
-
-    document
-    .querySelector(".overlay")
-    .classList.remove("active");
-
+    document.querySelector(".drawer").classList.remove("active");
+    document.querySelector(".overlay").classList.remove("active");
     document.body.style.overflow="";
-
 }
 
 
 function submitForm(e){
-
     e.preventDefault();
-
-    const inputs=
-    e.target.querySelectorAll(
-        "input,select,textarea"
-    );
-
+    const inputs=e.target.querySelectorAll("input,select,textarea");
     const name=inputs[0].value;
     const phone=inputs[1].value;
     const email=inputs[2].value;
     const service=inputs[3].value;
     const message=inputs[4].value;
 
-    const whatsappMessage=
-`Hello Marwar Infotech,
-
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-Service: ${service}
-
-Project:
-${message}`;
-
-    const url=
-    "https://wa.me/917976346610?text="+
-    encodeURIComponent(
-        whatsappMessage
-    );
-
+    const whatsappMessage=`Hello Marwar Infotech,\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\nProject:\n${message}`;
+    const url="https://wa.me/917976346610?text="+encodeURIComponent(whatsappMessage);
     window.open(url,"_blank");
-
 }
 
 
-document.addEventListener(
-"keydown",
-(e)=>{
-
+document.addEventListener("keydown",(e)=>{
     if(e.key==="Escape"){
-
         closeDrawer();
-        closeAdminModal();
-
+        closeShowcaseModal();
     }
-
 });
 
 
-const heroVisual=
-document.querySelector(".hero-visual");
-
-window.addEventListener(
-"scroll",
-()=>{
-
-    if(!heroVisual)
-        return;
-
-    const scroll=
-    window.scrollY;
-
-    if(scroll<window.innerHeight){
-
-        heroVisual.style.transform=
-        `translateY(${scroll*.08}px)`;
-
-    }
-
-});
-
-
-/* =========================================================
-   ADMIN CONFIG
-========================================================= */
-
-const ADMIN_USERNAME="admin";
-const ADMIN_PASSWORD="1234";
-
-const AUTH_KEY=
-"marwar_admin_authenticated";
-
-const CONTENT_KEY=
-"marwar_admin_content_v2";
-
-const DYNAMIC_KEY=
-"marwar_dynamic_sections_v2";
-
-
-let isAdmin=false;
-
-
-/* =========================================================
-   ADMIN LOGIN
-========================================================= */
-
-function openAdminLogin(){
-
-    document
-    .getElementById("adminLoginScreen")
-    .style.display="flex";
-
-    setTimeout(()=>{
-        document
-        .getElementById("adminUsername")
-        .focus();
-    },100);
-
-}
-
-
-function closeAdminLogin(){
-
-    document
-    .getElementById("adminLoginScreen")
-    .style.display="none";
-
-}
-
-
-function loginAdmin(){
-
-    const username=
-    document
-    .getElementById("adminUsername")
-    .value
-    .trim();
-
-    const password=
-    document
-    .getElementById("adminPassword")
-    .value;
-
-    const error=
-    document
-    .getElementById("adminError");
-
-    if(
-        username===ADMIN_USERNAME &&
-        password===ADMIN_PASSWORD
-    ){
-
-        sessionStorage.setItem(
-            AUTH_KEY,
-            "true"
-        );
-
-        error.style.display="none";
-
-        closeAdminLogin();
-
-        enterAdminMode();
-
-    }else{
-
-        error.style.display="block";
-
-    }
-
-}
-
-
-function enterAdminMode(){
-
-    isAdmin=true;
-
-    document.body.classList.add(
-        "admin-mode"
-    );
-
-    document
-    .getElementById("adminToolbar")
-    .style.display="block";
-
-    loadSavedContent();
-
-    loadDynamicSections();
-
-    prepareAdminEditors();
-
-    renderSectionManager();
-
-    setTimeout(()=>{
-        setupReveal();
-        setupMagnetic();
-        setupTilt();
-        setupFAQ();
-    },100);
-
-}
-
-
-function logoutAdmin(){
-
-    if(
-        !confirm(
-            "Logout from Admin Mode?"
-        )
-    )
-        return;
-
-    sessionStorage.removeItem(
-        AUTH_KEY
-    );
-
-    isAdmin=false;
-
-    document.body.classList.remove(
-        "admin-mode"
-    );
-
-    document
-    .getElementById("adminToolbar")
-    .style.display="none";
-
-    document
-    .getElementById("sectionManager")
-    .style.display="none";
-
-    document
-    .querySelectorAll(
-        "[contenteditable='true']"
-    )
-    .forEach(el=>{
-
-        el.removeAttribute(
-            "contenteditable"
-        );
-
-    });
-
-}
-
-
-/* =========================================================
-   ADMIN EDITABLE TEXT
-========================================================= */
-
-function prepareAdminEditors(){
-
-    if(!isAdmin)
-        return;
-
-    document
-    .querySelectorAll(
-        "[data-admin-editable]"
-    )
-    .forEach(el=>{
-
-        if(el.dataset.adminReady)
-            return;
-
-        el.dataset.adminReady="1";
-
-        el.addEventListener(
-            "click",
-            function(e){
-
-                if(!isAdmin)
-                    return;
-
-                e.stopPropagation();
-
-                editTextElement(this);
-
-            }
-        );
-
-    });
-
-
-    document
-    .querySelectorAll(
-        "img[data-admin-image]"
-    )
-    .forEach(img=>{
-
-        if(img.dataset.imageReady)
-            return;
-
-        img.dataset.imageReady="1";
-
-        img.addEventListener(
-            "click",
-            function(e){
-
-                if(!isAdmin)
-                    return;
-
-                e.preventDefault();
-                e.stopPropagation();
-
-                openImageEditor(this);
-
-            }
-        );
-
-    });
-
-}
-
-
-function editTextElement(el){
-
-    if(!isAdmin)
-        return;
-
-    document
-    .querySelectorAll(
-        "[contenteditable='true']"
-    )
-    .forEach(other=>{
-
-        if(other!==el)
-            other.blur();
-
-    });
-
-    el.contentEditable="true";
-
-    el.focus();
-
-    const range=
-    document.createRange();
-
-    range.selectNodeContents(el);
-
-    range.collapse(false);
-
-    const selection=
-    window.getSelection();
-
-    selection.removeAllRanges();
-
-    selection.addRange(range);
-
-    el.onblur=()=>{
-
-        el.removeAttribute(
-            "contenteditable"
-        );
-
-    };
-
-}
-
-
-/* =========================================================
-   IMAGE REPLACE / UPLOAD
-========================================================= */
-
-function openImageEditor(img){
-
-    openAdminModal(
-        "Replace Image",
-        `
-
-        <div class="admin-form-grid">
-
-            <div class="admin-form-full">
-
-                <label>Image URL</label>
-
-                <input
-                id="imageUrlInput"
-                value="${escapeAttr(img.src)}"
-                placeholder="https://example.com/image.jpg">
-
-            </div>
-
-            <div class="admin-form-full">
-
-                <label>Or upload from your device</label>
-
-                <input
-                id="imageFileInput"
-                type="file"
-                accept="image/*"
-                style="display:none">
-
-                <div
-                class="upload-box"
-                onclick="
-                    document
-                    .getElementById('imageFileInput')
-                    .click()
-                ">
-
-                    📤 Click here to upload image
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="admin-modal-actions">
-
-            <button
-            class="secondary"
-            onclick="closeAdminModal()">
-
-                Cancel
-
-            </button>
-
-            <button
-            class="primary"
-            onclick="applyImageChange()">
-
-                Replace Image
-
-            </button>
-
-        </div>
-
-        `
-    );
-
-    window.currentEditingImage=img;
-
-    document
-    .getElementById("imageFileInput")
-    .addEventListener(
-        "change",
-        function(){
-
-            const file=this.files[0];
-
-            if(!file)
-                return;
-
-            if(file.size>1800000){
-
-                alert(
-                    "Demo upload limit is 1.8MB per image."
-                );
-
-                this.value="";
-                return;
-
-            }
-
-            const reader=
-            new FileReader();
-
-            reader.onload=()=>{
-                document
-                .getElementById("imageUrlInput")
-                .value=reader.result;
-            };
-
-            reader.readAsDataURL(file);
-
-        }
-    );
-
-}
-
-
-function applyImageChange(){
-
-    const img=
-    window.currentEditingImage;
-
-    if(!img)
-        return;
-
-    const url=
-    document
-    .getElementById("imageUrlInput")
-    .value
-    .trim();
-
-    if(!url){
-
-        alert("Please enter an image URL or upload an image.");
-        return;
-
-    }
-
-    img.src=url;
-
-    closeAdminModal();
-
-}
-
-
-/* =========================================================
-   ADD MENU
-========================================================= */
-
-function openAddMenu(){
-
-    openAdminModal(
-        "Add New Content",
-        `
-
-        <div
-        style="
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:12px;
-        ">
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="openAddService()">
-
-                + Add Service
-
-            </button>
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="openAddProject()">
-
-                + Add Project
-
-            </button>
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="openAddTestimonial()">
-
-                + Add Testimonial
-
-            </button>
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="openAddFAQ()">
-
-                + Add FAQ
-
-            </button>
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="addSection('text');closeAdminModal()">
-
-                + Add Text Section
-
-            </button>
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="addSection('image');closeAdminModal()">
-
-                + Image + Text Section
-
-            </button>
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="addSection('gallery');closeAdminModal()">
-
-                + Gallery Section
-
-            </button>
-
-            <button
-            class="admin-tool-btn"
-            style="padding:20px;background:#edf4ff;color:#1463ff"
-            onclick="addSection('cta');closeAdminModal()">
-
-                + CTA Section
-
-            </button>
-
-        </div>
-
-        `
-    );
-
-}
-
-
-/* =========================================================
-   ADD SERVICE
-========================================================= */
-
-function openAddService(){
-
-    openAdminModal(
-        "Add Service",
-        `
-
-        <div class="admin-form-grid">
-
-            <div>
-                <label>Service Name</label>
-                <input id="serviceName"
-                placeholder="SEO Services">
-            </div>
-
-            <div>
-                <label>Icon</label>
-                <input id="serviceIcon"
-                value="✦"
-                placeholder="✦">
-            </div>
-
-            <div class="admin-form-full">
-                <label>Description</label>
-                <textarea id="serviceDescription"
-                placeholder="Describe your service..."></textarea>
-            </div>
-
-        </div>
-
-        <div class="admin-modal-actions">
-
-            <button
-            class="secondary"
-            onclick="openAddMenu()">
-                Back
-            </button>
-
-            <button
-            class="primary"
-            onclick="createService()">
-                Add Service
-            </button>
-
-        </div>
-
-        `
-    );
-
-}
-
-
-function createService(){
-
-    const name=
-    document.getElementById("serviceName").value.trim();
-
-    const icon=
-    document.getElementById("serviceIcon").value.trim();
-
-    const desc=
-    document
-    .getElementById("serviceDescription")
-    .value
-    .trim();
-
-    if(!name||!desc){
-
-        alert("Service name and description required.");
-        return;
-
-    }
-
-    const grid=
-    document.getElementById("servicesGrid");
-
-    const number=
-    String(
-        grid.children.length+1
-    ).padStart(2,"0");
-
-    const card=
-    document.createElement("div");
-
-    card.className=
-    "service-card reveal admin-added";
-
-    card.innerHTML=`
-
-        <button
-        class="admin-delete"
-        onclick="deleteDynamicElement(this)">
-            ×
-        </button>
-
-        <div class="service-number">
-            ${number}
-        </div>
-
-        <div class="service-icon">
-            ${escapeHTML(icon||"✦")}
-        </div>
-
-        <h3 data-admin-editable>
-            ${escapeHTML(name)}
-        </h3>
-
-        <p data-admin-editable>
-            ${escapeHTML(desc)}
-        </p>
-
-    `;
-
-    grid.appendChild(card);
-
-    closeAdminModal();
-
-    prepareAdminEditors();
-    setupReveal();
-    setupTilt();
-
-}
-
-
-/* =========================================================
-   ADD PROJECT
-========================================================= */
-
-function openAddProject(){
-
-    openAdminModal(
-        "Add Project",
-        `
-
-        <div class="admin-form-grid">
-
-            <div>
-                <label>Project Category</label>
-                <input id="projectCategory"
-                placeholder="Business Website">
-            </div>
-
-            <div>
-                <label>Project Name</label>
-                <input id="projectName"
-                placeholder="Luxury Brand Website">
-            </div>
-
-            <div class="admin-form-full">
-
-                <label>Image URL</label>
-
-                <input
-                id="projectImage"
-                placeholder="https://example.com/image.jpg">
-
-            </div>
-
-            <div class="admin-form-full">
-
-                <label>Or Upload Image</label>
-
-                <input
-                id="projectFile"
-                type="file"
-                accept="image/*">
-
-            </div>
-
-        </div>
-
-        <div class="admin-modal-actions">
-
-            <button
-            class="secondary"
-            onclick="openAddMenu()">
-                Back
-            </button>
-
-            <button
-            class="primary"
-            onclick="createProject()">
-                Add Project
-            </button>
-
-        </div>
-
-        `
-    );
-
-}
-
-
-function createProject(){
-
-    const category=
-    document.getElementById(
-        "projectCategory"
-    ).value.trim();
-
-    const name=
-    document.getElementById(
-        "projectName"
-    ).value.trim();
-
-    const urlInput=
-    document.getElementById(
-        "projectImage"
-    );
-
-    const file=
-    document.getElementById(
-        "projectFile"
-    ).files[0];
-
-    if(!category||!name){
-
-        alert("Category and project name required.");
-        return;
-
-    }
-
-    if(file){
-
-        if(file.size>1800000){
-
-            alert("Demo upload limit is 1.8MB.");
-            return;
-
-        }
-
-        const reader=
-        new FileReader();
-
-        reader.onload=()=>{
-            appendProject(
-                category,
-                name,
-                reader.result
-            );
-        };
-
-        reader.readAsDataURL(file);
-
-    }else{
-
-        appendProject(
-            category,
-            name,
-            urlInput.value.trim()||
-            "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1400&q=90"
-        );
-
-    }
-
-}
-
-
-function appendProject(
-    category,
-    name,
-    image
-){
-
-    const grid=
-    document.getElementById(
-        "portfolioGrid"
-    );
-
-    const project=
-    document.createElement("div");
-
-    project.className=
-    "project reveal admin-added";
-
-    project.innerHTML=`
-
-        <button
-        class="admin-delete"
-        onclick="deleteDynamicElement(this)">
-            ×
-        </button>
-
-        <img
-        data-admin-image
-        src="${escapeAttr(image)}"
-        alt="${escapeAttr(name)}">
-
-        <div class="project-info">
-
-            <small data-admin-editable>
-                ${escapeHTML(category)}
-            </small>
-
-            <h3 data-admin-editable>
-                ${escapeHTML(name)}
-            </h3>
-
-        </div>
-
-    `;
-
-    grid.appendChild(project);
-
-    closeAdminModal();
-
-    prepareAdminEditors();
-    setupReveal();
-    setupTilt();
-
-}
-
-
-/* =========================================================
-   ADD TESTIMONIAL
-========================================================= */
-
-function openAddTestimonial(){
-
-    openAdminModal(
-        "Add Testimonial",
-        `
-
-        <div class="admin-form-grid">
-
-            <div class="admin-form-full">
-
-                <label>Testimonial</label>
-
-                <textarea
-                id="testimonialText"
-                placeholder="Amazing service..."></textarea>
-
-            </div>
-
-            <div class="admin-form-full">
-
-                <label>Client Name</label>
-
-                <input
-                id="testimonialAuthor"
-                placeholder="— Client Name">
-
-            </div>
-
-        </div>
-
-        <div class="admin-modal-actions">
-
-            <button
-            class="secondary"
-            onclick="openAddMenu()">
-                Back
-            </button>
-
-            <button
-            class="primary"
-            onclick="createTestimonial()">
-                Add Testimonial
-            </button>
-
-        </div>
-
-        `
-    );
-
-}
-
-
-function createTestimonial(){
-
-    const text=
-    document.getElementById(
-        "testimonialText"
-    ).value.trim();
-
-    const author=
-    document.getElementById(
-        "testimonialAuthor"
-    ).value.trim();
-
-    if(!text||!author){
-
-        alert("Testimonial and client name required.");
-        return;
-
-    }
-
-    const section=
-    document.createElement("section");
-
-    section.className=
-    "testimonials section-space admin-added";
-
-    section.innerHTML=`
-
-        <button
-        class="admin-delete"
-        onclick="deleteDynamicElement(this)">
-            ×
-        </button>
-
-        <div class="container">
-
-            <div class="testimonial">
-
-                <div
-                class="quote"
-                data-admin-editable>
-
-                    “${escapeHTML(text)}”
-
-                </div>
-
-                <div
-                class="testimonial-author"
-                data-admin-editable>
-
-                    — ${escapeHTML(author)}
-
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
-
-    document
-    .getElementById("dynamicSections")
-    .appendChild(section);
-
-    closeAdminModal();
-
-    prepareAdminEditors();
-
-}
-
-
-/* =========================================================
-   ADD FAQ
-========================================================= */
-
-function openAddFAQ(){
-
-    openAdminModal(
-        "Add FAQ",
-        `
-
-        <div class="admin-form-grid">
-
-            <div class="admin-form-full">
-
-                <label>Question</label>
-
-                <input
-                id="faqQuestion"
-                placeholder="What services do you offer?">
-
-            </div>
-
-            <div class="admin-form-full">
-
-                <label>Answer</label>
-
-                <textarea
-                id="faqAnswer"
-                placeholder="We offer..."></textarea>
-
-            </div>
-
-        </div>
-
-        <div class="admin-modal-actions">
-
-            <button
-            class="secondary"
-            onclick="openAddMenu()">
-                Back
-            </button>
-
-            <button
-            class="primary"
-            onclick="createFAQ()">
-                Add FAQ
-            </button>
-
-        </div>
-
-        `
-    );
-
-}
-
-
-function createFAQ(){
-
-    const question=
-    document
-    .getElementById("faqQuestion")
-    .value.trim();
-
-    const answer=
-    document
-    .getElementById("faqAnswer")
-    .value.trim();
-
-    if(!question||!answer){
-
-        alert("Question and answer required.");
-        return;
-
-    }
-
-    const item=
-    document.createElement("div");
-
-    item.className=
-    "faq-item reveal admin-added";
-
-    item.innerHTML=`
-
-        <button
-        class="admin-delete"
-        onclick="deleteDynamicElement(this)">
-            ×
-        </button>
-
-        <button class="faq-question">
-
-            <span data-admin-editable>
-                ${escapeHTML(question)}
-            </span>
-
-            <span class="faq-plus">
-                +
-            </span>
-
-        </button>
-
-        <div class="faq-answer">
-
-            <div
-            class="faq-answer-inner"
-            data-admin-editable>
-
-                ${escapeHTML(answer)}
-
-            </div>
-
-        </div>
-
-    `;
-
-    document
-    .getElementById("faqWrap")
-    .appendChild(item);
-
-    closeAdminModal();
-
-    prepareAdminEditors();
-    setupFAQ();
-    setupReveal();
-
-}
-
-
-/* =========================================================
-   ADD CUSTOM SECTION
-========================================================= */
-
-function addSection(type){
-
-    const id=
-    "custom_"+Date.now();
-
-    let html="";
-
-    if(type==="text"){
-
-        html=`
-
-        <section
-        class="section-space"
-        data-custom-section="${id}">
-
-        <div class="container">
-
-            <div class="reveal">
-
-                <div
-                class="section-label"
-                data-admin-editable>
-
-                    <span></span>
-                    New Section
-
-                </div>
-
-                <h2
-                class="section-title"
-                data-admin-editable>
-
-                    New
-                    <span>Section.</span>
-
-                </h2>
-
-                <p
-                class="section-copy"
-                style="max-width:700px;margin-top:25px"
-                data-admin-editable>
-
-                    Click this text in Admin Mode
-                    to edit this new section.
-
-                </p>
-
-            </div>
-
-        </div>
-
-        </section>
-
-        `;
-
-    }
-
-
-    if(type==="image"){
-
-        html=`
-
-        <section
-        class="about section-space"
-        data-custom-section="${id}">
-
-        <div class="container about-grid">
-
-            <div class="about-image reveal-left">
-
-                <img
-                data-admin-image
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
-                alt="New section">
-
-            </div>
-
-            <div class="about-content reveal-right">
-
-                <div
-                class="section-label"
-                data-admin-editable>
-
-                    <span></span>
-                    New Section
-
-                </div>
-
-                <h2
-                class="section-title"
-                data-admin-editable>
-
-                    Image &
-                    <span>Content.</span>
-
-                </h2>
-
-                <p
-                class="section-copy"
-                data-admin-editable>
-
-                    Add your own content here.
-                    You can replace this image and
-                    edit every text from Admin Mode.
-
-                </p>
-
-            </div>
-
-        </div>
-
-        </section>
-
-        `;
-
-    }
-
-
-    if(type==="gallery"){
-
-        html=`
-
-        <section
-        class="portfolio section-space"
-        data-custom-section="${id}">
-
-        <div class="container">
-
-            <div class="reveal">
-
-                <div
-                class="section-label"
-                data-admin-editable>
-
-                    <span></span>
-                    Gallery
-
-                </div>
-
-                <h2
-                class="section-title"
-                data-admin-editable>
-
-                    Our
-                    <span>Gallery.</span>
-
-                </h2>
-
-            </div>
-
-            <div
-            class="portfolio-grid">
-
-                <div class="project reveal">
-
-                    <img
-                    data-admin-image
-                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85">
-
-                    <div class="project-info">
-
-                        <h3 data-admin-editable>
-                            Gallery Image
-                        </h3>
-
-                    </div>
-
-                </div>
-
-                <div class="project reveal">
-
-                    <img
-                    data-admin-image
-                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1400&q=85">
-
-                    <div class="project-info">
-
-                        <h3 data-admin-editable>
-                            Gallery Image
-                        </h3>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        </section>
-
-        `;
-
-    }
-
-
-    if(type==="cta"){
-
-        html=`
-
-        <section
-        class="cta"
-        data-custom-section="${id}">
-
-        <div class="container cta-inner">
-
-            <div>
-
-                <h2 data-admin-editable>
-                    Your Next Big
-                    <br>
-                    Project.
-                </h2>
-
-                <p data-admin-editable>
-                    Add your custom CTA message here.
-                </p>
-
-            </div>
-
-            <button
-            class="primary-btn"
-            onclick="openDrawer()">
-
-                Get Started →
-
-            </button>
-
-        </div>
-
-        </section>
-
-        `;
-
-    }
-
-
-    if(!html)
-        return;
-
-
-    const wrapper=
-    document.createElement("div");
-
-    wrapper.innerHTML=html;
-
-    const section=
-    wrapper.firstElementChild;
-
-    section.classList.add(
-        "admin-added"
-    );
-
-    const deleteButton=
-    document.createElement("button");
-
-    deleteButton.className=
-    "admin-delete";
-
-    deleteButton.innerHTML="×";
-
-    deleteButton.onclick=()=>{
-        section.remove();
-        renderSectionManager();
-    };
-
-    section.appendChild(
-        deleteButton
-    );
-
-    document
-    .getElementById("dynamicSections")
-    .appendChild(section);
-
-    prepareAdminEditors();
-
-    setupReveal();
-    setupMagnetic();
-    setupTilt();
-    setupFAQ();
-
-    renderSectionManager();
-
-    section.scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =========================================================
-   DELETE ELEMENT
-========================================================= */
-
-function deleteDynamicElement(button){
-
-    if(!confirm(
-        "Delete this item?"
-    ))
-        return;
-
-    const parent=
-    button.closest(
-        ".admin-added"
-    );
-
-    if(parent){
-
-        parent.remove();
-
-        renderSectionManager();
-
-    }
-
-}
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-function openAdminModal(
-    title,
-    body
-){
-
-    document
-    .getElementById("adminModalTitle")
-    .textContent=title;
-
-    document
-    .getElementById("adminModalBody")
-    .innerHTML=body;
-
-    document
-    .getElementById("adminModal")
-    .style.display="flex";
-
-}
-
-
-function closeAdminModal(){
-
-    document
-    .getElementById("adminModal")
-    .style.display="none";
-
-    window.currentEditingImage=null;
-
-}
-
-
-/* =========================================================
-   SECTION MANAGER
-========================================================= */
-
-function toggleSectionManager(){
-
-    const manager=
-    document.getElementById(
-        "sectionManager"
-    );
-
-    manager.style.display=
-    manager.style.display==="block"
-    ?"none"
-    :"block";
-
-    renderSectionManager();
-
-}
-
-
-function renderSectionManager(){
-
-    if(!isAdmin)
-        return;
-
-    const list=
-    document.getElementById(
-        "sectionManagerList"
-    );
-
-    list.innerHTML="";
-
-    const sections=
-    [
-        ...document.querySelectorAll(
-            "body > section"
-        ),
-        ...document.querySelectorAll(
-            "#dynamicSections > section"
-        )
-    ];
-
-    sections.forEach(
-        (section,index)=>{
-
-            const name=
-            section.id||
-            section.querySelector(
-                ".section-title"
-            )?.textContent
-            ?.trim()
-            .replace(/\s+/g," ")
-            .slice(0,35)||
-            section.className
-            .split(" ")[0];
-
-            const item=
-            document.createElement(
-                "div"
-            );
-
-            item.className=
-            "manager-section-item";
-
-            item.innerHTML=`
-
-                <span class="manager-section-name">
-                    ${index+1}. ${escapeHTML(name)}
-                </span>
-
-                <button
-                title="Move Up"
-                onclick="moveSection(this,-1)">
-                    ↑
-                </button>
-
-                <button
-                title="Move Down"
-                onclick="moveSection(this,1)">
-                    ↓
-                </button>
-
-                ${
-                    section.closest("#dynamicSections")
-                    ?
-                    `
-                    <button
-                    title="Delete"
-                    onclick="deleteSectionFromManager(this)"
-                    style="color:#e53935">
-                        ×
-                    </button>
-                    `
-                    :""
-                }
-
-            `;
-
-            item.dataset.sectionIndex=
-            index;
-
-            item.dataset.targetSection=
-            "1";
-
-            item._section=section;
-
-            list.appendChild(item);
-
-        }
-    );
-
-}
-
-
-function moveSection(button,direction){
-
-    const item=
-    button.parentElement;
-
-    const section=
-    item._section;
-
-    if(!section)
-        return;
-
-    const all=
-    [
-        ...document.querySelectorAll(
-            "body > section"
-        ),
-        ...document.querySelectorAll(
-            "#dynamicSections > section"
-        )
-    ];
-
-    const index=
-    all.indexOf(section);
-
-    const targetIndex=
-    index+direction;
-
-    if(
-        targetIndex<0||
-        targetIndex>=all.length
-    )
-        return;
-
-    const target=
-    all[targetIndex];
-
-    if(direction<0){
-
-        target.parentNode.insertBefore(
-            section,
-            target
-        );
-
-    }else{
-
-        target.parentNode.insertBefore(
-            target,
-            section
-        );
-
-    }
-
-    renderSectionManager();
-
-}
-
-
-function deleteSectionFromManager(button){
-
-    const item=
-    button.parentElement;
-
-    const section=
-    item._section;
-
-    if(!section)
-        return;
-
-    if(
-        !confirm(
-            "Delete this added section?"
-        )
-    )
-        return;
-
-    section.remove();
-
-    renderSectionManager();
-
-}
-
-
-/* =========================================================
-   SAVE TEXT + IMAGES
-========================================================= */
-
-function collectContent(){
-
-    const data=[];
-
-    document
-    .querySelectorAll(
-        "[data-admin-editable]"
-    )
-    .forEach(
-        (el,index)=>{
-
-            data.push({
-                index,
-                text:el.innerHTML
-            });
-
-        }
-    );
-
-
-    const images=[];
-
-    document
-    .querySelectorAll(
-        "img[data-admin-image]"
-    )
-    .forEach(
-        (img,index)=>{
-
-            images.push({
-                index,
-                src:img.src
-            });
-
-        }
-    );
-
-
-    return {
-        texts:data,
-        images:images
-    };
-
-}
-
-
-function saveAllChanges(){
-
-    if(!isAdmin)
-        return;
-
-    try{
-
-        const content=
-        collectContent();
-
-        localStorage.setItem(
-            CONTENT_KEY,
-            JSON.stringify(content)
-        );
-
-        localStorage.setItem(
-            DYNAMIC_KEY,
-            document
-            .getElementById(
-                "dynamicSections"
-            )
-            .innerHTML
-        );
-
-        alert(
-            "✓ Changes saved successfully in this browser."
-        );
-
-    }catch(error){
-
-        console.error(error);
-
-        alert(
-            "Could not save. Browser storage may be full. Large uploaded images can cause this."
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   LOAD SAVED CONTENT
-========================================================= */
-
-function loadSavedContent(){
-
-    try{
-
-        const raw=
-        localStorage.getItem(
-            CONTENT_KEY
-        );
-
-        if(raw){
-
-            const data=
-            JSON.parse(raw);
-
-            const texts=
-            document
-            .querySelectorAll(
-                "[data-admin-editable]"
-            );
-
-            if(data.texts){
-
-                data.texts.forEach(
-                    (item,index)=>{
-
-                        if(texts[index]){
-
-                            texts[index].innerHTML=
-                            item.text;
-
-                        }
-
-                    }
-                );
-
-            }
-
-
-            const images=
-            document
-            .querySelectorAll(
-                "img[data-admin-image]"
-            );
-
-            if(data.images){
-
-                data.images.forEach(
-                    (item,index)=>{
-
-                        if(images[index]){
-
-                            images[index].src=
-                            item.src;
-
-                        }
-
-                    }
-                );
-
-            }
-
-        }
-
-    }catch(error){
-
-        console.error(
-            "Content load error:",
-            error
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   LOAD DYNAMIC SECTIONS
-========================================================= */
-
-function loadDynamicSections(){
-
-    const saved=
-    localStorage.getItem(
-        DYNAMIC_KEY
-    );
-
-    if(!saved)
-        return;
-
-    try{
-
-        document
-        .getElementById(
-            "dynamicSections"
-        )
-        .innerHTML=saved;
-
-        document
-        .querySelectorAll(
-            "#dynamicSections .admin-added"
-        )
-        .forEach(section=>{
-
-            let btn=
-            section.querySelector(
-                ".admin-delete"
-            );
-
-            if(!btn){
-
-                btn=
-                document.createElement(
-                    "button"
-                );
-
-                btn.className=
-                "admin-delete";
-
-                btn.textContent="×";
-
-                btn.onclick=()=>{
-                    section.remove();
-                    renderSectionManager();
-                };
-
-                section.appendChild(btn);
-
-            }
-
-        });
-
-        prepareAdminEditors();
-
-        setupReveal();
-        setupMagnetic();
-        setupTilt();
-        setupFAQ();
-
-    }catch(error){
-
-        console.error(error);
-
-    }
-
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-function resetAllChanges(){
-
-    if(!confirm(
-        "Reset all saved admin changes and return to original website?"
-    ))
-        return;
-
-    localStorage.removeItem(
-        CONTENT_KEY
-    );
-
-    localStorage.removeItem(
-        DYNAMIC_KEY
-    );
-
-    location.reload();
-
-}
-
-
-/* =========================================================
-   HELPERS
-========================================================= */
-
-function escapeHTML(str){
-
-    return String(str)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-function escapeAttr(str){
-
-    return String(str)
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* =========================================================
-   ADMIN URL / SHORTCUT
-========================================================= */
-
-function checkAdminAccess(){
-
-    const authenticated=
-    sessionStorage.getItem(
-        AUTH_KEY
-    )==="true";
-
-    if(authenticated){
-
-        enterAdminMode();
-
-    }
-
-}
-
-
-/*
-    Open admin login by:
-
-    yourwebsite.com/#admin
-
-    OR press:
-
-    CTRL + SHIFT + A
-*/
-
-function checkHash(){
-
-    if(
-        window.location.hash.toLowerCase()
-        ==="#admin"
-    ){
-
-        openAdminLogin();
-
-    }
-
-}
-
-
-window.addEventListener(
-"hashchange",
-checkHash
-);
-
-
-document.addEventListener(
-"keydown",
-(e)=>{
-
-    if(
-        e.ctrlKey &&
-        e.shiftKey &&
-        e.key.toLowerCase()==="a"
-    ){
-
-        e.preventDefault();
-
-        if(isAdmin){
-
-            alert(
-                "You are already in Admin Mode."
-            );
-
-        }else{
-
-            openAdminLogin();
-
-        }
-
-    }
-
-});
-
-
-/* =========================================================
-   COUNTERS
-========================================================= */
-
+// COUNTERS ANIMATION
 function runCounters(){
-
-    document
-    .querySelectorAll(".stat-number")
-    .forEach(counter=>{
-
-        if(counter.dataset.counterDone)
-            return;
-
-        const target=
-        Number(counter.dataset.target);
-
-        if(!target)
-            return;
-
+    document.querySelectorAll(".stat-number").forEach(counter=>{
+        if(counter.dataset.counterDone) return;
+        const target=Number(counter.dataset.target);
+        if(!target) return;
         counter.dataset.counterDone="1";
-
         let current=0;
-
         const duration=1300;
-
-        const start=
-        performance.now();
+        const start=performance.now();
 
         function animate(time){
-
-            const progress=
-            Math.min(
-                (time-start)/duration,
-                1
-            );
-
-            current=
-            Math.floor(
-                progress*target
-            );
-
+            const progress=Math.min((time-start)/duration,1);
+            current=Math.floor(progress*target);
             if(target===100){
-
-                counter.textContent=
-                current+"%";
-
+                counter.textContent=current+"%";
             }else if(target===24){
-
-                counter.textContent=
-                current+"/7";
-
+                counter.textContent=current+"/7";
             }else{
-
-                counter.textContent=
-                current+"+";
-
+                counter.textContent=current+"+";
             }
-
             if(progress<1){
-
-                requestAnimationFrame(
-                    animate
-                );
-
+                requestAnimationFrame(animate);
             }
-
         }
-
-        requestAnimationFrame(
-            animate
-        );
-
+        requestAnimationFrame(animate);
     });
-
 }
 
 
-const counterObserver=
-new IntersectionObserver(
-(entries)=>{
+const counterObserver=new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
-
         if(entry.isIntersecting){
-
             runCounters();
-
-            counterObserver.unobserve(
-                entry.target
-            );
-
+            counterObserver.unobserve(entry.target);
         }
-
     });
-},
-{
-    threshold:.4
-});
+},{threshold:.4});
 
 
-document
-.querySelectorAll(".stat-number")
-.forEach(counter=>{
+document.querySelectorAll(".stat-number").forEach(counter=>{
     counterObserver.observe(counter);
 });
 
-
-/* =========================================================
-   START
-========================================================= */
-
-checkAdminAccess();
-checkHash();
-
-
-/*
-   Admin login can also be opened
-   by directly typing:
-
-   #admin
-
-   Example:
-
-   index.html#admin
-*/
-
-
-/* =========================================================
-   HERO AUTO SLIDER
-========================================================= */
-(function(){
-  const slides=[...document.querySelectorAll(".hero-slide")];
-  const dots=[...document.querySelectorAll(".hero-dot")];
-  if(!slides.length)return;
-  let current=0;
-  function goToSlide(index){
-    current=(index+slides.length)%slides.length;
-    slides.forEach((s,i)=>s.classList.toggle("active",i===current));
-    dots.forEach((d,i)=>d.classList.toggle("active",i===current));
-  }
-  dots.forEach((dot,i)=>dot.addEventListener("click",()=>goToSlide(i)));
-  setInterval(()=>goToSlide(current+1),5000);
-})();
-
-/* =========================================================
-   PROJECT DETAIL MODAL
-========================================================= */
-function openProjectDetail(card){
-  const modal=document.getElementById("projectDetailModal");
-  if(!modal)return;
-  const title=card.dataset.projectTitle||"Website Project";
-  const description=card.dataset.projectDescription||"";
-  const images=(card.dataset.projectImages||"").split("|").filter(Boolean);
-  document.getElementById("projectDetailTitle").textContent=title;
-  document.getElementById("projectDetailDescription").textContent=description;
-  document.getElementById("projectDetailGallery").innerHTML=images.map(src=>`<img src="${src}" alt="${title} showcase image">`).join("");
-  modal.classList.add("active");
-  modal.setAttribute("aria-hidden","false");
-  document.body.style.overflow="hidden";
-}
-function closeProjectDetail(){
-  const modal=document.getElementById("projectDetailModal");
-  if(!modal)return;
-  modal.classList.remove("active");
-  modal.setAttribute("aria-hidden","true");
-  document.body.style.overflow="";
-}
-document.querySelectorAll(".project-clickable").forEach(card=>{
-  card.addEventListener("click",()=>openProjectDetail(card));
-  card.addEventListener("keydown",e=>{
-    if(e.key==="Enter"||e.key===" ") { e.preventDefault(); openProjectDetail(card); }
-  });
-});
-document.getElementById("projectDetailModal")?.addEventListener("click",e=>{
-  if(e.target.id==="projectDetailModal")closeProjectDetail();
-});
-
 </script>
-
-
-<div class="project-detail-modal" id="projectDetailModal" aria-hidden="true">
-  <div class="project-detail-box">
-    <div class="project-detail-head">
-      <div>
-        <div class="section-label"><span></span> Website Showcase</div>
-        <h3 id="projectDetailTitle">Project</h3>
-      </div>
-      <button class="project-detail-close" onclick="closeProjectDetail()" aria-label="Close">×</button>
-    </div>
-    <p class="project-detail-description" id="projectDetailDescription"></p>
-    <div class="project-detail-gallery" id="projectDetailGallery"></div>
-  </div>
-</div>
 
 </body>
 </html>
