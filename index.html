@@ -7,7 +7,7 @@
 <title>Marwar Infotech — Digital Experiences & Web Development Company</title>
 
 <meta name="description"
-content="Marwar Infotech creates premium websites, digital experiences and modern business solutions. Founded by Pratap Singh Rathore and Co-founded by Harshvardhan Singh Rathore.">
+content="Marwar Infotech creates premium websites, digital experiences and digital marketing solutions including social media management, Meta Ads and Google Ads. Founded by Pratap Singh Rathore and Co-founded by Harshvardhan Singh Rathore.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -550,6 +550,288 @@ section{
     line-height:1.7;
     font-size:14px;
 }
+
+
+/* =========================================================
+   DIGITAL MARKETING
+========================================================= */
+
+.digital-marketing{
+    background:
+        radial-gradient(circle at 85% 20%,rgba(20,99,255,.10),transparent 34%),
+        #f5f8fd;
+    overflow:hidden;
+}
+
+.marketing-intro{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:80px;
+    align-items:center;
+    margin-top:65px;
+}
+
+.marketing-copy h3{
+    font-family:"Manrope";
+    font-size:clamp(32px,4vw,52px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:22px;
+}
+
+.marketing-copy h3 span{
+    color:var(--blue);
+}
+
+.marketing-copy p{
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.8;
+    max-width:650px;
+}
+
+.marketing-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin-top:30px;
+}
+
+.marketing-point{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    font-weight:700;
+}
+
+.marketing-point .check{
+    flex-shrink:0;
+}
+
+.marketing-visual{
+    position:relative;
+    min-height:500px;
+}
+
+.marketing-main-image{
+    height:470px;
+    border-radius:34px;
+    overflow:hidden;
+    box-shadow:0 35px 90px rgba(22,55,110,.16);
+    transform:rotate(2deg);
+    border:8px solid rgba(255,255,255,.85);
+}
+
+.marketing-main-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.marketing-float{
+    position:absolute;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.9);
+    border-radius:20px;
+    padding:18px 20px;
+    box-shadow:0 20px 55px rgba(20,50,100,.15);
+    z-index:3;
+}
+
+.marketing-float.top{
+    top:35px;
+    left:-25px;
+}
+
+.marketing-float.bottom{
+    right:-20px;
+    bottom:35px;
+}
+
+.marketing-float small{
+    display:block;
+    color:#7b8495;
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.marketing-float strong{
+    font-family:"Manrope";
+    font-size:18px;
+}
+
+.marketing-services{
+    margin-top:90px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.marketing-service{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:28px;
+    min-height:250px;
+    transition:.45s;
+    position:relative;
+    overflow:hidden;
+}
+
+.marketing-service::before{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    background:rgba(20,99,255,.08);
+    right:-55px;
+    top:-55px;
+    transition:.45s;
+}
+
+.marketing-service:hover{
+    transform:translateY(-10px);
+    box-shadow:var(--shadow);
+}
+
+.marketing-service:hover::before{
+    transform:scale(1.5);
+}
+
+.marketing-icon{
+    width:50px;
+    height:50px;
+    border-radius:16px;
+    background:#eaf2ff;
+    color:var(--blue);
+    display:grid;
+    place-items:center;
+    font-size:20px;
+    font-weight:800;
+    margin-bottom:25px;
+    position:relative;
+    z-index:1;
+}
+
+.marketing-service h4{
+    font-family:"Manrope";
+    font-size:19px;
+    margin-bottom:10px;
+    position:relative;
+    z-index:1;
+}
+
+.marketing-service p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.7;
+    position:relative;
+    z-index:1;
+}
+
+.ads-strip{
+    margin-top:25px;
+    padding:25px;
+    border-radius:25px;
+    background:#0b1220;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.ads-strip-copy h4{
+    font-family:"Manrope";
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.ads-strip-copy p{
+    color:#9eabc0;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.ads-platforms{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.ads-platform{
+    padding:11px 16px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:50px;
+    font-size:12px;
+    font-weight:800;
+    background:rgba(255,255,255,.05);
+}
+
+@media(max-width:1000px){
+    .marketing-intro{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .marketing-services{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .marketing-visual{
+        max-width:700px;
+        width:100%;
+        margin:auto;
+    }
+
+    .ads-strip{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .ads-platforms{
+        justify-content:flex-start;
+    }
+}
+
+@media(max-width:600px){
+    .marketing-points{
+        grid-template-columns:1fr;
+    }
+
+    .marketing-main-image{
+        height:370px;
+    }
+
+    .marketing-float.top{
+        left:5px;
+        top:20px;
+    }
+
+    .marketing-float.bottom{
+        right:5px;
+        bottom:20px;
+    }
+
+    .marketing-services{
+        grid-template-columns:1fr;
+    }
+
+    .ads-platforms{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        width:100%;
+    }
+
+    .ads-platform{
+        text-align:center;
+    }
+}
+
 
 /* STATS */
 
@@ -1338,6 +1620,7 @@ footer{
 
 <nav class="nav-links">
 <a href="#services">Services</a>
+<a href="#digital-marketing">Marketing</a>
 <a href="#about">About</a>
 <a href="#founders">Founders</a>
 <a href="#work">Work</a>
@@ -1435,7 +1718,7 @@ footer{
 <div class="reveal">
 <div class="section-label"><span></span>What We Do</div>
 <h2 class="section-title">Digital work with <span>character.</span></h2>
-<p class="section-copy" style="max-width:600px;margin-top:22px;">From strategy to final pixels, we create digital experiences that look premium and feel effortless.</p>
+<p class="section-copy" style="max-width:600px;margin-top:22px;">From strategy to final pixels, we create premium digital experiences—and now help businesses grow them through social media, paid advertising and conversion-focused campaigns.</p>
 </div>
 
 <div class="services-grid" id="servicesGrid">
@@ -1486,7 +1769,7 @@ footer{
 
 <div class="service-card reveal">
 <div class="service-card-img">
-<img src="https://images.unsplash.com/photo-1533750349077-cdcd106d29b2?auto=format&fit=crop&w=800&q=80" alt="Landing Pages">
+<img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1000&q=85" alt="Landing Pages">
 </div>
 <div class="service-card-content">
 <div class="service-number">05</div>
@@ -1507,6 +1790,115 @@ footer{
 </div>
 
 </div>
+</div>
+</section>
+
+
+<!-- ======================================================
+     DIGITAL MARKETING SECTION
+====================================================== -->
+
+<section class="digital-marketing section-space" id="digital-marketing">
+<div class="container">
+
+    <div class="reveal">
+        <div class="section-label"><span></span>Digital Marketing</div>
+        <h2 class="section-title">We don't just build your <span>website.</span></h2>
+        <p class="section-copy" style="max-width:720px;margin-top:22px;">
+            We help businesses build their digital presence, reach the right audience and turn attention into meaningful enquiries through social media, paid advertising and conversion-focused campaigns.
+        </p>
+    </div>
+
+    <div class="marketing-intro">
+
+        <div class="marketing-copy reveal-left">
+            <h3>Turn digital attention into <span>business growth.</span></h3>
+            <p>
+                A great website is only one part of the digital journey. Our digital marketing services are designed to connect your brand with potential customers across the platforms where they already spend their time.
+                From social media management to Meta Ads, Google Ads and campaign landing pages, we create a connected digital system around your business.
+            </p>
+
+            <div class="marketing-points">
+                <div class="marketing-point"><span class="check">✓</span>Social Media Management</div>
+                <div class="marketing-point"><span class="check">✓</span>Meta Ads Campaigns</div>
+                <div class="marketing-point"><span class="check">✓</span>Google Ads Management</div>
+                <div class="marketing-point"><span class="check">✓</span>Lead Generation</div>
+                <div class="marketing-point"><span class="check">✓</span>Campaign Strategy</div>
+                <div class="marketing-point"><span class="check">✓</span>Conversion Landing Pages</div>
+            </div>
+        </div>
+
+        <div class="marketing-visual reveal-right">
+            <div class="marketing-main-image">
+                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=90"
+                     alt="Digital marketing strategy meeting">
+            </div>
+
+            <div class="marketing-float top">
+                <small>Social Presence</small>
+                <strong>Content → Community</strong>
+            </div>
+
+            <div class="marketing-float bottom">
+                <small>Paid Growth</small>
+                <strong>Ads → Leads → Sales</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="marketing-services">
+
+        <div class="marketing-service reveal" style="--delay:.05s">
+            <div class="marketing-icon">◎</div>
+            <h4>Social Media Management</h4>
+            <p>
+                Consistent content planning, creative direction, captions, publishing and profile management designed around your brand.
+            </p>
+        </div>
+
+        <div class="marketing-service reveal" style="--delay:.10s">
+            <div class="marketing-icon">◈</div>
+            <h4>Meta Ads</h4>
+            <p>
+                Campaign setup and optimization for Facebook and Instagram advertising with audience, creative and conversion goals in mind.
+            </p>
+        </div>
+
+        <div class="marketing-service reveal" style="--delay:.15s">
+            <div class="marketing-icon">⌕</div>
+            <h4>Google Ads</h4>
+            <p>
+                Search-focused advertising designed to put your business in front of people actively looking for relevant products and services.
+            </p>
+        </div>
+
+        <div class="marketing-service reveal" style="--delay:.20s">
+            <div class="marketing-icon">↗</div>
+            <h4>Lead Generation</h4>
+            <p>
+                Campaign funnels, enquiry journeys and landing pages structured to help turn digital traffic into genuine business conversations.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="ads-strip reveal">
+        <div class="ads-strip-copy">
+            <h4>One strategy. Multiple digital touchpoints.</h4>
+            <p>
+                We can connect your website, social media presence and paid campaigns into one consistent customer journey.
+            </p>
+        </div>
+
+        <div class="ads-platforms">
+            <div class="ads-platform">Meta Ads</div>
+            <div class="ads-platform">Google Ads</div>
+            <div class="ads-platform">Instagram</div>
+            <div class="ads-platform">Facebook</div>
+        </div>
+    </div>
+
 </div>
 </section>
 
@@ -1857,6 +2249,7 @@ We believe a website should do more than simply exist online. It should communic
 <div class="footer-col">
 <h4>Explore</h4>
 <a href="#services">Services</a>
+<a href="#digital-marketing">Marketing</a>
 <a href="#about">About</a>
 <a href="#founders">Founders</a>
 <a href="#work">Work</a>
@@ -1910,6 +2303,11 @@ We believe a website should do more than simply exist online. It should communic
 <option>UI / UX Design</option>
 <option>Landing Page</option>
 <option>Website Redesign</option>
+<option>Digital Marketing</option>
+<option>Social Media Management</option>
+<option>Meta Ads</option>
+<option>Google Ads</option>
+<option>Lead Generation</option>
 </select>
 <textarea placeholder="Tell us about your project..."></textarea>
 <button type="submit">Send Enquiry →</button>
